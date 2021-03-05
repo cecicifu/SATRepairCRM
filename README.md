@@ -5,21 +5,23 @@
 > introducir el número de seguimiento de su reparación para consultar el estado.
 
 *Los elementos **opcionales** dependerán de las necesidades y el tiempo de desarrollo del proyecto.*
+*Las librerías usadas no deberán ser estrictamente las descritas abajo, podrían variar entre otras alternativas dependiendo del rendimiento, peso y uso en la aplicación*
 
 ## Frontend:
 - HTML5: etiquetas semánticas (https://www.w3schools.com/html/html5_semantic_elements.asp).
 - Javascript:
 	- NPM: gestor de paquetes (https://www.npmjs.com/).
 	- Axios: peticiones ajax (con CORS).
-	- Momentjs: formateo de fechas y horas.
+	- Moment: formateo de fechas y horas.
 	- Datatable: tablas avanzadas.
 	- select2: selects con busquedas y filtros.
 	- Fontawesome/Google Icons (https://fontawesome.com/ || https://fonts.google.com/icons/).
-	- **(opcional)** pacejs: loadings avanzados.
-	- **(opcional)** icheck: checkbox y radio-buttons mejorados.
+	- **(opcional)** pace: loadings avanzados.
+	- **(opcional)** icheck: checkboxes y radio-buttons mejorados.
+	- **(opcional)** tippy: tooltips con mejor estética. (En este caso se incluiría con su motor **popper**)
 	- **(opcional)** ckeditor: textarea avanzados y con markdown.
 	- **(opcional)** toastr/bootbox: alerts y ventanas avanzadas.
-	- **(opcional)** chartjs/highcharts/morris/raphael: gráficos avanzados. 
+	- **(opcional)** chart/highcharts/morris/raphael: gráficos avanzados. 
 		!Important [En principio no se incluirán gráficos en este proyecto, no está dentro del "main scope"]
 	
 - CSS:
