@@ -5,6 +5,7 @@
 > introducir el número de seguimiento de su reparación para consultar el estado.
 
 *Los elementos **opcionales** dependerán de las necesidades y el tiempo de desarrollo del proyecto.*
+
 *Las librerías usadas no deberán ser estrictamente las descritas abajo, podrían variar entre otras alternativas dependiendo del rendimiento, peso y uso en la aplicación*
 
 ## Frontend:
@@ -56,7 +57,7 @@
 	PSR: Autoloading de clases (https://www.php-fig.org/psr/).
 	
 - **(opcional)** RabbitMQ: gestionar colas y eventos.
-- Apache (opcional: Nginx).
+- Apache (**opcional**: Nginx).
 - MySQL (Incluído UML): La construcción de la base de datos seguirá la metodología de algunos
 	ejemplos de Microsoft SQL Server (http://www.wilsonmar.com/sql_adventureworks.htm).
 	
