@@ -35,57 +35,61 @@
 	- **(opcional)** Tailwind: framework (https://tailwindcss.com/).
 	- **(opcional)** sass / scss / stylus: preprocesador.
 
-- JSON: como formato principal para las peticiones cumpliendo con la JSONAPI (https://jsonapi.org/).
-- Webpack: como bundler (https://webpack.js.org/).
+- JSON: formato principal para las peticiones. Cumpliendo con la JSONAPI (https://jsonapi.org/).
+- Webpack: bundler (https://webpack.js.org/).
 	
 ### Backend:
-- PHP (Versión +7.4): Será vanilla, no se usará ningún framework.
+- PHP (Versión +7.4): "vanilla", no se usará ningún framework.
 
 	Orientación a objetos y principios "SOLID":
 	- Arquitectura Hexagonal (Estructura y composición de nuestra aplicación, es más escalable que MVC) (https://miro.medium.com/max/1718/1*yR4C1B-YfMh5zqpbHzTyag.png).
 	- DDD (Domain Drive Design) (https://leer.amazon.es/kp/embed?asin=B06ZYRPHMC&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_N8NY4MGSQPBKC0DJX1H8).
 	- Microservicios y / o Eventos.
 	- PDO (Permite el uso de diferentes drivers de bases de datos).
-	- Y otros patrones de diseño (repository, decorator, etc..).
+	- Otros patrones de diseño (repository, decorator, etc..).
 			
 	Seguridad:
 
-	- Tokens (comprobación de token autogenerado en todos los formularios, previene de ataques CSRF).
-	- STMT (Sentencias preparadas, previene de injecciones SQL).
-	- Filters y sanitazes de los campos enviados por POST / GET.
+	- Tokens (Comprobación de token autogenerado en todos los formularios, previene de ataques CSRF).
+	- STMT (Sentencias preparadas, previene de injecciones SQL y rollbacks en caso de error).
+	- Filters y sanitizes de los campos enviados por POST / GET.
 	- Encriptación de contraseñas con algoritmos avanzados.
+	- **(opcional)** Logger (Librerías como *Monolog* para saber que pasa en nuestra aplicación en todo momento) (https://github.com/Seldaek/monolog).
 		
-	**(opcional)** Twig: motor de plantillas (https://twig.symfony.com/).
+	**(opcional)** Twig: motor de plantilla (https://twig.symfony.com/).
 
 	Composer: gestor de dependencias (https://getcomposer.org/).
 		
-	PSR: Autoloading de clases (https://www.php-fig.org/psr/).
+	PSR-4: autoload de clases (Estándares PHP) (https://www.php-fig.org/).
+
+	Faker: generar datos falsos (https://github.com/FakerPHP/Faker). 
 	
-- **(opcional)** RabbitMQ: gestionar colas y eventos.
+- **(opcional)** AMQP: RabbitMQ, gestionar colas de mensajes.
 - Apache (**opcional**: Nginx).
-- MySQL: La construcción de la base de datos seguirá la metodología de algunos
-	ejemplos de Microsoft SQL Server (http://www.wilsonmar.com/sql_adventureworks.htm).
+- MySQL: Siguiendo la metodología de algunos ejemplos de Microsoft SQL Server (http://www.wilsonmar.com/sql_adventureworks.htm).
 
 ## Pruebas:
-- Unit Test: partes individuales de la aplicación.
+- Unit Test: partes individuales de la aplicación. Ej: (https://pestphp.com/).
 - Integration Test: toda la aplicación o grandes conjuntos de ella.
+- **(opcional)** Mutantion Testing: modifica nuestros test cambiando valores y condicionales para mejorar el coverage y reliability de nuestra aplicación (https://github.com/infection/infection).
 
 ## Análisis:
 - Test de accesibilidad.
 	  https://www.w3.org/WAI/ER/tools/
 	  https://wave.webaim.org/
-- Otros test de velocidad y rendimiento.
+- Test de velocidad y rendimiento.
 
 ## Herramientas:
 - PhpStorm (IDE principal).
-- VSCode (Editor de código secundario).
-- Laragon (entorno de desarrollo).
+- VSCode (Editor de código).
+- Laragon (Entorno de desarrollo).
 - Filezilla (FTP).
-- Postman (Peticiones HTTP).
+- Postman (Peticiones HTTP para testeo de APIs).
 - PuTTY (SSH).
-- HeidiSQL.
-- MySQL Workbench.
-- Git.
-- Trello.
+- HeidiSQL (Interfaz gráfica para gestión de SQL).
+- MySQL Workbench (Interfaz gráfico para gestión y diseño de MySQL).
+- Git (Control de versión).
+- Github (Alojamiento del repositorio del proyecto).
+- Trello (Gestión de tareas).
 - Google Chrome / Mozilla Firefox.
-- Photoshop / https://bulkresizephotos.com.
+- Photoshop / https://bulkresizephotos.com (Edición y optimización de imágenes).
