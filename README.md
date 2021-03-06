@@ -6,15 +6,15 @@
 
 *Los elementos **opcionales** dependerán de las necesidades y el tiempo de desarrollo del proyecto.*
 
-*Las librerías usadas no deberán ser estrictamente las descritas abajo, podrían variar entre otras alternativas dependiendo del rendimiento, peso y uso en la aplicación*
+*Las librerías usadas no deberán ser estrictamente las descritas abajo, podrían variar entre otras alternativas dependiendo del rendimiento, peso y uso en la aplicación.*
 
-## Diseño:
+## Diseño
 -  ERD: *Entity-Relationship Diagram* para el diseño conceptual de la base de datos.
 -  CD / OD: *Class Diagram* / *Object Diagram* para el diseño conceptual de la aplicación.
 -  UCD: *Use Case Diagram* para el diseño funcional de la aplicación.
 
 ## Desarrollo
-### Frontend:
+### Frontend
 - HTML5: etiquetas semánticas (https://www.w3schools.com/html/html5_semantic_elements.asp).
 - Javascript:
 	- NPM: gestor de paquetes (https://www.npmjs.com/).
@@ -38,7 +38,7 @@
 - JSON: formato principal para las peticiones. Cumpliendo con la JSONAPI (https://jsonapi.org/).
 - Webpack: bundler (https://webpack.js.org/).
 	
-### Backend:
+### Backend
 - PHP (Versión +7.4): "vanilla", no se usará ningún framework.
 
 	Orientación a objetos y principios "SOLID":
@@ -68,18 +68,18 @@
 - Apache (**opcional**: Nginx).
 - MySQL: Siguiendo la metodología de algunos ejemplos de Microsoft SQL Server (http://www.wilsonmar.com/sql_adventureworks.htm).
 
-## Pruebas:
+## Pruebas
 - Unit Test: partes individuales de la aplicación. Ej: (https://pestphp.com/).
 - Integration Test: toda la aplicación o grandes conjuntos de ella.
 - **(opcional)** Mutantion Testing: modifica nuestros test cambiando valores y condicionales para mejorar el coverage y reliability de nuestra aplicación (https://github.com/infection/infection).
 
-## Análisis:
+## Análisis
 - Test de accesibilidad.
 	  https://www.w3.org/WAI/ER/tools/
 	  https://wave.webaim.org/
 - Test de velocidad y rendimiento.
 
-## Herramientas:
+## Herramientas
 - PhpStorm (IDE principal).
 - VSCode (Editor de código).
 - Laragon (Entorno de desarrollo).
@@ -91,5 +91,5 @@
 - Git (Control de versión).
 - Github (Alojamiento del repositorio del proyecto).
 - Trello (Gestión de tareas).
-- Google Chrome / Mozilla Firefox (Extensiones: *Wappalyzer*, *Colorzilla*, *Grid Ruler*, *JSON Formatter*). 
+- Google Chrome / Mozilla Firefox (Extensiones: *Wappalyzer*, *ColorZilla*, *Grid Ruler*, *JSON Formatter*). 
 - Photoshop / https://bulkresizephotos.com (Edición y optimización de imágenes).
