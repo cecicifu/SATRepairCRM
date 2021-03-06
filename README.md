@@ -91,5 +91,5 @@
 - Git (Control de versión).
 - Github (Alojamiento del repositorio del proyecto).
 - Trello (Gestión de tareas).
-- Google Chrome / Mozilla Firefox.
+- Google Chrome / Mozilla Firefox (Extensiones: *Wappalyzer*, *Colorzilla*, *Grid Ruler*, *JSON Formatter*). 
 - Photoshop / https://bulkresizephotos.com (Edición y optimización de imágenes).
