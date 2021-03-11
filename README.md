@@ -1,8 +1,9 @@
 # SATRepairCRM
-> Este proyecto constará de un panel BackOffice donde se podrá gestionar todo el
+> Este proyecto será un CRM (Customer relationship management), que constará de un panel BackOffice donde se podrá gestionar todo el
 > sistema (usuarios, reparaciones, estados, clientes, productos y categorías), y 
 > un FrontOffice muy sencillo que solo constará de un pequeño campo donde los clientes podrán
 > introducir el número de seguimiento de su reparación para consultar el estado.
+> El objetivo es que este proyecto pueda avanzar tanto que en un futuro consiga ser también un ERP (Enterprise Resource Planning) como Odoo
 
 *Los elementos **opcionales** dependerán de las necesidades y el tiempo de desarrollo del proyecto.*
 
@@ -39,11 +40,11 @@
 - Webpack: bundler (https://webpack.js.org/).
 	
 ### Backend
-- PHP (Versión +7.4): "vanilla", no se usará ningún framework.
+- PHP (Versión +7.4): Symfony, Laravel o Vanilla. Todavía está por decidir.
 
 	Orientación a objetos y principios "SOLID":
-	- Arquitectura Hexagonal (Estructura y composición de nuestra aplicación, es más escalable que MVC) (https://miro.medium.com/max/1718/1*yR4C1B-YfMh5zqpbHzTyag.png).
-	- DDD (Domain Drive Design) (https://leer.amazon.es/kp/embed?asin=B06ZYRPHMC&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_N8NY4MGSQPBKC0DJX1H8).
+	- **(opcional)** Arquitectura Hexagonal (Estructura y composición de nuestra aplicación, es más escalable que MVC) (https://miro.medium.com/max/1718/1*yR4C1B-YfMh5zqpbHzTyag.png).
+	- **(opcional)** DDD (Domain Drive Design) (https://leer.amazon.es/kp/embed?asin=B06ZYRPHMC&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_N8NY4MGSQPBKC0DJX1H8).
 	- Microservicios y / o Eventos.
 	- PDO (Permite el uso de diferentes drivers de bases de datos).
 	- Otros patrones de diseño (repository, decorator, etc..).
@@ -77,7 +78,13 @@
 - Test de accesibilidad.
 	  https://www.w3.org/WAI/ER/tools/
 	  https://wave.webaim.org/
-- Test de velocidad y rendimiento.
+- Tests de velocidad y rendimiento.
+
+## Despliegue
+- Host: VPS en [OVH](https://www.ovh.es/) o [Heroku](https://www.heroku.com/).
+- Dominio: [Namecheap](https://www.namecheap.com/) o [Name](https://www.name.com/).
+- **(opcional)** CDN: [Cloudflare](https://www.cloudflare.com/).
+- **(opcional)** SSL: [Letsencrypt](https://letsencrypt.org/).
 
 ## Herramientas
 - PhpStorm (IDE principal).
@@ -89,7 +96,7 @@
 - HeidiSQL (Interfaz gráfica para gestión de SQL).
 - MySQL Workbench (Interfaz gráfico para gestión y diseño de MySQL).
 - Git (Control de versión).
-- Github (Alojamiento del repositorio del proyecto).
+- Github (Repositorio del proyecto).
 - Trello (Gestión de tareas).
 - Google Chrome / Mozilla Firefox (Extensiones: *Wappalyzer*, *ColorZilla*, *Grid Ruler*, *JSON Formatter*). 
 - Photoshop / https://bulkresizephotos.com (Edición y optimización de imágenes).
