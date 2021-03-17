@@ -72,7 +72,7 @@
 ## Pruebas
 - Unit Test: partes individuales de la aplicación. Ej: (https://pestphp.com/).
 - Integration Test: toda la aplicación o grandes conjuntos de ella.
-- **(opcional)** Mutantion Testing: modifica nuestros test cambiando valores y condicionales para mejorar el coverage y reliability de nuestra aplicación (https://github.com/infection/infection).
+- **(opcional)** Mutation Testing: modifica nuestros test cambiando valores y condicionales para mejorar el coverage y reliability de nuestra aplicación (https://github.com/infection/infection).
 
 ## Análisis
 - Test de accesibilidad.
