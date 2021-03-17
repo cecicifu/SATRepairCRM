@@ -20,16 +20,16 @@
 - Javascript:
 	- NPM: gestor de paquetes (https://www.npmjs.com/).
 	- Axios: peticiones ajax (con CORS).
-	- Moment: formateo de fechas y horas.
+	- Dayjs: formateo de fechas y horas (https://github.com/iamkun/dayjs).
 	- Datatable: tablas avanzadas.
-	- select2: selects con busquedas y filtros.
+	- Select2: selects con busquedas y filtros.
 	- Fontawesome / Google Icons (https://fontawesome.com/ || https://fonts.google.com/icons/).
-	- **(opcional)** pace: loadings avanzados.
-	- **(opcional)** icheck: checkboxes y radio-buttons mejorados.
-	- **(opcional)** tippy: tooltips con mejor estética. (En este caso se incluiría con su motor **popper**)
-	- **(opcional)** ckeditor: textarea avanzados y con markdown.
-	- **(opcional)** toastr / bootbox: alerts y ventanas avanzadas.
-	- **(opcional)** chart / highcharts / morris / raphael: gráficos avanzados. 
+	- **(opcional)** Pace: loadings avanzados.
+	- **(opcional)** Icheck: checkboxes y radio-buttons mejorados.
+	- **(opcional)** Tippy: tooltips con mejor estética. (En este caso se incluiría con su motor **popper**)
+	- **(opcional)** Ckeditor: textarea avanzados y con markdown.
+	- **(opcional)** Toastr / Bootbox: alerts y ventanas avanzadas.
+	- **(opcional)** Chart / Highcharts / Morris / Raphael: gráficos avanzados. 
 		!Important [En principio no se incluirán gráficos en este proyecto, no está dentro del "main scope"]
 	
 - CSS:
