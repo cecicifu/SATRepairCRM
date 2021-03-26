@@ -40,7 +40,7 @@
 - Webpack: bundler (https://webpack.js.org/).
 	
 ### Backend
-- PHP (Versión +7.4): Symfony, Laravel o Vanilla. Todavía está por decidir.
+- PHP (Versión +7.4): Symfony Framework.
 
 	Orientación a objetos y principios "SOLID":
 	- **(opcional)** Arquitectura Hexagonal (Estructura y composición de nuestra aplicación, es más escalable que MVC) (https://miro.medium.com/max/1718/1*yR4C1B-YfMh5zqpbHzTyag.png).
