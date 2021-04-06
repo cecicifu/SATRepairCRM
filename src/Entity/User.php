@@ -23,7 +23,7 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=15)
+     * @ORM\Column(type="string", length=15, unique=true)
      */
     private $username;
 
@@ -146,6 +146,7 @@ class User implements UserInterface
     public function getRoles(): array
     {
         // TODO: Implement getRoles() method.
+        return ['ROLE_USER'];
     }
 
     /**

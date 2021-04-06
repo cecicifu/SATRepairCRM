@@ -1,5 +1,8 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    encoders:
+        App\Entity\User:
+            algorithm: auto
     providers:
         users_in_memory: { memory: null }
     firewalls:
@@ -12,7 +15,7 @@ security:
             provider: users_in_memory
             guard:
                 authenticators:
-                    - App\Security\AppCustomAuthenticator
+                    - App\Security\AppLoginAuthenticator
             logout:
                 path: app_logout
                 # where to redirect after logout
