@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ffafe355-89e5-487f-8f1c-302d5258ed35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/AppCustomAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/AppLoginAuthenticator.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +199,7 @@
       <workItem from="1616888290783" duration="28000" />
       <workItem from="1616888328041" duration="36000" />
       <workItem from="1616955260088" duration="1791000" />
-      <workItem from="1617724836584" duration="10660000" />
+      <workItem from="1617724836584" duration="12190000" />
     </task>
     <servers />
   </component>
