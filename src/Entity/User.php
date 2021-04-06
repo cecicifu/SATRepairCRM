@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\IdGenerator\UuidV4Generator;
+use Symfony\Component\Uid\Uuid;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -14,8 +16,9 @@ class User implements UserInterface
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="string", length=36)
+     * @ORM\Column(type="uuid", unique=true)
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class=UuidV4Generator::class)
      */
     private $id;
 
@@ -45,16 +48,16 @@ class User implements UserInterface
     private $modified;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime_immutable")
      */
     private $created;
 
-    public function getId(): ?string
+    public function getId(): Uuid
     {
         return $this->id;
     }
 
-    public function getUsername(): ?string
+    public function getUsername(): string
     {
         return $this->username;
     }
@@ -78,7 +81,7 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getPassword(): ?string
+    public function getPassword(): string
     {
         return $this->password;
     }
@@ -90,36 +93,36 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getLastSession(): ?\DateTimeInterface
+    public function getLastSession(): ?\DateTime
     {
         return $this->lastSession;
     }
 
-    public function setLastSession(?\DateTimeInterface $lastSession): self
+    public function setLastSession(?\DateTime $lastSession): self
     {
         $this->lastSession = $lastSession;
 
         return $this;
     }
 
-    public function getModified(): ?\DateTimeInterface
+    public function getModified(): \DateTime
     {
         return $this->modified;
     }
 
-    public function setModified(\DateTimeInterface $modified): self
+    public function setModified(\DateTime $modified): self
     {
         $this->modified = $modified;
 
         return $this;
     }
 
-    public function getCreated(): ?\DateTimeInterface
+    public function getCreated(): \DateTimeImmutable
     {
         return $this->created;
     }
 
-    public function setCreatedDate(\DateTimeInterface $created): self
+    public function setCreated(\DateTimeImmutable $created): self
     {
         $this->created = $created;
 
@@ -140,7 +143,7 @@ class User implements UserInterface
      *
      * @return string[] The user roles
      */
-    public function getRoles()
+    public function getRoles(): array
     {
         // TODO: Implement getRoles() method.
     }
@@ -152,7 +155,7 @@ class User implements UserInterface
      *
      * @return string|null The salt
      */
-    public function getSalt()
+    public function getSalt(): ?string
     {
         // TODO: Implement getSalt() method.
     }

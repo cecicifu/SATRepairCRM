@@ -40,6 +40,8 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $user->setCreated(new \DateTimeImmutable("now"));
+            $user->setModified(new \DateTime("now"));
             $entityManager->persist($user);
             $entityManager->flush();
 
@@ -76,6 +78,7 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user->setModified(new \DateTime("now"));
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('user_index');
