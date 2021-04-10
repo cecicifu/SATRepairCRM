@@ -2,19 +2,25 @@
 
 namespace App\Entity;
 
+use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 class User implements UserInterface
 {
-    private $id;
-    private $username;
-    private $email;
-    private $password;
-    private $lastSession;
-    private $modified;
-    private $created;
+    private UuidInterface $id;
+    private string $username;
+    private ?string $email;
+    private string $password;
+    private ?\DateTimeInterface $lastSession;
+    private \DateTimeInterface $modified;
+    private \DateTimeImmutable $created;
 
-    public function getId(): ?string
+    public function __construct(UuidInterface $uuid)
+    {
+        $this->id = $uuid;
+    }
+
+    public function getId(): UuidInterface
     {
         return $this->id;
     }
@@ -60,7 +66,7 @@ class User implements UserInterface
         return $this->lastSession;
     }
 
-    public function setLastSession(\DateTimeInterface $lastSession): self
+    public function setLastSession(?\DateTimeInterface $lastSession): self
     {
         $this->lastSession = $lastSession;
 

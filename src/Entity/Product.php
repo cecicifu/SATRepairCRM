@@ -2,16 +2,23 @@
 
 namespace App\Entity;
 
+use Ramsey\Uuid\UuidInterface;
+
 class Product
 {
-    private $id;
-    private $name;
-    private $amount;
-    private $price;
-    private $modified;
-    private $created;
+    private UuidInterface $id;
+    private string $name;
+    private int $amount;
+    private ?float $price;
+    private \DateTimeInterface $modified;
+    private \DateTimeImmutable $created;
 
-    public function getId(): ?string
+    public function __construct(UuidInterface $uuid)
+    {
+        $this->id = $uuid;
+    }
+
+    public function getId(): UuidInterface
     {
         return $this->id;
     }

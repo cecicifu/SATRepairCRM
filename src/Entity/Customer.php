@@ -2,19 +2,26 @@
 
 namespace App\Entity;
 
+use Ramsey\Uuid\UuidInterface;
+
 class Customer
 {
-    private $id;
-    private $fullname;
-    private $address;
-    private $city;
-    private $email;
-    private $zipCode;
-    private $phone;
-    private $modified;
-    private $created;
+    private UuidInterface $id;
+    private string $fullname;
+    private ?string $address;
+    private ?string $city;
+    private ?string $email;
+    private ?int $zipCode;
+    private int $phone;
+    private \DateTimeInterface $modified;
+    private \DateTimeImmutable $created;
 
-    public function getId(): ?string
+    public function __construct(UuidInterface $uuid)
+    {
+        $this->id = $uuid;
+    }
+
+    public function getId(): UuidInterface
     {
         return $this->id;
     }

@@ -8,9 +8,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/doctrine/Category.orm.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/doctrine/Category.orm.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/doctrine/Customer.orm.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/doctrine/Customer.orm.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/doctrine/Product.orm.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/doctrine/Product.orm.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/doctrine/Status.orm.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/doctrine/Status.orm.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/doctrine/User.orm.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/doctrine/User.orm.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Status.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Status.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +220,7 @@
       <workItem from="1617724836584" duration="12493000" />
       <workItem from="1617779082113" duration="45000" />
       <workItem from="1618045512935" duration="341000" />
-      <workItem from="1618046034156" duration="3166000" />
+      <workItem from="1618046034156" duration="5092000" />
     </task>
     <servers />
   </component>

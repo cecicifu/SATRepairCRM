@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
+use Ramsey\Uuid\Uuid;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -34,7 +35,7 @@ class UserController extends AbstractController
      */
     public function new(Request $request): Response
     {
-        $user = new User();
+        $user = new User(Uuid::uuid4());
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 

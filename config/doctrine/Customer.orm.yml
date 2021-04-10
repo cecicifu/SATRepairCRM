@@ -5,10 +5,6 @@ App\Entity\Customer:
     id:
         id:
             type: uuid
-            generator:
-                strategy: CUSTOM
-            customIdGenerator:
-                class: Ramsey\Uuid\Doctrine\UuidGenerator
     fields:
         fullname:
             type: string
