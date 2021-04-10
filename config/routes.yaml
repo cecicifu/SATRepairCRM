@@ -1,3 +1,7 @@
 #index:
 #    path: /users
 #    controller: App\Controller\UserController::index
+admin:
+  resource: '../src/Controller/Admin/'
+  type: annotation
+  prefix: /admin
