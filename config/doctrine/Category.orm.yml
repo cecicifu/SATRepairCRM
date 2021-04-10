@@ -1,0 +1,41 @@
+App\Entity\Category:
+    type: entity
+    table: category
+    repositoryClass: App\Repository\CategoryRepository
+    id:
+        id:
+            type: uuid
+            generator:
+                strategy: CUSTOM
+            customIdGenerator:
+                class: Ramsey\Uuid\Doctrine\UuidGenerator
+    fields:
+        name:
+            type: string
+            scale: 0
+            length: 30
+            unique: false
+            nullable: false
+            precision: 0
+        description:
+            type: string
+            scale: 0
+            length: 100
+            unique: false
+            nullable: true
+            precision: 0
+        modified:
+            type: datetime
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+        created:
+            type: datetime_immutable
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+    lifecycleCallbacks: {  }
