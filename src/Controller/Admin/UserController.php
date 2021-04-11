@@ -32,6 +32,7 @@ class UserController extends AbstractController
     /**
      * @Route("/new", name="user_new", methods={"GET","POST"})
      * @param Request $request
+     * @param UserPasswordEncoderInterface $passwordEncoder
      * @return Response
      */
     public function new(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
