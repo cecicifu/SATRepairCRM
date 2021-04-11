@@ -3,6 +3,8 @@
 namespace App\DataFixtures;
 
 use App\Entity\User;
+use DateTime;
+use DateTimeImmutable;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Ramsey\Uuid\Uuid;
@@ -36,8 +38,8 @@ class AppFixtures extends Fixture
                 'asdf,123'
             )
         );
-        $user->setCreated(new \DateTimeImmutable("now"));
-        $user->setModified(new \DateTime("now"));
+        $user->setCreated(new DateTimeImmutable("now"));
+        $user->setModified(new DateTime("now"));
 
         return $user;
     }

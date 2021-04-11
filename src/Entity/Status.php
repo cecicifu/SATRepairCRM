@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use DateTimeImmutable;
+use DateTimeInterface;
 use Ramsey\Uuid\UuidInterface;
 
 class Status
@@ -9,8 +11,8 @@ class Status
     private UuidInterface $id;
     private string $name;
     private ?string $colour;
-    private \DateTimeInterface $modified;
-    private \DateTimeImmutable $created;
+    private DateTimeInterface $modified;
+    private DateTimeImmutable $created;
 
     public function __construct(UuidInterface $uuid)
     {
@@ -46,24 +48,24 @@ class Status
         return $this;
     }
 
-    public function getModified(): ?\DateTimeInterface
+    public function getModified(): ?DateTimeInterface
     {
         return $this->modified;
     }
 
-    public function setModified(\DateTimeInterface $modified): self
+    public function setModified(DateTimeInterface $modified): self
     {
         $this->modified = $modified;
 
         return $this;
     }
 
-    public function getCreated(): ?\DateTimeImmutable
+    public function getCreated(): ?DateTimeImmutable
     {
         return $this->created;
     }
 
-    public function setCreated(\DateTimeImmutable $created): self
+    public function setCreated(DateTimeImmutable $created): self
     {
         $this->created = $created;
 

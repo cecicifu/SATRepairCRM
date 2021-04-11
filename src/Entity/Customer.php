@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use DateTimeImmutable;
+use DateTimeInterface;
 use Ramsey\Uuid\UuidInterface;
 
 class Customer
@@ -13,8 +15,8 @@ class Customer
     private ?string $email;
     private ?int $zipCode;
     private int $phone;
-    private \DateTimeInterface $modified;
-    private \DateTimeImmutable $created;
+    private DateTimeInterface $modified;
+    private DateTimeImmutable $created;
 
     public function __construct(UuidInterface $uuid)
     {
@@ -98,24 +100,24 @@ class Customer
         return $this;
     }
 
-    public function getModified(): ?\DateTimeInterface
+    public function getModified(): ?DateTimeInterface
     {
         return $this->modified;
     }
 
-    public function setModified(\DateTimeInterface $modified): self
+    public function setModified(DateTimeInterface $modified): self
     {
         $this->modified = $modified;
 
         return $this;
     }
 
-    public function getCreated(): ?\DateTimeImmutable
+    public function getCreated(): ?DateTimeImmutable
     {
         return $this->created;
     }
 
-    public function setCreated(\DateTimeImmutable $created): self
+    public function setCreated(DateTimeImmutable $created): self
     {
         $this->created = $created;
 

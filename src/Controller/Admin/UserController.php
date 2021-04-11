@@ -5,6 +5,8 @@ namespace App\Controller\Admin;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
+use DateTime;
+use DateTimeImmutable;
 use Ramsey\Uuid\Uuid;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -48,8 +50,8 @@ class UserController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            $user->setCreated(new \DateTimeImmutable("now"));
-            $user->setModified(new \DateTime("now"));
+            $user->setCreated(new DateTimeImmutable("now"));
+            $user->setModified(new DateTime("now"));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
@@ -79,6 +81,7 @@ class UserController extends AbstractController
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      * @param Request $request
      * @param User $user
+     * @param UserPasswordEncoderInterface $passwordEncoder
      * @return Response
      */
     public function edit(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder): Response
@@ -93,7 +96,7 @@ class UserController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            $user->setModified(new \DateTime("now"));
+            $user->setModified(new DateTime("now"));
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('user_index');

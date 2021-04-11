@@ -11,7 +11,6 @@
                 <th>Id</th>
                 <th>Username</th>
                 <th>Email</th>
-                <th>Password</th>
                 <th>LastSession</th>
                 <th>Modified</th>
                 <th>Created</th>
@@ -24,7 +23,6 @@
                 <td>{{ user.id }}</td>
                 <td>{{ user.username }}</td>
                 <td>{{ user.email }}</td>
-                <td>{{ user.password }}</td>
                 <td>{{ user.lastSession ? user.lastSession|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ user.modified ? user.modified|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ user.created ? user.created|date('Y-m-d H:i:s') : '' }}</td>
