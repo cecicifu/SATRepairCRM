@@ -25,7 +25,7 @@ class Product
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -37,7 +37,7 @@ class Product
         return $this;
     }
 
-    public function getAmount(): ?int
+    public function getAmount(): int
     {
         return $this->amount;
     }
@@ -61,7 +61,7 @@ class Product
         return $this;
     }
 
-    public function getModified(): ?DateTimeInterface
+    public function getModified(): DateTimeInterface
     {
         return $this->modified;
     }
@@ -73,7 +73,7 @@ class Product
         return $this;
     }
 
-    public function getCreated(): ?DateTimeImmutable
+    public function getCreated(): DateTimeImmutable
     {
         return $this->created;
     }

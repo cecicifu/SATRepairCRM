@@ -24,7 +24,7 @@ class Category
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -48,7 +48,7 @@ class Category
         return $this;
     }
 
-    public function getModified(): ?DateTimeInterface
+    public function getModified(): DateTimeInterface
     {
         return $this->modified;
     }
@@ -60,7 +60,7 @@ class Category
         return $this;
     }
 
-    public function getCreated(): ?DateTimeImmutable
+    public function getCreated(): DateTimeImmutable
     {
         return $this->created;
     }

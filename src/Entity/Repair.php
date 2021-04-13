@@ -197,12 +197,12 @@ class Repair
         return $this;
     }
 
-    public function isTax(): float
+    public function getTax(): ?float
     {
         return $this->tax;
     }
 
-    public function setTax(float $tax): self
+    public function setTax(?float $tax): self
     {
         $this->tax = $tax;
 

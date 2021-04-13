@@ -28,7 +28,7 @@ class Customer
         return $this->id;
     }
 
-    public function getFullname(): ?string
+    public function getFullname(): string
     {
         return $this->fullname;
     }
@@ -88,7 +88,7 @@ class Customer
         return $this;
     }
 
-    public function getPhone(): ?int
+    public function getPhone(): int
     {
         return $this->phone;
     }
@@ -100,7 +100,7 @@ class Customer
         return $this;
     }
 
-    public function getModified(): ?DateTimeInterface
+    public function getModified(): DateTimeInterface
     {
         return $this->modified;
     }
@@ -112,7 +112,7 @@ class Customer
         return $this;
     }
 
-    public function getCreated(): ?DateTimeImmutable
+    public function getCreated(): DateTimeImmutable
     {
         return $this->created;
     }
