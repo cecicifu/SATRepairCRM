@@ -22,14 +22,15 @@ App\Entity\RepairHasProducts:
   manyToOne:
     repair:
       targetEntity: App\Entity\Repair
-      fetch: LAZY
+      inversedBy: products
+      cascade: [ persist ]
       joinColumn:
         name: repair
         referencedColumnName: id
         nullable: false
     product:
       targetEntity: App\Entity\Product
-      fetch: LAZY
+      cascade: [ persist ]
       joinColumn:
         name: product
         referencedColumnName: id

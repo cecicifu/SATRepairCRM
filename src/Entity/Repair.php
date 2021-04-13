@@ -81,27 +81,21 @@ class Repair
         return $this->products;
     }
 
-    public function addProduct(RepairHasProducts $product): self
+    public function addProduct(Product $product): self
     {
         if (!$this->products->contains($product))
         {
-            $this->products[] = $product;
-            $product->setRepair($this);
+            $this->products->add($product);
         }
 
         return $this;
     }
 
-    public function removeProduct(RepairHasProducts $product): self
+    public function removeProduct(Product $product): self
     {
         if ($this->products->contains($product))
         {
             $this->products->removeElement($product);
-
-            if ($product->getRepair() === $this)
-            {
-                $product->setRepair(null);
-            }
         }
 
         return $this;
