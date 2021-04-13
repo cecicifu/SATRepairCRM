@@ -93,19 +93,23 @@ App\Entity\Repair:
   manyToOne:
     customer:
       targetEntity: App\Entity\Customer
+      fetch: EAGER
       mappedBy: id
       cascade: [ persist ]
     category:
       targetEntity: App\Entity\Category
+      fetch: EAGER
       mappedBy: id
       cascade: [ persist ]
     status:
       targetEntity: App\Entity\Status
+      fetch: EAGER
       mappedBy: id
       cascade: [ persist ]
   oneToMany:
     products:
-      targetEntity: App\Entity\Product
+      targetEntity: App\Entity\RepairHasProducts
+      fetch: EAGER
       orphanRemoval: true
       mappedBy: repair
   lifecycleCallbacks: {  }

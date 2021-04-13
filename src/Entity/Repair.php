@@ -81,7 +81,7 @@ class Repair
         return $this->products;
     }
 
-    public function addProduct(Product $product): self
+    public function addProduct(RepairHasProducts $product): self
     {
         if (!$this->products->contains($product))
         {
@@ -91,7 +91,7 @@ class Repair
         return $this;
     }
 
-    public function removeProduct(Product $product): self
+    public function removeProduct(RepairHasProducts $product): self
     {
         if ($this->products->contains($product))
         {
