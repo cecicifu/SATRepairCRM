@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="App\Repository\StatusRepository" name="App\Entity\Status" table="status">
+    <id name="id" type="uuid" column="id"/>
+    <field name="name" type="string" column="name" length="25" precision="0" scale="0" unique="true" nullable="false"/>
+    <field name="colour" type="string" column="colour" length="50" precision="0" scale="0" nullable="true"/>
+    <field name="modified" type="datetime" column="modified" precision="0" scale="0" nullable="false"/>
+    <field name="created" type="datetime_immutable" column="created" precision="0" scale="0" nullable="false"/>
+  </entity>
+</doctrine-mapping>
