@@ -14,12 +14,9 @@ class RepairHasProducts
     private int $quantity;
     private DateTimeImmutable $created;
 
-    public function __construct(Repair $repair, Product $product, int $quantity)
+    public function __construct()
     {
         $this->id = Uuid::uuid4();
-        $this->repair = $repair;
-        $this->product = $product;
-        $this->quantity = $quantity;
         $this->created = new DateTimeImmutable('now');
     }
 
