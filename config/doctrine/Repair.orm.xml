@@ -16,10 +16,11 @@
     <field name="created" type="datetime_immutable" column="created" precision="0" scale="0"/>
     <one-to-many field="products" target-entity="App\Entity\RepairHasProducts" mapped-by="repair" orphan-removal="true" fetch="EAGER">
       <cascade>
+        <cascade-persist/>
         <cascade-remove/>
       </cascade>
     </one-to-many>
-    <many-to-one field="customer" target-entity="App\Entity\Customer" fetch="EAGER">
+    <many-to-one field="customer" target-entity="App\Entity\Customer">
       <cascade>
         <cascade-persist/>
       </cascade>
@@ -27,7 +28,7 @@
         <join-column name="customer_id"/>
       </join-columns>
     </many-to-one>
-    <many-to-one field="category" target-entity="App\Entity\Category" fetch="EAGER">
+    <many-to-one field="category" target-entity="App\Entity\Category">
       <cascade>
         <cascade-persist/>
       </cascade>
@@ -35,7 +36,7 @@
         <join-column name="category_id"/>
       </join-columns>
     </many-to-one>
-    <many-to-one field="status" target-entity="App\Entity\Status" fetch="EAGER">
+    <many-to-one field="status" target-entity="App\Entity\Status">
       <cascade>
         <cascade-persist/>
       </cascade>
