@@ -1,0 +1,17 @@
+{{ form_start(form) }}
+
+{{ form_row(form.customer) }}
+{{ form_row(form.category) }}
+{{ form_row(form.status) }}
+{{ form_row(form.products) }}
+{{ form_row(form.imei) }}
+{{ form_row(form.pattern) }}
+{{ form_row(form.fault) }}
+{{ form_row(form.colour) }}
+{{ form_row(form.privateComment) }}
+{{ form_row(form.publicComment) }}
+{{ form_row(form.labourPrice) }}
+{{ form_row(form.tax) }}
+
+<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

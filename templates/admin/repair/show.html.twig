@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Repair{% endblock %}
+
+{% block body %}
+    <h1>Repair</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ repair.id }}</td>
+        </tr>
+        <tr>
+            <th>Fault</th>
+            <td>{{ repair.fault }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('repair_index') }}">back to list</a>
+
+    <a href="{{ path('repair_edit', {'id': repair.id}) }}">edit</a>
+
+    {{ include('admin/repair/_delete_form.html.twig') }}
+{% endblock %}
