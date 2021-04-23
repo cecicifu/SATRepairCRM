@@ -4,7 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Repair;
 use App\Form\RepairType;
-use App\Repository\RepairRepository;
+use App\Service\RepairService;
 use DateTime;
 use DateTimeImmutable;
 use Ramsey\Uuid\Uuid;
@@ -21,13 +21,13 @@ class RepairController extends AbstractController
 {
     /**
      * @Route("/", name="repair_index", methods={"GET"})
-     * @param RepairRepository $repairRepository
+     * @param RepairService $repairService
      * @return Response
      */
-    public function index(RepairRepository $repairRepository): Response
+    public function index(RepairService $repairService): Response
     {
         return $this->render('admin/repair/index.html.twig', [
-            'repairs' => $repairRepository->findAll(),
+            'repairs' => $repairService->findAll(),
         ]);
     }
 
