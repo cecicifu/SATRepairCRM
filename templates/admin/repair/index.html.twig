@@ -9,12 +9,14 @@
         <thead>
         <tr>
             <th>Id</th>
+            <th>Products</th>
         </tr>
         </thead>
         <tbody>
         {% for repair in repairs %}
             <tr>
                 <td>{{ repair.id }}</td>
+                <td>{{ repair.products.count }}</td>
                 <td>
                     <a href="{{ path('repair_show', {'id': repair.id}) }}">show</a>
                     <a href="{{ path('repair_edit', {'id': repair.id}) }}">edit</a>
