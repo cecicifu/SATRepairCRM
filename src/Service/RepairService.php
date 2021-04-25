@@ -37,7 +37,9 @@ class RepairService
 
     public function newRepairProductAmount(Product $product, RepairHasProducts $productToAdd): void
     {
-        if ($product->getAmount() < $productToAdd->getQuantity()) throw new Exception("Product {$product->getName()} amount not enough");
+        if ($product->getAmount() < $productToAdd->getQuantity()) {
+            throw new Exception("Product {$product->getName()} amount not enough");
+        }
         $product->setAmount($product->getAmount() - $productToAdd->getQuantity());
     }
 
@@ -47,7 +49,9 @@ class RepairService
             if ($product->getQuantity() === 0) {
                 $repair->removeProduct($product);
             } else {
-                if ($product->getProduct()->getAmount() < $product->getQuantity()) throw new Exception("Product {$product->getProduct()->getName()} amount not enough");
+                if ($product->getProduct()->getAmount() < $product->getQuantity()) {
+                    throw new Exception("Product {$product->getProduct()->getName()} amount not enough");
+                }
                 $product->getProduct()->setAmount($product->getProduct()->getAmount() - $product->getQuantity());
             }
         }

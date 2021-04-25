@@ -45,7 +45,7 @@ class RepairController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
 
-            $repair->setCode(uniqid());
+            $repair->setCode(uniqid('', true));
             $repair->setModified(new DateTime('now'));
             $repair->setCreated(new DateTimeImmutable('now'));
 

@@ -14,7 +14,7 @@ class Repair
     private Customer $customer;
     private Category $category;
     private Status $status;
-    private ?Collection $products;
+    private Collection $products;
     private ?string $code;
     private ?int $imei;
     private ?string $pattern;
@@ -76,7 +76,7 @@ class Repair
         return $this;
     }
 
-    public function getProducts(): ?Collection
+    public function getProducts(): Collection
     {
         return $this->products;
     }
