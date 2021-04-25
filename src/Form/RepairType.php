@@ -42,7 +42,9 @@ class RepairType extends AbstractType
                 'label' => false,
                 'mapped' => true,
                 'by_reference' => false,
-                'required' => false
+                'required' => false,
+                'allow_add' => true,
+                'allow_delete' => true
             ])
             ->add('imei', IntegerType::class, [
                 'required' => false
