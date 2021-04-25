@@ -9,7 +9,6 @@ use DateTime;
 use DateTimeImmutable;
 use Ramsey\Uuid\Uuid;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -34,9 +33,10 @@ class RepairController extends AbstractController
     /**
      * @Route("/new", name="repair_new", methods={"GET","POST"})
      * @param Request $request
+     * @param RepairService $repairService
      * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, RepairService $repairService): Response
     {
         $repair = new Repair(Uuid::uuid4());
         $form = $this->createForm(RepairType::class, $repair);
@@ -50,18 +50,19 @@ class RepairController extends AbstractController
             $repair->setCreated(new DateTimeImmutable('now'));
 
             if (!$form->get('products')->getData()->isEmpty())  {
-                $productsAdded = $form->get('products')->getData();
+                $productsToAdd = $form->get('products')->getData();
 
-                foreach ($productsAdded as $productAdded) {
-                    $productAdded->setRepair($repair);
-                    $product = $productAdded->getProduct();
+                foreach ($productsToAdd as $productToAdd) {
+                    if($productToAdd->getQuantity() > 0) {
+                        $productToAdd->setRepair($repair);
+                        $product = $productToAdd->getProduct();
 
-                    if ($product->getAmount() < $productAdded->getQuantity()) throw new Exception("Product {$product->getName()} amount not enough");
-                    $product->setAmount($product->getAmount() - $productAdded->getQuantity());
+                        $repairService->newRepairProductAmount($product, $productToAdd);
 
-                    $repair->addProduct($productAdded);
+                        $repair->addProduct($productToAdd);
 
-                    $entityManager->persist($product);
+                        $entityManager->persist($product);
+                    }
                 }
             }
 
@@ -93,19 +94,17 @@ class RepairController extends AbstractController
      * @Route("/{id}/edit", name="repair_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Repair $repair
+     * @param RepairService $repairService
      * @return Response
      */
-    public function edit(Request $request, Repair $repair): Response
+    public function edit(Request $request, Repair $repair, RepairService $repairService): Response
     {
         $form = $this->createForm(RepairType::class, $repair);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             if(!$repair->getProducts()->isEmpty()) {
-                foreach ($repair->getProducts() as $product) {
-                    if ($product->getProduct()->getAmount() < $product->getQuantity()) throw new Exception("Product {$product->getProduct()->getName()} amount not enough");
-                    $product->getProduct()->setAmount($product->getProduct()->getAmount() - $product->getQuantity());
-                }
+                $repairService->editRepairProductAmount($repair);
             }
             $repair->setModified(new DateTime('now'));
 
