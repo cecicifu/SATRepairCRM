@@ -35,6 +35,7 @@ class RepairController extends AbstractController
      * @param Request $request
      * @param RepairService $repairService
      * @return Response
+     * @throws \Exception
      */
     public function new(Request $request, RepairService $repairService): Response
     {
@@ -45,7 +46,7 @@ class RepairController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
 
-            $repair->setCode(uniqid('', true));
+            $repair->setCode(bin2hex(random_bytes(8)));
             $repair->setModified(new DateTime('now'));
             $repair->setCreated(new DateTimeImmutable('now'));
 
