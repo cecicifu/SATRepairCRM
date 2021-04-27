@@ -95,6 +95,9 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "stan": [
+            "vendor/bin/phpstan analyse --ansi --no-interaction"
         ]
     },
     "conflict": {
