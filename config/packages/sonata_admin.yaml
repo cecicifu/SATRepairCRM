@@ -1,5 +1,8 @@
 sonata_admin:
-    title: 'Sonata Admin'
+    title: 'SATRepairCRM'
+    security:
+        handler: sonata.admin.security.handler.role
+        role_admin: ROLE_ADMIN
     dashboard:
         blocks:
             - { type: sonata.admin.block.admin_list, position: left }

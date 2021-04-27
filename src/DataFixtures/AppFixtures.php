@@ -105,7 +105,7 @@ class AppFixtures extends Fixture
 
         $customer = new Customer(Uuid::fromString('48afa7c3-c3b3-412d-8c74-5e48253d68bd'));
         $customer->setFullname('customer1');
-        $customer->setPhone(45353453453);
+        $customer->setPhone(453534);
         $customer->setCreated(new DateTimeImmutable("now"));
         $customer->setModified(new DateTime("now"));
 

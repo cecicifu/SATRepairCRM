@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7831128bf095b57dc1b751c4e24dd495",
+    "content-hash": "55e911508196a8eb872a9d62259352a3",
     "packages": [
         {
             "name": "brick/math",
@@ -3672,6 +3672,129 @@
             "time": "2021-03-11T20:34:37+00:00"
         },
         {
+            "name": "sonata-project/doctrine-orm-admin-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/SonataDoctrineORMAdminBundle.git",
+                "reference": "8b81d53d381d7d31c999945b0fba3db784e5de38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrineORMAdminBundle/zipball/8b81d53d381d7d31c999945b0fba3db784e5de38",
+                "reference": "8b81d53d381d7d31c999945b0fba3db784e5de38",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/doctrine-bundle": "^2.3",
+                "doctrine/orm": "^2.5",
+                "doctrine/persistence": "^2.0",
+                "php": "^7.3 || ^8.0",
+                "sonata-project/admin-bundle": "^4.0@alpha",
+                "sonata-project/exporter": "^2.0",
+                "sonata-project/form-extensions": "^1.4",
+                "symfony/config": "^4.4 || ^5.2",
+                "symfony/console": "^4.4 || ^5.2",
+                "symfony/dependency-injection": "^4.4 || ^5.2",
+                "symfony/doctrine-bridge": "^4.4 || ^5.2",
+                "symfony/form": "^4.4 || ^5.2",
+                "symfony/framework-bundle": "^4.4 || ^5.2",
+                "symfony/http-foundation": "^4.4 || ^5.2",
+                "symfony/http-kernel": "^4.4 || ^5.2",
+                "symfony/options-resolver": "^4.4 || ^5.2",
+                "symfony/property-access": "^4.4 || ^5.2",
+                "symfony/security-acl": "^3.0",
+                "twig/twig": "^2.10 || ^3.0"
+            },
+            "conflict": {
+                "simplethings/entity-audit-bundle": ">=2.0",
+                "sonata-project/block-bundle": "<4.2"
+            },
+            "provide": {
+                "sonata-project/admin-bundle-persistency-layer": "1.0.0"
+            },
+            "require-dev": {
+                "doctrine/doctrine-fixtures-bundle": "^3.4",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^0.12.52",
+                "phpstan/phpstan-phpunit": "^0.12.18",
+                "phpstan/phpstan-symfony": "^0.12.10",
+                "psalm/plugin-phpunit": "^0.15.1",
+                "psalm/plugin-symfony": "^2.0",
+                "sonata-project/block-bundle": "^4.2",
+                "sonata-project/entity-audit-bundle": "^1.1",
+                "symfony/css-selector": "^4.4 || ^5.2",
+                "symfony/panther": "^1.0",
+                "symfony/phpunit-bridge": "^5.2",
+                "symfony/templating": "^4.4 || ^5.2",
+                "symfony/yaml": "^4.4 || ^5.2",
+                "vimeo/psalm": "^4.1.1"
+            },
+            "suggest": {
+                "sonata-project/entity-audit-bundle": "If you want to support for versioning of entities and their associations."
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sonata\\DoctrineORMAdminBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "https://sonata-project.org"
+                },
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/SonataDoctrineORMAdminBundle/contributors"
+                }
+            ],
+            "description": "Integrate Doctrine ORM into the SonataAdminBundle",
+            "homepage": "https://sonata-project.org/bundles/admin",
+            "keywords": [
+                "admin",
+                "admin-generator",
+                "bundle",
+                "doctrine",
+                "orm",
+                "sonata",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/sonata-project/SonataDoctrineORMAdminBundle/issues",
+                "source": "https://github.com/sonata-project/SonataDoctrineORMAdminBundle/tree/master"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/OskarStark",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/VincentLanglet",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/core23",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/wbloszyk",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-04-17T08:56:08+00:00"
+        },
+        {
             "name": "sonata-project/exporter",
             "version": "2.6.2",
             "source": {
@@ -6376,6 +6499,37 @@
                 }
             ],
             "time": "2021-01-27T12:56:27+00:00"
+        },
+        {
+            "name": "symfony/orm-pack",
+            "version": "v1.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/orm-pack.git",
+                "reference": "c9bcc08102061f406dc908192c0f33524a675666"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/orm-pack/zipball/c9bcc08102061f406dc908192c0f33524a675666",
+                "reference": "c9bcc08102061f406dc908192c0f33524a675666",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/doctrine-bundle": "*",
+                "doctrine/doctrine-migrations-bundle": "*",
+                "doctrine/orm": "*"
+            },
+            "type": "symfony-pack",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A pack for the Doctrine ORM",
+            "support": {
+                "issues": "https://github.com/symfony/orm-pack/issues",
+                "source": "https://github.com/symfony/orm-pack/tree/master"
+            },
+            "time": "2020-02-10T18:03:48+00:00"
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
@@ -10430,6 +10584,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "sonata-project/admin-bundle": 20,
+        "sonata-project/doctrine-orm-admin-bundle": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
