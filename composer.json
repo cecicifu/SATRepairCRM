@@ -1,6 +1,6 @@
 {
     "name": "cecicifu/satrepaircrm",
-    "description": "",
+    "description": "A CRM FOR REPAIRS",
     "type": "project",
     "license": "propietary",
     "minimum-stability": "dev",
@@ -15,9 +15,6 @@
         "doctrine/doctrine-migrations-bundle": "^3.0",
         "doctrine/orm": "^2.8",
         "phpdocumentor/reflection-docblock": "^5.2",
-        "phpstan/extension-installer": "^1.1",
-        "phpstan/phpstan-doctrine": "^0.12.33",
-        "phpstan/phpstan-symfony": "^0.12.28",
         "ramsey/uuid-doctrine": "^1.6",
         "sensio/framework-extra-bundle": "^5.1",
         "sonata-project/admin-bundle": "dev-master",
@@ -54,6 +51,9 @@
     "require-dev": {
         "roave/security-advisories": "dev-latest",
         "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-doctrine": "^0.12.33",
+        "phpstan/phpstan-symfony": "^0.12.28",
         "phpstan/phpstan": "^0.12.85",
         "symfony/browser-kit": "^5.2",
         "symfony/css-selector": "^5.2",
