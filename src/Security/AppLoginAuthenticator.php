@@ -66,11 +66,15 @@ class AppLoginAuthenticator extends AbstractFormLoginAuthenticator
             throw new InvalidCsrfTokenException();
         }
 
-        $user = $this->entityManager->getRepository(User::class)->findOneBy(['username' => $credentials['username']]);
+        $entityManager = $this->entityManager;
+        $user = $entityManager->getRepository(User::class)->findOneBy(['username' => $credentials['username']]);
 
         if (!$user) {
             throw new CustomUserMessageAuthenticationException('Username could not be found.');
         }
+
+        $user->setLastSession(new \DateTime('now'));
+        $entityManager->flush();
 
         return $user;
     }
@@ -86,7 +90,7 @@ class AppLoginAuthenticator extends AbstractFormLoginAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse($this->urlGenerator->generate('user_index'));
+        return new RedirectResponse($this->urlGenerator->generate('sonata_admin_dashboard'));
     }
 
     protected function getLoginUrl(): string

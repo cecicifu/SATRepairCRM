@@ -15,7 +15,7 @@ class Repair
     private Category $category;
     private Status $status;
     private Collection $products;
-    private ?string $code;
+    private string $code;
     private ?int $imei;
     private ?string $pattern;
     private string $fault;
@@ -28,10 +28,12 @@ class Repair
     private ?DateTimeInterface $modified;
     private DateTimeImmutable $created;
 
+    public function __construct(UuidInterface $uuid, string $code, bool $visible)
     {
         $this->id = $uuid;
+        $this->code = $code;
+        $this->visible = $visible;
         $this->products = new ArrayCollection();
-        $this->setVisible(true);
     }
 
     public function getId(): UuidInterface
@@ -242,5 +244,10 @@ class Repair
         $this->created = $created;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->code;
     }
 }

@@ -29,3 +29,45 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    admin.repair:
+        class: App\Admin\RepairAdmin
+        arguments: [~, App\Entity\Repair, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Repair }
+        public: true
+
+    admin.customer:
+        class: App\Admin\CustomerAdmin
+        arguments: [~, App\Entity\Customer, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Customer }
+        public: true
+
+    admin.category:
+        class: App\Admin\CategoryAdmin
+        arguments: [~, App\Entity\Category, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Category }
+        public: true
+
+    admin.status:
+        class: App\Admin\StatusAdmin
+        arguments: [~, App\Entity\Status, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Status }
+        public: true
+
+    admin.product:
+        class: App\Admin\ProductAdmin
+        arguments: [~, App\Entity\Product, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Product }
+        public: true
+
+    admin.user:
+        class: App\Admin\UserAdmin
+        arguments: [~, App\Entity\User, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: User }
+        public: true
