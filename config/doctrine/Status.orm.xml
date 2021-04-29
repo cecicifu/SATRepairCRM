@@ -4,7 +4,7 @@
     <id name="id" type="uuid" column="id"/>
     <field name="name" column="name" length="25" precision="0" scale="0" unique="true"/>
     <field name="colour" column="colour" length="50" precision="0" scale="0" nullable="true"/>
-    <field name="modified" type="datetime" column="modified" precision="0" scale="0"/>
+    <field name="modified" type="datetime" column="modified" precision="0" scale="0" nullable="true"/>
     <field name="created" type="datetime_immutable" column="created" precision="0" scale="0"/>
   </entity>
 </doctrine-mapping>

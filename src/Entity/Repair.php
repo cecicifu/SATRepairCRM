@@ -25,10 +25,9 @@ class Repair
     private ?float $labourPrice;
     private ?float $tax;
     private bool $visible;
-    private DateTimeInterface $modified;
+    private ?DateTimeInterface $modified;
     private DateTimeImmutable $created;
 
-    public function __construct(UuidInterface $uuid)
     {
         $this->id = $uuid;
         $this->products = new ArrayCollection();
@@ -101,12 +100,12 @@ class Repair
         return $this;
     }
 
-    public function getCode(): ?string
+    public function getCode(): string
     {
         return $this->code;
     }
 
-    public function setCode(?string $code): self
+    public function setCode(string $code): self
     {
         $this->code = $code;
 
@@ -221,12 +220,12 @@ class Repair
         return $this;
     }
 
-    public function getModified(): DateTimeInterface
+    public function getModified(): ?DateTimeInterface
     {
         return $this->modified;
     }
 
-    public function setModified(DateTimeInterface $modified): self
+    public function setModified(?DateTimeInterface $modified): self
     {
         $this->modified = $modified;
 

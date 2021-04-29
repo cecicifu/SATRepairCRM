@@ -8,7 +8,7 @@
     <field name="email" column="email" length="70" precision="0" scale="0" nullable="true"/>
     <field name="zipCode" type="integer" column="zip_code" precision="0" scale="0" nullable="true"/>
     <field name="phone" type="integer" column="phone" precision="0" scale="0"/>
-    <field name="modified" type="datetime" column="modified" precision="0" scale="0"/>
+    <field name="modified" type="datetime" column="modified" precision="0" scale="0" nullable="true"/>
     <field name="created" type="datetime_immutable" column="created" precision="0" scale="0"/>
   </entity>
 </doctrine-mapping>

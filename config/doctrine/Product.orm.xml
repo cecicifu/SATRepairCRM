@@ -5,7 +5,7 @@
     <field name="name" column="name" length="50" precision="0" scale="0"/>
     <field name="amount" type="integer" column="amount" precision="0" scale="0"/>
     <field name="price" type="float" column="price" precision="0" scale="0" nullable="true"/>
-    <field name="modified" type="datetime" column="modified" precision="0" scale="0"/>
+    <field name="modified" type="datetime" column="modified" precision="0" scale="0" nullable="true"/>
     <field name="created" type="datetime_immutable" column="created" precision="0" scale="0"/>
   </entity>
 </doctrine-mapping>

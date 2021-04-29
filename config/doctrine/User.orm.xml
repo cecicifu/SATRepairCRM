@@ -6,7 +6,7 @@
     <field name="email" column="email" length="70" precision="0" scale="0" nullable="true"/>
     <field name="password" column="password" length="100" precision="0" scale="0"/>
     <field name="lastSession" type="datetime" column="last_session" precision="0" scale="0" nullable="true"/>
-    <field name="modified" type="datetime" column="modified" precision="0" scale="0"/>
+    <field name="modified" type="datetime" column="modified" precision="0" scale="0" nullable="true"/>
     <field name="created" type="datetime_immutable" column="created" precision="0" scale="0"/>
   </entity>
 </doctrine-mapping>

@@ -12,7 +12,7 @@ class Product
     private string $name;
     private int $amount;
     private ?float $price;
-    private DateTimeInterface $modified;
+    private ?DateTimeInterface $modified;
     private DateTimeImmutable $created;
 
     public function __construct(UuidInterface $uuid)
@@ -61,12 +61,12 @@ class Product
         return $this;
     }
 
-    public function getModified(): DateTimeInterface
+    public function getModified(): ?DateTimeInterface
     {
         return $this->modified;
     }
 
-    public function setModified(DateTimeInterface $modified): self
+    public function setModified(?DateTimeInterface $modified): self
     {
         $this->modified = $modified;
 
