@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210429180955 extends AbstractMigration
+final class Version20210430063007 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -33,7 +33,7 @@ final class Version20210429180955 extends AbstractMigration
         , customer_id CHAR(36) DEFAULT NULL --(DC2Type:uuid)
         , category_id CHAR(36) DEFAULT NULL --(DC2Type:uuid)
         , status_id CHAR(36) DEFAULT NULL --(DC2Type:uuid)
-        , code VARCHAR(13) NOT NULL, imei INTEGER DEFAULT NULL, pattern VARCHAR(20) DEFAULT NULL, fault VARCHAR(85) NOT NULL, colour VARCHAR(50) DEFAULT NULL, private_comment VARCHAR(200) DEFAULT NULL, public_comment VARCHAR(200) DEFAULT NULL, labour_price INTEGER DEFAULT NULL, tax INTEGER DEFAULT NULL, visible INTEGER NOT NULL, modified DATETIME DEFAULT NULL, created DATETIME NOT NULL --(DC2Type:datetime_immutable)
+        , code VARCHAR(13) NOT NULL, imei INTEGER DEFAULT NULL, pattern VARCHAR(20) DEFAULT NULL, fault VARCHAR(85) NOT NULL, colour VARCHAR(50) DEFAULT NULL, private_comment VARCHAR(200) DEFAULT NULL, public_comment VARCHAR(200) DEFAULT NULL, labour_price DOUBLE PRECISION DEFAULT NULL, tax DOUBLE PRECISION DEFAULT NULL, visible INTEGER NOT NULL, modified DATETIME DEFAULT NULL, created DATETIME NOT NULL --(DC2Type:datetime_immutable)
         , PRIMARY KEY(id))');
         $this->addSql('CREATE UNIQUE INDEX UNIQ_8EE4342177153098 ON repair (code)');
         $this->addSql('CREATE INDEX IDX_8EE434219395C3F3 ON repair (customer_id)');
