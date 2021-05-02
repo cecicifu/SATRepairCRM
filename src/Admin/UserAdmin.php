@@ -32,18 +32,32 @@ final class UserAdmin extends AbstractAdmin
         return new User(Uuid::uuid4());
     }
 
-    /** @var User|object|null $object */
+    /**
+     * @var User|object|null $object
+     */
     protected function prePersist(object $object): void
     {
         $object->setCreated(new DateTimeImmutable('now'));
-        $object->setPassword($this->passwordEncoder->encodePassword($object, $object->getPassword()));
+        $object->setPassword(
+            $this->passwordEncoder->encodePassword(
+                $object,
+                $object->getPassword()
+            )
+        );
     }
 
-    /** @var User|object|null $object */
+    /**
+     * @var User|object|null $object
+     */
     protected function preUpdate(object $object): void
     {
         $object->setModified(new DateTime('now'));
-        $object->setPassword($this->passwordEncoder->encodePassword($object, $object->getPassword()));
+        $object->setPassword(
+            $this->passwordEncoder->encodePassword(
+                $object,
+                $object->getPassword()
+            )
+        );
     }
 
     protected function configureDatagridFilters(DatagridMapper $filter): void
