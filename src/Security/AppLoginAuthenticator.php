@@ -3,6 +3,7 @@
 namespace App\Security;
 
 use App\Entity\User;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -47,10 +48,11 @@ class AppLoginAuthenticator extends AbstractFormLoginAuthenticator
     public function getCredentials(Request $request): array
     {
         $credentials = [
-            'username' => $request->request->get('username'),
-            'password' => $request->request->get('password'),
+            'username' => $request->request->get('login_form')['username'],
+            'password' => $request->request->get('login_form')['password'],
             'csrf_token' => $request->request->get('_csrf_token'),
         ];
+
         $request->getSession()->set(
             Security::LAST_USERNAME,
             $credentials['username']
@@ -73,7 +75,7 @@ class AppLoginAuthenticator extends AbstractFormLoginAuthenticator
             throw new CustomUserMessageAuthenticationException('Username could not be found.');
         }
 
-        $user->setLastSession(new \DateTime('now'));
+        $user->setLastSession(new DateTime('now'));
         $entityManager->flush();
 
         return $user;
