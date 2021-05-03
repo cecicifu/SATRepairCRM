@@ -11,6 +11,7 @@ use Ramsey\Uuid\Uuid;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\FieldDescription\FieldDescriptionInterface;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\ColorType;
@@ -69,8 +70,8 @@ final class StatusAdmin extends AbstractAdmin
             ->add('id')
             ->add('name')
             ->add('colour')
-            ->add('modified')
-            ->add('created')
+            ->add('modified', FieldDescriptionInterface::TYPE_DATETIME)
+            ->add('created', FieldDescriptionInterface::TYPE_DATETIME)
             ;
     }
 }

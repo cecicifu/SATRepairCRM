@@ -11,8 +11,10 @@ use Ramsey\Uuid\Uuid;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\FieldDescription\FieldDescriptionInterface;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -73,8 +75,8 @@ final class UserAdmin extends AbstractAdmin
     {
         $list
             ->add('username')
-            ->add('email')
-            ->add('lastSession')
+            ->add('email', FieldDescriptionInterface::TYPE_EMAIL)
+            ->add('lastSession', FieldDescriptionInterface::TYPE_DATETIME)
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
                     'show' => [],
@@ -87,9 +89,13 @@ final class UserAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form): void
     {
         $form
-            ->add('id', null, ['disabled' => true])
+            ->add('id', null, [
+                'disabled' => true
+            ])
             ->add('username')
-            ->add('email')
+            ->add('email', EmailType::class, [
+                'required' => false
+            ])
             ->add('password', RepeatedType::class, [
                 'type'              => PasswordType::class,
                 'required'          => true,
@@ -106,10 +112,10 @@ final class UserAdmin extends AbstractAdmin
         $show
             ->add('id')
             ->add('username')
-            ->add('email')
-            ->add('lastSession')
-            ->add('modified')
-            ->add('created')
+            ->add('email', FieldDescriptionInterface::TYPE_EMAIL)
+            ->add('lastSession', FieldDescriptionInterface::TYPE_DATETIME)
+            ->add('modified', FieldDescriptionInterface::TYPE_DATETIME)
+            ->add('created', FieldDescriptionInterface::TYPE_DATETIME)
         ;
     }
 }

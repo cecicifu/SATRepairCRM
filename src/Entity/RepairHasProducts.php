@@ -65,4 +65,11 @@ class RepairHasProducts
     {
         return $this->created;
     }
+
+    public function setCreated(DateTimeImmutable $created): self
+    {
+        $this->created = $created;
+
+        return $this;
+    }
 }

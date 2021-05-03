@@ -11,8 +11,10 @@ use Ramsey\Uuid\Uuid;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\FieldDescription\FieldDescriptionInterface;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 final class CategoryAdmin extends AbstractAdmin
 {
@@ -43,7 +45,7 @@ final class CategoryAdmin extends AbstractAdmin
     {
         $list
             ->add('name')
-            ->add('description')
+            ->add('description', FieldDescriptionInterface::TYPE_TEXTAREA)
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
                     'show' => [],
@@ -58,7 +60,9 @@ final class CategoryAdmin extends AbstractAdmin
         $form
             ->add('id', null, ['disabled' => true])
             ->add('name')
-            ->add('description')
+            ->add('description', TextareaType::class, [
+                'required' => false
+            ])
             ;
     }
 
@@ -67,9 +71,9 @@ final class CategoryAdmin extends AbstractAdmin
         $show
             ->add('id')
             ->add('name')
-            ->add('description')
-            ->add('modified')
-            ->add('created')
+            ->add('description', FieldDescriptionInterface::TYPE_TEXTAREA)
+            ->add('modified', FieldDescriptionInterface::TYPE_DATETIME)
+            ->add('created', FieldDescriptionInterface::TYPE_DATETIME)
             ;
     }
 }

@@ -18,8 +18,8 @@ class RepairHasProductsType extends AbstractType
             ->add('product', EntityType::class, [
                 'class' => Product::class,
                 'choice_label' => 'name',
-                'label' => 'Products',
-                'placeholder' => '---'
+                'label' => 'Product',
+                'placeholder' => ''
             ])
             ->add('quantity', IntegerType::class)
         ;

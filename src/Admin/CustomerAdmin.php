@@ -11,8 +11,11 @@ use Ramsey\Uuid\Uuid;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\FieldDescription\FieldDescriptionInterface;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 final class CustomerAdmin extends AbstractAdmin
 {
@@ -50,7 +53,6 @@ final class CustomerAdmin extends AbstractAdmin
             ->add('address')
             ->add('city')
             ->add('email')
-            ->add('zipCode')
             ->add('phone')
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
@@ -66,11 +68,19 @@ final class CustomerAdmin extends AbstractAdmin
         $form
             ->add('id', null, ['disabled' => true])
             ->add('fullname')
-            ->add('address')
-            ->add('city')
-            ->add('email')
-            ->add('zipCode')
-            ->add('phone')
+            ->add('address', null, [
+                'required' => false
+            ])
+            ->add('city', null, [
+                'required' => false
+            ])
+            ->add('email', EmailType::class, [
+                'required' => false
+            ])
+            ->add('zipCode', IntegerType::class, [
+                'required' => false
+            ])
+            ->add('phone', IntegerType::class)
             ;
     }
 
@@ -81,11 +91,11 @@ final class CustomerAdmin extends AbstractAdmin
             ->add('fullname')
             ->add('address')
             ->add('city')
-            ->add('email')
+            ->add('email', FieldDescriptionInterface::TYPE_EMAIL)
             ->add('zipCode')
             ->add('phone')
-            ->add('modified')
-            ->add('created')
+            ->add('modified', FieldDescriptionInterface::TYPE_DATETIME)
+            ->add('created', FieldDescriptionInterface::TYPE_DATETIME)
             ;
     }
 }
