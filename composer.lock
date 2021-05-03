@@ -2624,16 +2624,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.3",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc"
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/0f73288fd15629204f9d42b7055f72dacbe811fc",
-                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
                 "shasum": ""
             },
             "require": {
@@ -2657,7 +2657,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for logging libraries",
@@ -2668,9 +2668,9 @@
                 "psr-3"
             ],
             "support": {
-                "source": "https://github.com/php-fig/log/tree/1.1.3"
+                "source": "https://github.com/php-fig/log/tree/1.1.4"
             },
-            "time": "2020-03-23T09:12:05+00:00"
+            "time": "2021-05-03T11:20:27+00:00"
         },
         {
             "name": "ramsey/collection",
@@ -3434,20 +3434,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDoctrineORMAdminBundle.git",
-                "reference": "8b81d53d381d7d31c999945b0fba3db784e5de38"
+                "reference": "afd09a654fc9ace7094fd82cbcd3233d5709a164"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataDoctrineORMAdminBundle/zipball/8b81d53d381d7d31c999945b0fba3db784e5de38",
-                "reference": "8b81d53d381d7d31c999945b0fba3db784e5de38",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrineORMAdminBundle/zipball/afd09a654fc9ace7094fd82cbcd3233d5709a164",
+                "reference": "afd09a654fc9ace7094fd82cbcd3233d5709a164",
                 "shasum": ""
             },
             "require": {
+                "doctrine/dbal": "^2.13",
                 "doctrine/doctrine-bundle": "^2.3",
-                "doctrine/orm": "^2.5",
-                "doctrine/persistence": "^2.0",
+                "doctrine/orm": "^2.8",
+                "doctrine/persistence": "^2.1",
                 "php": "^7.3 || ^8.0",
-                "sonata-project/admin-bundle": "^4.0@alpha",
+                "sonata-project/admin-bundle": "^4.0@dev",
                 "sonata-project/exporter": "^2.0",
                 "sonata-project/form-extensions": "^1.4",
                 "symfony/config": "^4.4 || ^5.2",
@@ -3465,6 +3466,7 @@
             },
             "conflict": {
                 "simplethings/entity-audit-bundle": ">=2.0",
+                "sonata-project/admin-bundle": "<=4.0.0-alpha-1",
                 "sonata-project/block-bundle": "<4.2"
             },
             "provide": {
@@ -3485,7 +3487,8 @@
                 "symfony/phpunit-bridge": "^5.2",
                 "symfony/templating": "^4.4 || ^5.2",
                 "symfony/yaml": "^4.4 || ^5.2",
-                "vimeo/psalm": "^4.1.1"
+                "vimeo/psalm": "^4.1.1",
+                "weirdan/doctrine-psalm-plugin": "^1.0"
             },
             "suggest": {
                 "sonata-project/entity-audit-bundle": "If you want to support for versioning of entities and their associations."
@@ -3549,7 +3552,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-04-17T08:56:08+00:00"
+            "time": "2021-05-02T22:52:59+00:00"
         },
         {
             "name": "sonata-project/exporter",
@@ -9595,16 +9598,16 @@
         },
         {
             "name": "phpstan/phpstan-symfony",
-            "version": "0.12.29",
+            "version": "0.12.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-symfony.git",
-                "reference": "4e4353ef28765f1b5e0ebab1bced58f087f2044b"
+                "reference": "8377e227368bdec99d4753a8a050e162450c2217"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-symfony/zipball/4e4353ef28765f1b5e0ebab1bced58f087f2044b",
-                "reference": "4e4353ef28765f1b5e0ebab1bced58f087f2044b",
+                "url": "https://api.github.com/repos/phpstan/phpstan-symfony/zipball/8377e227368bdec99d4753a8a050e162450c2217",
+                "reference": "8377e227368bdec99d4753a8a050e162450c2217",
                 "shasum": ""
             },
             "require": {
@@ -9659,9 +9662,9 @@
             "description": "Symfony Framework extensions and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-symfony/issues",
-                "source": "https://github.com/phpstan/phpstan-symfony/tree/0.12.29"
+                "source": "https://github.com/phpstan/phpstan-symfony/tree/0.12.30"
             },
-            "time": "2021-05-02T09:05:52+00:00"
+            "time": "2021-05-03T09:17:26+00:00"
         },
         {
             "name": "roave/security-advisories",
