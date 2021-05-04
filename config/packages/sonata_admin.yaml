@@ -1,5 +1,6 @@
 sonata_admin:
     title: 'SATRepairCRM'
+    show_mosaic_button: false
     dashboard:
         blocks:
             - { type: sonata.admin.block.admin_list, position: left }
