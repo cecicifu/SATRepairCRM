@@ -79,9 +79,12 @@ final class ProductAdmin extends AbstractAdmin
             ->add('amount')
             ->add('price', FieldDescriptionInterface::TYPE_CURRENCY, [
                 'currency' => 'EUR'
+            ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
+                'timezone' => 'Europe/Madrid'
             ])
-            ->add('modified', FieldDescriptionInterface::TYPE_DATETIME)
-            ->add('created', FieldDescriptionInterface::TYPE_DATETIME)
+            ->add('created', FieldDescriptionInterface::TYPE_DATETIME, [
+                'timezone' => 'Europe/Madrid'
+            ])
             ;
     }
 }

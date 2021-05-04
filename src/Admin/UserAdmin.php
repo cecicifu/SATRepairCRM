@@ -76,7 +76,9 @@ final class UserAdmin extends AbstractAdmin
         $list
             ->add('username')
             ->add('email', FieldDescriptionInterface::TYPE_EMAIL)
-            ->add('lastSession', FieldDescriptionInterface::TYPE_DATETIME)
+            ->add('lastSession', FieldDescriptionInterface::TYPE_DATETIME, [
+                'timezone' => 'Europe/Madrid'
+            ])
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
                     'show' => [],
@@ -113,9 +115,15 @@ final class UserAdmin extends AbstractAdmin
             ->add('id')
             ->add('username')
             ->add('email', FieldDescriptionInterface::TYPE_EMAIL)
-            ->add('lastSession', FieldDescriptionInterface::TYPE_DATETIME)
-            ->add('modified', FieldDescriptionInterface::TYPE_DATETIME)
-            ->add('created', FieldDescriptionInterface::TYPE_DATETIME)
+            ->add('lastSession', FieldDescriptionInterface::TYPE_DATETIME, [
+                'timezone' => 'Europe/Madrid'
+            ])
+            ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
+                'timezone' => 'Europe/Madrid'
+            ])
+            ->add('created', FieldDescriptionInterface::TYPE_DATETIME, [
+                'timezone' => 'Europe/Madrid'
+            ])
         ;
     }
 }

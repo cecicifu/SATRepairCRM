@@ -94,8 +94,12 @@ final class CustomerAdmin extends AbstractAdmin
             ->add('email', FieldDescriptionInterface::TYPE_EMAIL)
             ->add('zipCode')
             ->add('phone')
-            ->add('modified', FieldDescriptionInterface::TYPE_DATETIME)
-            ->add('created', FieldDescriptionInterface::TYPE_DATETIME)
+            ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
+                'timezone' => 'Europe/Madrid'
+            ])
+            ->add('created', FieldDescriptionInterface::TYPE_DATETIME, [
+                'timezone' => 'Europe/Madrid'
+            ])
             ;
     }
 }

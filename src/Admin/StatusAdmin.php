@@ -70,8 +70,12 @@ final class StatusAdmin extends AbstractAdmin
             ->add('id')
             ->add('name')
             ->add('colour')
-            ->add('modified', FieldDescriptionInterface::TYPE_DATETIME)
-            ->add('created', FieldDescriptionInterface::TYPE_DATETIME)
+            ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
+                'timezone' => 'Europe/Madrid'
+            ])
+            ->add('created', FieldDescriptionInterface::TYPE_DATETIME, [
+                'timezone' => 'Europe/Madrid'
+            ])
             ;
     }
 }
