@@ -24,6 +24,8 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\ColorType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\PercentType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 final class RepairAdmin extends AbstractAdmin
@@ -125,10 +127,10 @@ final class RepairAdmin extends AbstractAdmin
                 ->add('publicComment', TextareaType::class, [
                     'required' => false
                 ])
-                ->add('labourPrice', IntegerType::class, [
+                ->add('labourPrice', MoneyType::class, [
                     'required' => false
                 ])
-                ->add('tax', IntegerType::class, [
+                ->add('tax', PercentType::class, [
                     'required' => false
                 ])
             ->end()
@@ -179,9 +181,11 @@ final class RepairAdmin extends AbstractAdmin
             ->add('colour')
             ->add('privateComment', FieldDescriptionInterface::TYPE_TEXTAREA)
             ->add('publicComment', FieldDescriptionInterface::TYPE_TEXTAREA)
-            ->add('labourPrice')
-            ->add('tax')
-            ->add('visible')
+            ->add('labourPrice', FieldDescriptionInterface::TYPE_CURRENCY, [
+                'currency' => '€'
+            ])
+            ->add('tax', FieldDescriptionInterface::TYPE_PERCENT)
+            ->add('visible', FieldDescriptionInterface::TYPE_BOOLEAN)
             ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
                 'timezone' => 'Europe/Madrid'
             ])

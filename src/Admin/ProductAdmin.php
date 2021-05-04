@@ -15,6 +15,7 @@ use Sonata\AdminBundle\FieldDescription\FieldDescriptionInterface;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 
 final class ProductAdmin extends AbstractAdmin
 {
@@ -48,7 +49,7 @@ final class ProductAdmin extends AbstractAdmin
             ->add('name')
             ->add('amount')
             ->add('price', FieldDescriptionInterface::TYPE_CURRENCY, [
-                'currency' => 'EUR'
+                'currency' => '€'
             ])
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
@@ -65,7 +66,7 @@ final class ProductAdmin extends AbstractAdmin
             ->add('id', null, ['disabled' => true])
             ->add('name')
             ->add('amount', IntegerType::class)
-            ->add('price', IntegerType::class, [
+            ->add('price', MoneyType::class, [
                 'required' => false
             ])
             ;
@@ -78,7 +79,8 @@ final class ProductAdmin extends AbstractAdmin
             ->add('name')
             ->add('amount')
             ->add('price', FieldDescriptionInterface::TYPE_CURRENCY, [
-                'currency' => 'EUR'
+                'currency' => '€'
+            ])
             ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
                 'timezone' => 'Europe/Madrid'
             ])
