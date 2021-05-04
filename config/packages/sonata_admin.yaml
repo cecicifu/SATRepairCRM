@@ -3,6 +3,49 @@ sonata_admin:
     dashboard:
         blocks:
             - { type: sonata.admin.block.admin_list, position: left }
+        groups:
+            repairs:
+                on_top: true
+                label: 'Repairs'
+                label_catalogue: ~
+                icon: '<i class="fas fa-desktop"></i>'
+                items:
+                    - admin.repair
+            customers:
+                on_top: true
+                label: 'Customers'
+                label_catalogue: ~
+                icon: '<i class="fas fa-users"></i>'
+                items:
+                    - admin.customer
+            categories:
+                on_top: true
+                label: 'Categories'
+                label_catalogue: ~
+                icon: '<i class="fas fa-tags"></i>'
+                items:
+                    - admin.category
+            status:
+                on_top: true
+                label: 'Status'
+                label_catalogue: ~
+                icon: '<i class="fas fa-check-square"></i>'
+                items:
+                    - admin.status
+            products:
+                on_top: true
+                label: 'Products'
+                label_catalogue: ~
+                icon: '<i class="fas fa-box"></i>'
+                items:
+                    - admin.product
+            users:
+                on_top: true
+                label: 'Users'
+                label_catalogue: ~
+                icon: '<i class="fas fa-user"></i>'
+                items:
+                    - admin.user
 
 sonata_block:
     blocks:
