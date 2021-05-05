@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Form\LoginForm;
+use App\Form\LoginType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Exception\LogicException;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,7 +25,7 @@ class SecurityController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        $form = $this->createForm(LoginForm::class, [
+        $form = $this->createForm(LoginType::class, [
             'username' => $lastUsername
         ]);
 

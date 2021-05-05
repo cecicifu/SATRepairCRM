@@ -48,8 +48,8 @@ class AppLoginAuthenticator extends AbstractFormLoginAuthenticator
     public function getCredentials(Request $request): array
     {
         $credentials = [
-            'username' => $request->request->get('login_form')['username'],
-            'password' => $request->request->get('login_form')['password'],
+            'username' => $request->request->get('login')['username'],
+            'password' => $request->request->get('login')['password'],
             'csrf_token' => $request->request->get('_csrf_token'),
         ];
 
