@@ -139,15 +139,18 @@ final class RepairAdmin extends AbstractAdmin
                 ->add('code', null, ['disabled' => true])
                 ->add('customer', EntityType::class, [
                     'class' => Customer::class,
-                    'choice_label' => 'fullname'
+                    'choice_label' => 'fullname',
+                    'placeholder' => ''
                 ])
                 ->add('category', EntityType::class, [
                     'class' => Category::class,
-                    'choice_label' => 'name'
+                    'choice_label' => 'name',
+                    'placeholder' => ''
                 ])
                 ->add('status', EntityType::class, [
                     'class' => Status::class,
-                    'choice_label' => 'name'
+                    'choice_label' => 'name',
+                    'placeholder' => ''
                 ])
                 ->add('visible', CheckboxType::class, [
                     'required' => false

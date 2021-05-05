@@ -25,14 +25,17 @@ class RepairType extends AbstractType
             ->add('customer', EntityType::class, [
                 'class' => Customer::class,
                 'choice_label' => 'fullname',
+                'placeholder' => '',
             ])
             ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'name',
+                'placeholder' => '',
             ])
             ->add('status', EntityType::class, [
                 'class' => Status::class,
                 'choice_label' => 'name',
+                'placeholder' => '',
             ])
             ->add('products', CollectionType::class, [
                 'entry_type' => RepairHasProductsType::class,
