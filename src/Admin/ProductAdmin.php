@@ -40,7 +40,7 @@ final class ProductAdmin extends AbstractAdmin
             ->add('name')
             ->add('amount')
             ->add('price')
-            ;
+        ;
     }
 
     protected function configureListFields(ListMapper $list): void
@@ -49,7 +49,7 @@ final class ProductAdmin extends AbstractAdmin
             ->add('name')
             ->add('amount')
             ->add('price', FieldDescriptionInterface::TYPE_CURRENCY, [
-                'currency' => '€'
+                'currency' => '€',
             ])
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
@@ -57,19 +57,22 @@ final class ProductAdmin extends AbstractAdmin
                     'edit' => [],
                     'delete' => [],
                 ],
-            ]);
+            ])
+        ;
     }
 
     protected function configureFormFields(FormMapper $form): void
     {
         $form
-            ->add('id', null, ['disabled' => true])
+            ->add('id', null, [
+                'disabled' => true,
+            ])
             ->add('name')
             ->add('amount', IntegerType::class)
             ->add('price', MoneyType::class, [
-                'required' => false
+                'required' => false,
             ])
-            ;
+        ;
     }
 
     protected function configureShowFields(ShowMapper $show): void
@@ -79,14 +82,14 @@ final class ProductAdmin extends AbstractAdmin
             ->add('name')
             ->add('amount')
             ->add('price', FieldDescriptionInterface::TYPE_CURRENCY, [
-                'currency' => '€'
+                'currency' => '€',
             ])
             ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
-                'timezone' => 'Europe/Madrid'
+                'timezone' => 'Europe/Madrid',
             ])
             ->add('created', FieldDescriptionInterface::TYPE_DATETIME, [
-                'timezone' => 'Europe/Madrid'
+                'timezone' => 'Europe/Madrid',
             ])
-            ;
+        ;
     }
 }

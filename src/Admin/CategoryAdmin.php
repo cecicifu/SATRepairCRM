@@ -38,7 +38,7 @@ final class CategoryAdmin extends AbstractAdmin
         $filter
             ->add('name')
             ->add('description')
-            ;
+        ;
     }
 
     protected function configureListFields(ListMapper $list): void
@@ -52,18 +52,21 @@ final class CategoryAdmin extends AbstractAdmin
                     'edit' => [],
                     'delete' => [],
                 ],
-            ]);
+            ])
+        ;
     }
 
     protected function configureFormFields(FormMapper $form): void
     {
         $form
-            ->add('id', null, ['disabled' => true])
+            ->add('id', null, [
+                'disabled' => true,
+            ])
             ->add('name')
             ->add('description', TextareaType::class, [
-                'required' => false
+                'required' => false,
             ])
-            ;
+        ;
     }
 
     protected function configureShowFields(ShowMapper $show): void
@@ -73,11 +76,11 @@ final class CategoryAdmin extends AbstractAdmin
             ->add('name')
             ->add('description', FieldDescriptionInterface::TYPE_TEXTAREA)
             ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
-                'timezone' => 'Europe/Madrid'
+                'timezone' => 'Europe/Madrid',
             ])
             ->add('created', FieldDescriptionInterface::TYPE_DATETIME, [
-                'timezone' => 'Europe/Madrid'
+                'timezone' => 'Europe/Madrid',
             ])
-            ;
+        ;
     }
 }

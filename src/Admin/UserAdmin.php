@@ -77,7 +77,7 @@ final class UserAdmin extends AbstractAdmin
             ->add('username')
             ->add('email', FieldDescriptionInterface::TYPE_EMAIL)
             ->add('lastSession', FieldDescriptionInterface::TYPE_DATETIME, [
-                'timezone' => 'Europe/Madrid'
+                'timezone' => 'Europe/Madrid',
             ])
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
@@ -85,18 +85,19 @@ final class UserAdmin extends AbstractAdmin
                     'edit' => [],
                     'delete' => [],
                 ],
-            ]);
+            ])
+        ;
     }
 
     protected function configureFormFields(FormMapper $form): void
     {
         $form
             ->add('id', null, [
-                'disabled' => true
+                'disabled' => true,
             ])
             ->add('username')
             ->add('email', EmailType::class, [
-                'required' => false
+                'required' => false,
             ])
             ->add('password', RepeatedType::class, [
                 'type'              => PasswordType::class,
@@ -104,7 +105,7 @@ final class UserAdmin extends AbstractAdmin
                 'mapped'            => true,
                 'first_options'     => ['label' => 'New password'],
                 'second_options'    => ['label' => 'Confirm new password'],
-                'invalid_message' => 'The password fields must match.'
+                'invalid_message' => 'The password fields must match.',
             ])
         ;
     }
@@ -116,13 +117,13 @@ final class UserAdmin extends AbstractAdmin
             ->add('username')
             ->add('email', FieldDescriptionInterface::TYPE_EMAIL)
             ->add('lastSession', FieldDescriptionInterface::TYPE_DATETIME, [
-                'timezone' => 'Europe/Madrid'
+                'timezone' => 'Europe/Madrid',
             ])
             ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
-                'timezone' => 'Europe/Madrid'
+                'timezone' => 'Europe/Madrid',
             ])
             ->add('created', FieldDescriptionInterface::TYPE_DATETIME, [
-                'timezone' => 'Europe/Madrid'
+                'timezone' => 'Europe/Madrid',
             ])
         ;
     }

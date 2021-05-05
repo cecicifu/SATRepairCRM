@@ -87,7 +87,7 @@ final class RepairAdmin extends AbstractAdmin
             ->add('pattern')
             ->add('fault')
             ->add('colour')
-            ;
+        ;
     }
 
     protected function configureListFields(ListMapper $list): void
@@ -104,7 +104,8 @@ final class RepairAdmin extends AbstractAdmin
                     'edit' => [],
                     'delete' => [],
                 ],
-            ]);
+            ])
+        ;
     }
 
     protected function configureFormFields(FormMapper $form): void
@@ -112,65 +113,69 @@ final class RepairAdmin extends AbstractAdmin
         $form
             ->with('Repair', ['class' => 'col-md-9'])
                 ->add('imei', IntegerType::class, [
-                    'required' => false
+                    'required' => false,
                 ])
                 ->add('pattern', null, [
-                    'required' => false
+                    'required' => false,
                 ])
                 ->add('fault', TextareaType::class)
                 ->add('colour', ColorType::class, [
-                    'required' => false
+                    'required' => false,
                 ])
                 ->add('privateComment', TextareaType::class, [
-                    'required' => false
+                    'required' => false,
                 ])
                 ->add('publicComment', TextareaType::class, [
-                    'required' => false
+                    'required' => false,
                 ])
                 ->add('labourPrice', MoneyType::class, [
-                    'required' => false
+                    'required' => false,
                 ])
                 ->add('tax', PercentType::class, [
-                    'required' => false
+                    'required' => false,
                 ])
             ->end()
             ->with('Metadata', ['class' => 'col-md-3'])
-                ->add('id', null, ['disabled' => true])
-                ->add('code', null, ['disabled' => true])
+                ->add('id', null, [
+                    'disabled' => true,
+                ])
+                ->add('code', null, [
+                    'disabled' => true,
+                ])
                 ->add('customer', EntityType::class, [
                     'class' => Customer::class,
                     'choice_label' => 'fullname',
-                    'placeholder' => ''
+                    'placeholder' => '',
                 ])
                 ->add('category', EntityType::class, [
                     'class' => Category::class,
                     'choice_label' => 'name',
-                    'placeholder' => ''
+                    'placeholder' => '',
                 ])
                 ->add('status', EntityType::class, [
                     'class' => Status::class,
                     'choice_label' => 'name',
-                    'placeholder' => ''
+                    'placeholder' => '',
                 ])
                 ->add('visible', CheckboxType::class, [
-                    'required' => false
+                    'required' => false,
                 ])
             ->end()
             ->with('Products', ['class' => 'col-md-12'])
                 ->add('products', CollectionType::class, [
                     'entry_type' => RepairHasProductsType::class,
                     'entry_options' => [
-                        'label' => false
+                        'label' => false,
                     ],
                     'label' => false,
                     'mapped' => true,
                     'by_reference' => false,
                     'required' => false,
                     'allow_add' => true,
-                    'allow_delete' => true
+                    'allow_delete' => true,
                 ])
             ->end()
-            ;
+        ;
     }
 
     protected function configureShowFields(ShowMapper $show): void
@@ -185,16 +190,16 @@ final class RepairAdmin extends AbstractAdmin
             ->add('privateComment', FieldDescriptionInterface::TYPE_TEXTAREA)
             ->add('publicComment', FieldDescriptionInterface::TYPE_TEXTAREA)
             ->add('labourPrice', FieldDescriptionInterface::TYPE_CURRENCY, [
-                'currency' => '€'
+                'currency' => '€',
             ])
             ->add('tax', FieldDescriptionInterface::TYPE_PERCENT)
             ->add('visible', FieldDescriptionInterface::TYPE_BOOLEAN)
             ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
-                'timezone' => 'Europe/Madrid'
+                'timezone' => 'Europe/Madrid',
             ])
             ->add('created', FieldDescriptionInterface::TYPE_DATETIME, [
-                'timezone' => 'Europe/Madrid'
+                'timezone' => 'Europe/Madrid',
             ])
-            ;
+        ;
     }
 }

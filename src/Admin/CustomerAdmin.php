@@ -43,7 +43,7 @@ final class CustomerAdmin extends AbstractAdmin
             ->add('email')
             ->add('zipCode')
             ->add('phone')
-            ;
+        ;
     }
 
     protected function configureListFields(ListMapper $list): void
@@ -60,28 +60,31 @@ final class CustomerAdmin extends AbstractAdmin
                     'edit' => [],
                     'delete' => [],
                 ],
-            ]);
+            ])
+        ;
     }
 
     protected function configureFormFields(FormMapper $form): void
     {
         $form
-            ->add('id', null, ['disabled' => true])
+            ->add('id', null, [
+                'disabled' => true,
+            ])
             ->add('fullname')
             ->add('address', null, [
-                'required' => false
+                'required' => false,
             ])
             ->add('city', null, [
-                'required' => false
+                'required' => false,
             ])
             ->add('email', EmailType::class, [
-                'required' => false
+                'required' => false,
             ])
             ->add('zipCode', IntegerType::class, [
-                'required' => false
+                'required' => false,
             ])
             ->add('phone', IntegerType::class)
-            ;
+        ;
     }
 
     protected function configureShowFields(ShowMapper $show): void
@@ -95,11 +98,11 @@ final class CustomerAdmin extends AbstractAdmin
             ->add('zipCode')
             ->add('phone')
             ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
-                'timezone' => 'Europe/Madrid'
+                'timezone' => 'Europe/Madrid',
             ])
             ->add('created', FieldDescriptionInterface::TYPE_DATETIME, [
-                'timezone' => 'Europe/Madrid'
+                'timezone' => 'Europe/Madrid',
             ])
-            ;
+        ;
     }
 }

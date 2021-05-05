@@ -38,7 +38,7 @@ final class StatusAdmin extends AbstractAdmin
         $filter
             ->add('name')
             ->add('colour')
-            ;
+        ;
     }
 
     protected function configureListFields(ListMapper $list): void
@@ -52,16 +52,19 @@ final class StatusAdmin extends AbstractAdmin
                     'edit' => [],
                     'delete' => [],
                 ],
-            ]);
+            ])
+        ;
     }
 
     protected function configureFormFields(FormMapper $form): void
     {
         $form
-            ->add('id', null, ['disabled' => true])
+            ->add('id', null, [
+                'disabled' => true,
+            ])
             ->add('name')
             ->add('colour', ColorType::class)
-            ;
+        ;
     }
 
     protected function configureShowFields(ShowMapper $show): void
@@ -71,11 +74,11 @@ final class StatusAdmin extends AbstractAdmin
             ->add('name')
             ->add('colour')
             ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
-                'timezone' => 'Europe/Madrid'
+                'timezone' => 'Europe/Madrid',
             ])
             ->add('created', FieldDescriptionInterface::TYPE_DATETIME, [
-                'timezone' => 'Europe/Madrid'
+                'timezone' => 'Europe/Madrid',
             ])
-            ;
+        ;
     }
 }
