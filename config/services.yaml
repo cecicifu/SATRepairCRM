@@ -71,3 +71,8 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: admin, label: User }
         public: true
+
+    app.menu_listener:
+        class: App\EventListener\MenuBuilderListener
+        tags:
+            - { name: kernel.event_listener, event: sonata.admin.event.configure.menu.sidebar, method: addMenuItems }
