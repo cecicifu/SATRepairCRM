@@ -19,7 +19,7 @@ class SecurityController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
          if ($this->getUser()) {
-             return $this->redirectToRoute('user_index');
+             return $this->redirectToRoute('sonata_admin_dashboard');
          }
 
         $error = $authenticationUtils->getLastAuthenticationError();
