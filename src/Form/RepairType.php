@@ -24,52 +24,52 @@ class RepairType extends AbstractType
         $builder
             ->add('customer', EntityType::class, [
                 'class' => Customer::class,
-                'choice_label' => 'fullname'
+                'choice_label' => 'fullname',
             ])
             ->add('category', EntityType::class, [
                 'class' => Category::class,
-                'choice_label' => 'name'
+                'choice_label' => 'name',
             ])
             ->add('status', EntityType::class, [
                 'class' => Status::class,
-                'choice_label' => 'name'
+                'choice_label' => 'name',
             ])
             ->add('products', CollectionType::class, [
                 'entry_type' => RepairHasProductsType::class,
                 'entry_options' => [
-                  'label' => false
+                  'label' => false,
                 ],
                 'label' => false,
                 'mapped' => true,
                 'by_reference' => false,
                 'required' => false,
                 'allow_add' => true,
-                'allow_delete' => true
+                'allow_delete' => true,
             ])
             ->add('imei', IntegerType::class, [
-                'required' => false
+                'required' => false,
             ])
             ->add('pattern', TextType::class, [
-                'required' => false
+                'required' => false,
             ])
             ->add('fault', TextareaType::class)
             ->add('colour', ColorType::class, [
-                'required' => false
+                'required' => false,
             ])
             ->add('privateComment', TextareaType::class, [
-                'required' => false
+                'required' => false,
             ])
             ->add('publicComment', TextareaType::class, [
-                'required' => false
+                'required' => false,
             ])
             ->add('labourPrice', IntegerType::class, [
-                'required' => false
+                'required' => false,
             ])
             ->add('tax', IntegerType::class, [
-                'required' => false
+                'required' => false,
             ])
             ->add('visible', CheckboxType::class, [
-                'required' => false
+                'required' => false,
             ])
         ;
     }
