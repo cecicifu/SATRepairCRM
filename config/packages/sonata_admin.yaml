@@ -1,6 +1,10 @@
 sonata_admin:
-    title: 'SATRepairCRM'
+    title: false
+    title_logo: build/images/logo.png
     show_mosaic_button: false
+    assets:
+        extra_stylesheets:
+        - build/app.css
     global_search:
         empty_boxes: hide
         case_sensitive: true

@@ -1,1 +1,5 @@
-
+header.main-header > a.logo > img {
+    max-width: 100%;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
