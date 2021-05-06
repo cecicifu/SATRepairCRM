@@ -186,7 +186,9 @@ final class RepairAdmin extends AbstractAdmin
             ->add('imei')
             ->add('pattern')
             ->add('fault')
-            ->add('colour')
+            ->add('colour', 'string', [
+                'template' => 'fieldtype/show_colour.html.twig',
+            ])
             ->add('privateComment', FieldDescriptionInterface::TYPE_TEXTAREA)
             ->add('publicComment', FieldDescriptionInterface::TYPE_TEXTAREA)
             ->add('labourPrice', FieldDescriptionInterface::TYPE_CURRENCY, [

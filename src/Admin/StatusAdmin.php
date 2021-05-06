@@ -45,7 +45,9 @@ final class StatusAdmin extends AbstractAdmin
     {
         $list
             ->add('name')
-            ->add('colour')
+            ->add('colour', 'string', [
+                'template' => 'fieldtype/list_colour.html.twig',
+            ])
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
                     'show' => [],
@@ -72,7 +74,9 @@ final class StatusAdmin extends AbstractAdmin
         $show
             ->add('id')
             ->add('name')
-            ->add('colour')
+            ->add('colour', 'string', [
+                'template' => 'fieldtype/show_colour.html.twig',
+            ])
             ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
                 'timezone' => 'Europe/Madrid',
             ])

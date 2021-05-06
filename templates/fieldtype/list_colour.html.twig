@@ -1,0 +1,5 @@
+{% extends '@SonataAdmin/CRUD/base_list_field.html.twig' %}
+
+{% block field %}
+    <div style="background-color: {{ object.colour }};" title="{{ object.colour }}"><strong>{{ object.colour }}</strong></div>
+{% endblock %}
