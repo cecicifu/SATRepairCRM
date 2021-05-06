@@ -48,11 +48,15 @@ class RepairService
         foreach ($repair->getProducts() as $product) {
             if ($product->getQuantity() === 0) {
                 $repair->removeProduct($product);
+        foreach ($repair->getProducts() as $productToAdd) {
+            if ($productToAdd->getQuantity() === 0) {
+                $repair->removeProduct($productToAdd);
             } else {
-                if ($product->getProduct()->getAmount() < $product->getQuantity()) {
-                    throw new Exception("Product {$product->getProduct()->getName()} amount not enough");
+                if ($productToAdd->getProduct()->getAmount() < $productToAdd->getQuantity()) {
+                    throw new Exception("Product {$productToAdd->getProduct()->getName()} amount not enough");
                 }
-                $product->getProduct()->setAmount($product->getProduct()->getAmount() - $product->getQuantity());
+                $productToAdd->setRepair($repair);
+                $productToAdd->getProduct()->setAmount($productToAdd->getProduct()->getAmount() - $productToAdd->getQuantity());
             }
         }
     }
