@@ -72,4 +72,9 @@ class RepairHasProducts
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return "Product: {$this->getProduct()->getName()} - Quantity: {$this->getQuantity()}";
+    }
 }
