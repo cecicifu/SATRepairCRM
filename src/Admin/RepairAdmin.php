@@ -94,9 +94,9 @@ final class RepairAdmin extends AbstractAdmin
     {
         $list
             ->add('code')
-            ->add('customer')
-            ->add('category')
-            ->add('status')
+            ->add('customer', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
+            ->add('category', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
+            ->add('status', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
             ->add('fault')
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
@@ -183,6 +183,10 @@ final class RepairAdmin extends AbstractAdmin
         $show
             ->add('id')
             ->add('code')
+            ->add('customer', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
+            ->add('category', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
+            ->add('status', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
+            ->add('products', FieldDescriptionInterface::TYPE_ONE_TO_MANY)
             ->add('imei')
             ->add('pattern')
             ->add('fault')
