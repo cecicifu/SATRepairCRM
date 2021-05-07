@@ -57,7 +57,11 @@ class RepairService
                 if ($productToAdd->getProduct()->getAmount() < $productToAdd->getQuantity()) {
                     throw new Exception("Product {$productToAdd->getProduct()->getName()} amount not enough");
                 }
-                $productToAdd->setRepair($repair);
+
+                if(!$productToAdd->getRepair()) {
+                    $productToAdd->setRepair($repair);
+                }
+
                 $productToAdd->getProduct()->setAmount($productToAdd->getProduct()->getAmount() - $productToAdd->getQuantity());
             }
         }
