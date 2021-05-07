@@ -23,6 +23,11 @@ class RepairService
         return $this->repairRepository->findAll();
     }
 
+    public function findByCode(string $code): ?Repair
+    {
+        return $this->repairRepository->findOneBy(['code' => $code]);
+    }
+
     public function findRepairProducts(Repair $repair): ?Collection
     {
         $repair = $this->repairRepository->find($repair);
@@ -45,9 +50,6 @@ class RepairService
 
     public function editRepairProductAmount(Repair $repair): void
     {
-        foreach ($repair->getProducts() as $product) {
-            if ($product->getQuantity() === 0) {
-                $repair->removeProduct($product);
         foreach ($repair->getProducts() as $productToAdd) {
             if ($productToAdd->getQuantity() === 0) {
                 $repair->removeProduct($productToAdd);

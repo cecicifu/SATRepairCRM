@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Repair Tracker{% endblock %}
+
+{% block body %}
+    <div class="tracker__block">
+        <img src="{{ asset('build/images/logo.png') }}" alt="SATRepairCRM Logo">
+
+        {{ include('tracker/_form.html.twig') }}
+
+        <div id="content__block"></div>
+    </div>
+{% endblock %}

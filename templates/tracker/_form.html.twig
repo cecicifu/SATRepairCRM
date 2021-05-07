@@ -1,0 +1,8 @@
+ <div class="tracker__form">
+    {{ form_start(form) }}
+
+    {{ form_row(form.code) }}
+
+    <button class="btn" id="tracker__btn">{{ button_label|default('Find') }}</button>
+    {{ form_end(form) }}
+</div>
