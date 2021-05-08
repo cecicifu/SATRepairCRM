@@ -1,0 +1,121 @@
+App\Entity\Repair:
+  constraints:
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: code
+  properties:
+    customer:
+      - Valid: ~
+      - NotBlank: ~
+      - NotNull: ~
+    category:
+      - Valid: ~
+      - NotBlank: ~
+      - NotNull: ~
+    status:
+      - Valid: ~
+      - NotBlank: ~
+      - NotNull: ~
+    imei:
+      - Type: integer
+    pattern:
+      - Length:
+          max: 20
+    fault:
+      - NotBlank: ~
+      - NotNull: ~
+      - Length:
+          max: 85
+    colour:
+      - Length:
+          max: 50
+    privateComment:
+      - Length:
+          max: 200
+    publicComment:
+      - Length:
+          max: 200
+    labourPrice:
+      - Type: float
+    tax:
+      - Type: float
+    visible:
+      - Type: bool
+
+App\Entity\Category:
+  properties:
+    name:
+      - NotBlank: ~
+      - NotNull: ~
+      - Length:
+          max: 30
+    description:
+      - Length:
+          max: 100
+
+App\Entity\Customer:
+  properties:
+    fullname:
+      - NotBlank: ~
+      - NotNull: ~
+      - Length:
+          max: 70
+    address:
+      - Length:
+          max: 70
+    city:
+      - Length:
+          max: 50
+    email:
+      - Length:
+          max: 70
+    zipCode:
+      - Type: integer
+    phone:
+      - NotBlank: ~
+      - NotNull: ~
+      - Type: integer
+
+App\Entity\Product:
+  properties:
+    name:
+      - NotBlank: ~
+      - NotNull: ~
+      - Length:
+          max: 50
+    amount:
+      - Type: integer
+    price:
+      - Type: float
+
+App\Entity\RepairHasProducts:
+  properties:
+    quantity:
+      - Type: integer
+
+App\Entity\Status:
+  properties:
+    name:
+      - NotBlank: ~
+      - NotNull: ~
+      - Length:
+          max: 25
+    colour:
+      - Length:
+          max: 50
+
+App\Entity\User:
+  constraints:
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: username
+  properties:
+    username:
+      - NotBlank: ~
+      - NotNull: ~
+      - Length:
+          max: 15
+    email:
+      - Email: ~
+      - Length:
+          max: 70
+    password:
+      - NotBlank: ~
+      - NotNull: ~
+      - NotCompromisedPassword: ~
