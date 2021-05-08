@@ -92,6 +92,8 @@ App\Entity\RepairHasProducts:
       - Type: integer
 
 App\Entity\Status:
+  constraints:
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: name
   properties:
     name:
       - NotBlank: ~
