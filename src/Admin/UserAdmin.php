@@ -9,6 +9,7 @@ use DateTime;
 use DateTimeImmutable;
 use Ramsey\Uuid\Uuid;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
+use Sonata\AdminBundle\Datagrid\DatagridInterface;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\FieldDescription\FieldDescriptionInterface;
@@ -60,6 +61,12 @@ final class UserAdmin extends AbstractAdmin
                 $object->getPassword()
             )
         );
+    }
+
+    protected function configureDefaultSortValues(array &$sortValues): void
+    {
+        $sortValues[DatagridInterface::SORT_ORDER] = 'DESC';
+        $sortValues[DatagridInterface::SORT_BY] = 'created';
     }
 
     protected function configureDatagridFilters(DatagridMapper $filter): void

@@ -9,6 +9,7 @@ use DateTime;
 use DateTimeImmutable;
 use Ramsey\Uuid\Uuid;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
+use Sonata\AdminBundle\Datagrid\DatagridInterface;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\FieldDescription\FieldDescriptionInterface;
@@ -32,6 +33,12 @@ final class ProductAdmin extends AbstractAdmin
     protected function preUpdate(object $object): void
     {
         $object->setModified(new DateTime('now'));
+    }
+
+    protected function configureDefaultSortValues(array &$sortValues): void
+    {
+        $sortValues[DatagridInterface::SORT_ORDER] = 'DESC';
+        $sortValues[DatagridInterface::SORT_BY] = 'created';
     }
 
     protected function configureDatagridFilters(DatagridMapper $filter): void
