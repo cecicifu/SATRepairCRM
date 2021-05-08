@@ -14,25 +14,24 @@ App\Entity\Repair:
       - Valid: ~
       - NotBlank: ~
       - NotNull: ~
-    imei:
-      - Type: integer
-    pattern:
-      - Length:
-          max: 20
-    fault:
+    code:
       - NotBlank: ~
       - NotNull: ~
       - Length:
-          max: 85
+          min: 13
+          max: 13
+    imei:
+      - Type: integer
+      - Length:
+          min: 17
+          max: 17
+    fault:
+      - NotBlank: ~
+      - NotNull: ~
     colour:
       - Length:
-          max: 50
-    privateComment:
-      - Length:
-          max: 200
-    publicComment:
-      - Length:
-          max: 200
+          min: 7
+          max: 7
     labourPrice:
       - Type: float
     tax:
@@ -45,42 +44,34 @@ App\Entity\Category:
     name:
       - NotBlank: ~
       - NotNull: ~
-      - Length:
-          max: 30
-    description:
-      - Length:
-          max: 100
 
 App\Entity\Customer:
   properties:
     fullname:
       - NotBlank: ~
       - NotNull: ~
-      - Length:
-          max: 70
-    address:
-      - Length:
-          max: 70
-    city:
-      - Length:
-          max: 50
     email:
+      - Email: ~
       - Length:
           max: 70
     zipCode:
       - Type: integer
+      - Length:
+          min: 5
+          max: 5
     phone:
       - NotBlank: ~
       - NotNull: ~
       - Type: integer
+      - Length:
+          min: 9
+          max: 9
 
 App\Entity\Product:
   properties:
     name:
       - NotBlank: ~
       - NotNull: ~
-      - Length:
-          max: 50
     amount:
       - Type: integer
     price:
@@ -98,11 +89,10 @@ App\Entity\Status:
     name:
       - NotBlank: ~
       - NotNull: ~
-      - Length:
-          max: 25
     colour:
       - Length:
-          max: 50
+          min: 7
+          max: 7
 
 App\Entity\User:
   constraints:
@@ -111,12 +101,8 @@ App\Entity\User:
     username:
       - NotBlank: ~
       - NotNull: ~
-      - Length:
-          max: 15
     email:
       - Email: ~
-      - Length:
-          max: 70
     password:
       - NotBlank: ~
       - NotNull: ~

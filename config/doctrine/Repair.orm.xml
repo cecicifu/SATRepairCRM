@@ -3,15 +3,15 @@
   <entity repository-class="App\Repository\RepairRepository" name="App\Entity\Repair" table="repair">
     <id name="id" type="uuid" column="id"/>
     <field name="code" column="code" length="13" unique="true"/>
-    <field name="imei" type="integer" column="imei" nullable="true"/>
-    <field name="pattern" column="pattern" length="20" nullable="true"/>
-    <field name="fault" column="fault" length="85"/>
-    <field name="colour" column="colour" length="50" nullable="true"/>
-    <field name="privateComment" column="private_comment" length="200" nullable="true"/>
-    <field name="publicComment" column="public_comment" length="200" nullable="true"/>
+    <field name="imei" type="integer" column="imei" length="17" nullable="true"/>
+    <field name="pattern" type="text" column="pattern" nullable="true"/>
+    <field name="fault" type="text" column="fault"/>
+    <field name="colour" column="colour" length="7" nullable="true"/>
+    <field name="privateComment" type="text" column="private_comment" nullable="true"/>
+    <field name="publicComment" type="text" column="public_comment" nullable="true"/>
     <field name="labourPrice" type="float" column="labour_price" nullable="true"/>
     <field name="tax" type="float" column="tax" nullable="true"/>
-    <field name="visible" type="integer" column="visible" length="50"/>
+    <field name="visible" type="boolean" column="visible"/>
     <field name="modified" type="datetime" column="modified" nullable="true"/>
     <field name="created" type="datetime_immutable" column="created"/>
     <one-to-many field="products" target-entity="App\Entity\RepairHasProducts" mapped-by="repair" orphan-removal="true" fetch="EAGER">
