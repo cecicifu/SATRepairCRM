@@ -50,18 +50,7 @@ final class RepairAdmin extends AbstractAdmin
     {
         $object->setCreated(new DateTimeImmutable('now'));
         if (!$object->getProducts()->isEmpty())  {
-            $productsToAdd = $object->getProducts();
-
-            foreach ($productsToAdd as $productToAdd) {
-                if($productToAdd->getQuantity() > 0) {
-                    $productToAdd->setRepair($object);
-                    $product = $productToAdd->getProduct();
-
-                    $this->repairService->newRepairProductAmount($product, $productToAdd);
-
-                    $object->addProduct($productToAdd);
-                }
-            }
+            $this->repairService->updateRepairProductAmount($object);
         }
     }
 
@@ -72,7 +61,7 @@ final class RepairAdmin extends AbstractAdmin
     {
         $object->setModified(new DateTime('now'));
         if(!$object->getProducts()->isEmpty()) {
-            $this->repairService->editRepairProductAmount($object);
+            $this->repairService->updateRepairProductAmount($object);
         }
     }
 
