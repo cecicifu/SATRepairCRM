@@ -74,6 +74,11 @@ class RepairHasProducts
         return $this;
     }
 
+    public function equals(RepairHasProducts $product): bool
+    {
+        return $this->getProduct()->getId() === $product->getProduct()->getId();
+    }
+
     public function __toString()
     {
         return "Product: {$this->getProduct()->getName()} - Quantity: {$this->getQuantity()}";

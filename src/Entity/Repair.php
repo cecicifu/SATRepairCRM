@@ -86,6 +86,16 @@ class Repair
     {
         if (!$this->products->contains($product))
         {
+            foreach ($this->getProducts() as $existingProduct)
+            {
+                if ($existingProduct->equals($product))
+                {
+                    $existingProduct->setQuantity(
+                        $existingProduct->getQuantity() + $product->getQuantity()
+                    );
+                    return $this;
+                }
+            }
             $this->products->add($product);
         }
 
