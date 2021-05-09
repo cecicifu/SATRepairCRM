@@ -49,20 +49,7 @@ class RepairController extends AbstractController
             $repair->setCreated(new DateTimeImmutable('now'));
 
             if (!$form->get('products')->getData()->isEmpty())  {
-                $productsToAdd = $form->get('products')->getData();
-
-                foreach ($productsToAdd as $productToAdd) {
-                    if($productToAdd->getQuantity() > 0) {
-                        $productToAdd->setRepair($repair);
-                        $product = $productToAdd->getProduct();
-
-                        $repairService->newRepairProductAmount($product, $productToAdd);
-
-                        $repair->addProduct($productToAdd);
-
-                        $entityManager->persist($product);
-                    }
-                }
+                $repairService->updateRepairProductAmount($form->getData());
             }
 
             $entityManager->persist($repair);
@@ -102,10 +89,11 @@ class RepairController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if(!$repair->getProducts()->isEmpty()) {
-                $repairService->editRepairProductAmount($repair);
-            }
             $repair->setModified(new DateTime('now'));
+
+            if(!$repair->getProducts()->isEmpty()) {
+                $repairService->updateRepairProductAmount($repair);
+            }
 
             $this->getDoctrine()->getManager()->flush();
 
