@@ -2,6 +2,9 @@ body {
     height: 95vh;
     background-color: #d2d6de;
 }
+.input-group .input-group-addon {
+    width: 1%;
+}
 /* ADMIN LOGO */
 header.main-header > a.logo > img {
     max-width: 100%;
