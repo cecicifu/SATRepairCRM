@@ -33,7 +33,7 @@ class TrackerController extends AbstractController
         if ($request->isXmlHttpRequest()) {
             $repair = $repairService->findByCode($request->getContent());
 
-            if($repair) {
+            if($repair && $repair->isVisible()) {
                 return new JsonResponse([
                     'category' => $repair->getCategory()->getName(),
                     'status' => $repair->getStatus()->getName(),
