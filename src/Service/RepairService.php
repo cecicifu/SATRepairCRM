@@ -2,8 +2,6 @@
 
 namespace App\Service;
 
-use App\Entity\Product;
-use App\Entity\RepairHasProducts;
 use App\Repository\RepairRepository;
 use App\Entity\Repair;
 use Doctrine\Common\Collections\Collection;
