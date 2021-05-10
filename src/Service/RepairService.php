@@ -38,23 +38,30 @@ class RepairService
         return $repair->getProducts()->count();
     }
 
-    public function updateRepairProductAmount(Repair $repair): void
+    public function updateRepairProductAmount(Repair $repair): Repair
     {
         foreach ($repair->getProducts() as $productToAdd) {
-            if($productToAdd->getQuantity() > 0) {
-                $product = $productToAdd->getProduct();
-                if ($product->getAmount() < $productToAdd->getQuantity()) {
-                    throw new Exception("Product {$product->getName()} amount not enough");
-                }
+            $product = $productToAdd->getProduct();
 
-                if(!$productToAdd->getRepair()) {
-                    $productToAdd->setRepair($repair);
-                }
-
-                $repair->addProduct($productToAdd);
-                $product->setAmount($product->getAmount() - $productToAdd->getQuantity());
+            if($productToAdd->getQuantity() <= 0) {
+                throw new Exception("Quantity should be positive");
             }
-        }
 
+            if($productToAdd->getQuantity() === 0) {
+                throw new Exception("Quantity cannot be zero");
+            }
+
+            if ($product->getAmount() < $productToAdd->getQuantity()) {
+                throw new Exception("Product {$product->getName()} amount not enough");
+            }
+
+            if(!$productToAdd->getRepair()) {
+                $productToAdd->setRepair($repair);
+            }
+
+            $repair->addProduct($productToAdd);
+            $product->setAmount($product->getAmount() - $productToAdd->getQuantity());
+        }
+        return $repair;
     }
 }
