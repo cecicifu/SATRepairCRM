@@ -14,6 +14,11 @@ App\Entity\Repair:
       - Valid: ~
       - NotBlank: ~
       - NotNull: ~
+    products:
+      - App\Validator\Quantity\QuantityLessThanAmount: ~
+      - App\Validator\Quantity\QuantityPositive: ~
+      - App\Validator\Quantity\QuantityNonZero: ~
+      - App\Validator\Quantity\QuantityNotEmpty: ~
     code:
       - NotBlank: ~
       - NotNull: ~

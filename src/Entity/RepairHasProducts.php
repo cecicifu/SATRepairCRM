@@ -11,7 +11,7 @@ class RepairHasProducts
     private UuidInterface $id;
     private ?Repair $repair;
     private Product $product;
-    private int $quantity;
+    private ?int $quantity;
     private DateTimeImmutable $created;
 
     public function __construct()
@@ -50,12 +50,12 @@ class RepairHasProducts
         return $this;
     }
 
-    public function getQuantity(): int
+    public function getQuantity(): ?int
     {
         return $this->quantity;
     }
 
-    public function setQuantity(int $quantity): self
+    public function setQuantity(?int $quantity): self
     {
         $this->quantity = $quantity;
 

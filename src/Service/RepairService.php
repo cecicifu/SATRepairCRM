@@ -5,7 +5,6 @@ namespace App\Service;
 use App\Repository\RepairRepository;
 use App\Entity\Repair;
 use Doctrine\Common\Collections\Collection;
-use Symfony\Component\Config\Definition\Exception\Exception;
 
 class RepairService
 {
@@ -38,22 +37,10 @@ class RepairService
         return $repair->getProducts()->count();
     }
 
-    public function updateRepairProductAmount(Repair $repair): Repair
+    public function updateRepairProductAmount(Repair $repair): void
     {
         foreach ($repair->getProducts() as $productToAdd) {
             $product = $productToAdd->getProduct();
-
-            if($productToAdd->getQuantity() <= 0) {
-                throw new Exception("Quantity should be positive");
-            }
-
-            if($productToAdd->getQuantity() === 0) {
-                throw new Exception("Quantity cannot be zero");
-            }
-
-            if ($product->getAmount() < $productToAdd->getQuantity()) {
-                throw new Exception("Product {$product->getName()} amount not enough");
-            }
 
             if(!$productToAdd->getRepair()) {
                 $productToAdd->setRepair($repair);
@@ -62,6 +49,5 @@ class RepairService
             $repair->addProduct($productToAdd);
             $product->setAmount($product->getAmount() - $productToAdd->getQuantity());
         }
-        return $repair;
     }
 }
