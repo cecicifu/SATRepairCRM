@@ -9,15 +9,14 @@ use Ramsey\Uuid\UuidInterface;
 class RepairHasProducts
 {
     private UuidInterface $id;
-    private ?Repair $repair;
+    private Repair $repair;
     private Product $product;
-    private ?int $quantity;
+    private int $quantity;
     private DateTimeImmutable $created;
 
     public function __construct()
     {
         $this->id = Uuid::uuid4();
-        $this->repair = null;
         $this->created = new DateTimeImmutable('now');
     }
 
@@ -26,7 +25,7 @@ class RepairHasProducts
         return $this->id;
     }
 
-    public function getRepair(): ?Repair
+    public function getRepair(): Repair
     {
         return $this->repair;
     }
@@ -50,12 +49,12 @@ class RepairHasProducts
         return $this;
     }
 
-    public function getQuantity(): ?int
+    public function getQuantity(): int
     {
         return $this->quantity;
     }
 
-    public function setQuantity(?int $quantity): self
+    public function setQuantity(int $quantity): self
     {
         $this->quantity = $quantity;
 

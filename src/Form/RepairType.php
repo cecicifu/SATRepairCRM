@@ -40,7 +40,7 @@ class RepairType extends AbstractType
             ->add('products', CollectionType::class, [
                 'entry_type' => RepairHasProductsType::class,
                 'entry_options' => [
-                  'label' => false,
+                    'label' => false,
                 ],
                 'label' => false,
                 'mapped' => true,

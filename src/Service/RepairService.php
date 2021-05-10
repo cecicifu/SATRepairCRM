@@ -42,9 +42,7 @@ class RepairService
         foreach ($repair->getProducts() as $productToAdd) {
             $product = $productToAdd->getProduct();
 
-            if(!$productToAdd->getRepair()) {
-                $productToAdd->setRepair($repair);
-            }
+            $productToAdd->setRepair($repair);
 
             $repair->addProduct($productToAdd);
             $product->setAmount($product->getAmount() - $productToAdd->getQuantity());

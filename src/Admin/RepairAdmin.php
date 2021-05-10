@@ -166,7 +166,7 @@ final class RepairAdmin extends AbstractAdmin
                     'label' => false,
                     'mapped' => true,
                     'by_reference' => false,
-                    'required' => false,
+                    'required' => true,
                     'allow_add' => true,
                     'allow_delete' => true,
                 ])
