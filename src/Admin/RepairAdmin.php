@@ -94,8 +94,11 @@ final class RepairAdmin extends AbstractAdmin
             ])
             ->add('customer', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
             ->add('category', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
-            ->add('status', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
             ->add('fault')
+            ->add('status', FieldDescriptionInterface::TYPE_MANY_TO_ONE, [
+                'template' => 'fieldtype/list_status.html.twig',
+            ])
+            ->add('created')
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
                     'show' => [],
@@ -184,7 +187,9 @@ final class RepairAdmin extends AbstractAdmin
             ->add('customer', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
             ->add('category', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
             ->add('status', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
-            ->add('products', FieldDescriptionInterface::TYPE_ONE_TO_MANY)
+            ->add('products', FieldDescriptionInterface::TYPE_ONE_TO_MANY, [
+                'template' => 'fieldtype/show_status.html.twig',
+            ])
             ->add('imei')
             ->add('pattern')
             ->add('fault')
