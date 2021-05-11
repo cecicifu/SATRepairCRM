@@ -1,0 +1,15 @@
+{% extends '@SonataAdmin/CRUD/base_list_field.html.twig' %}
+
+{% block field %}
+    <div>{{ object.code }} <a href="#" onclick="clipboard(this)" title="Copy to clipboard"><i class="fas fa-clipboard"></i></a></div>
+    <script>
+        clipboard = (event) => {
+            const code = event.parentNode.textContent;
+            if (!navigator.clipboard) {
+                console.log("Not supported!");
+                return;
+            }
+            navigator.clipboard.writeText(code);
+        }
+    </script>
+{% endblock %}

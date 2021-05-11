@@ -89,7 +89,9 @@ final class RepairAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $list): void
     {
         $list
-            ->add('code')
+            ->add('code', 'string', [
+                'template' => 'fieldtype/list_code.html.twig',
+            ])
             ->add('customer', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
             ->add('category', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
             ->add('status', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
