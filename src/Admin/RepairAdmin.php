@@ -19,8 +19,8 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\FieldDescription\FieldDescriptionInterface;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Form\Type\ModelAutocompleteType;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\ColorType;
@@ -143,20 +143,23 @@ final class RepairAdmin extends AbstractAdmin
                 ->add('code', null, [
                     'disabled' => true,
                 ])
-                ->add('customer', EntityType::class, [
+                ->add('customer', ModelAutocompleteType::class, [
                     'class' => Customer::class,
-                    'choice_label' => 'fullname',
-                    'placeholder' => '',
+                    'property' => 'fullname',
+                    'minimum_input_length' => 0,
+                    'cache' => true,
                 ])
-                ->add('category', EntityType::class, [
+                ->add('category', ModelAutocompleteType::class, [
                     'class' => Category::class,
-                    'choice_label' => 'name',
-                    'placeholder' => '',
+                    'property' => 'name',
+                    'minimum_input_length' => 0,
+                    'cache' => true,
                 ])
-                ->add('status', EntityType::class, [
+                ->add('status', ModelAutocompleteType::class, [
                     'class' => Status::class,
-                    'choice_label' => 'name',
-                    'placeholder' => '',
+                    'property' => 'name',
+                    'minimum_input_length' => 0,
+                    'cache' => true,
                 ])
                 ->add('visible', CheckboxType::class, [
                     'required' => false,
