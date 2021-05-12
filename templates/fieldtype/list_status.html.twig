@@ -1,5 +1,5 @@
 {% extends '@SonataAdmin/CRUD/base_list_field.html.twig' %}
 
 {% block field %}
-    <div><strong style="background-color: {{ object.status.colour }};padding: .4em;">{{ object.status }}</strong></div>
+    <div><strong class="badge rounded-pill" style="background-color: {{ object.status.colour }};">{{ object.status }}</strong></div>
 {% endblock %}
