@@ -45,6 +45,7 @@ final class StatusAdmin extends AbstractAdmin
         $filter
             ->add('name')
             ->add('colour')
+            ->add('created')
         ;
     }
 

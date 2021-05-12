@@ -45,6 +45,7 @@ final class CategoryAdmin extends AbstractAdmin
         $filter
             ->add('name')
             ->add('description')
+            ->add('created')
         ;
     }
 

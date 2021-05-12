@@ -75,6 +75,7 @@ final class UserAdmin extends AbstractAdmin
             ->add('username')
             ->add('email')
             ->add('lastSession')
+            ->add('created')
         ;
     }
 

@@ -47,6 +47,7 @@ final class ProductAdmin extends AbstractAdmin
             ->add('name')
             ->add('amount')
             ->add('price')
+            ->add('created')
         ;
     }
 

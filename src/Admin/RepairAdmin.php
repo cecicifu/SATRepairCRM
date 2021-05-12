@@ -83,6 +83,7 @@ final class RepairAdmin extends AbstractAdmin
             ->add('pattern')
             ->add('fault')
             ->add('colour')
+            ->add('created')
         ;
     }
 
@@ -112,72 +113,76 @@ final class RepairAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form): void
     {
         $form
-            ->with('Repair', ['class' => 'col-md-9'])
-                ->add('imei', IntegerType::class, [
-                    'required' => false,
-                ])
-                ->add('pattern', null, [
-                    'required' => false,
-                ])
-                ->add('fault', TextareaType::class)
-                ->add('colour', ColorType::class, [
-                    'required' => false,
-                ])
-                ->add('privateComment', TextareaType::class, [
-                    'required' => false,
-                ])
-                ->add('publicComment', TextareaType::class, [
-                    'required' => false,
-                ])
-                ->add('labourPrice', MoneyType::class, [
-                    'required' => false,
-                ])
-                ->add('tax', PercentType::class, [
-                    'required' => false,
-                ])
+            ->tab('Repair')
+                ->with('Metadata', ['class' => 'col-md-3'])
+                    ->add('id', null, [
+                        'disabled' => true,
+                    ])
+                    ->add('code', null, [
+                        'disabled' => true,
+                    ])
+                    ->add('customer', ModelAutocompleteType::class, [
+                        'class' => Customer::class,
+                        'property' => 'fullname',
+                        'minimum_input_length' => 0,
+                        'cache' => true,
+                    ])
+                    ->add('category', ModelAutocompleteType::class, [
+                        'class' => Category::class,
+                        'property' => 'name',
+                        'minimum_input_length' => 0,
+                        'cache' => true,
+                    ])
+                    ->add('status', ModelAutocompleteType::class, [
+                        'class' => Status::class,
+                        'property' => 'name',
+                        'minimum_input_length' => 0,
+                        'cache' => true,
+                    ])
+                    ->add('visible', CheckboxType::class, [
+                        'required' => false,
+                    ])
+                ->end()
+                ->with('Info', ['class' => 'col-md-9'])
+                    ->add('fault', TextareaType::class)
+                    ->add('imei', IntegerType::class, [
+                        'required' => false,
+                    ])
+                    ->add('pattern', null, [
+                        'required' => false,
+                    ])
+                    ->add('colour', ColorType::class, [
+                        'required' => false,
+                    ])
+                    ->add('privateComment', TextareaType::class, [
+                        'required' => false,
+                    ])
+                    ->add('publicComment', TextareaType::class, [
+                        'required' => false,
+                    ])
+                ->end()
             ->end()
-            ->with('Metadata', ['class' => 'col-md-3'])
-                ->add('id', null, [
-                    'disabled' => true,
-                ])
-                ->add('code', null, [
-                    'disabled' => true,
-                ])
-                ->add('customer', ModelAutocompleteType::class, [
-                    'class' => Customer::class,
-                    'property' => 'fullname',
-                    'minimum_input_length' => 0,
-                    'cache' => true,
-                ])
-                ->add('category', ModelAutocompleteType::class, [
-                    'class' => Category::class,
-                    'property' => 'name',
-                    'minimum_input_length' => 0,
-                    'cache' => true,
-                ])
-                ->add('status', ModelAutocompleteType::class, [
-                    'class' => Status::class,
-                    'property' => 'name',
-                    'minimum_input_length' => 0,
-                    'cache' => true,
-                ])
-                ->add('visible', CheckboxType::class, [
-                    'required' => false,
-                ])
-            ->end()
-            ->with('Products', ['class' => 'col-md-12'])
-                ->add('products', CollectionType::class, [
-                    'entry_type' => RepairHasProductsType::class,
-                    'entry_options' => [
-                        'label' => false,
-                    ],
-                    'label' => false,
-                    'mapped' => true,
-                    'by_reference' => false,
-                    'required' => true,
-                    'allow_add' => true,
-                    'allow_delete' => true,
-                ])
+            ->tab('Extra')
+                ->with('', ['class' => 'col-md-12'])
+                    ->add('labourPrice', MoneyType::class, [
+                        'required' => false,
+                    ])
+                    ->add('tax', PercentType::class, [
+                        'required' => false,
+                    ])
+                    ->add('products', CollectionType::class, [
+                        'entry_type' => RepairHasProductsType::class,
+                        'entry_options' => [
+                            'label' => false,
+                        ],
+                        'label' => "Products",
+                        'mapped' => true,
+                        'by_reference' => false,
+                        'required' => true,
+                        'allow_add' => true,
+                        'allow_delete' => true,
+                    ])
+                ->end()
             ->end()
         ;
     }
@@ -187,15 +192,15 @@ final class RepairAdmin extends AbstractAdmin
         $show
             ->add('id')
             ->add('code')
+            ->add('visible', FieldDescriptionInterface::TYPE_BOOLEAN)
             ->add('customer', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
             ->add('category', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
             ->add('status', FieldDescriptionInterface::TYPE_MANY_TO_ONE, [
                 'template' => 'fieldtype/show_status.html.twig',
             ])
-            ->add('products', FieldDescriptionInterface::TYPE_ONE_TO_MANY)
+            ->add('fault')
             ->add('imei')
             ->add('pattern')
-            ->add('fault')
             ->add('colour', 'string', [
                 'template' => 'fieldtype/show_colour.html.twig',
             ])
@@ -205,7 +210,7 @@ final class RepairAdmin extends AbstractAdmin
                 'currency' => '€',
             ])
             ->add('tax', FieldDescriptionInterface::TYPE_PERCENT)
-            ->add('visible', FieldDescriptionInterface::TYPE_BOOLEAN)
+            ->add('products', FieldDescriptionInterface::TYPE_ONE_TO_MANY)
             ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
                 'timezone' => 'Europe/Madrid',
             ])

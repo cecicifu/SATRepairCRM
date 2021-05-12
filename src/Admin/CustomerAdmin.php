@@ -50,6 +50,7 @@ final class CustomerAdmin extends AbstractAdmin
             ->add('email')
             ->add('zipCode')
             ->add('phone')
+            ->add('created')
         ;
     }
 
@@ -78,19 +79,19 @@ final class CustomerAdmin extends AbstractAdmin
                 'disabled' => true,
             ])
             ->add('fullname')
+            ->add('phone', IntegerType::class)
+            ->add('email', EmailType::class, [
+                'required' => false,
+            ])
             ->add('address', null, [
                 'required' => false,
             ])
             ->add('city', null, [
                 'required' => false,
             ])
-            ->add('email', EmailType::class, [
-                'required' => false,
-            ])
             ->add('zipCode', IntegerType::class, [
                 'required' => false,
             ])
-            ->add('phone', IntegerType::class)
         ;
     }
 
@@ -99,11 +100,11 @@ final class CustomerAdmin extends AbstractAdmin
         $show
             ->add('id')
             ->add('fullname')
+            ->add('phone')
+            ->add('email', FieldDescriptionInterface::TYPE_EMAIL)
             ->add('address')
             ->add('city')
-            ->add('email', FieldDescriptionInterface::TYPE_EMAIL)
             ->add('zipCode')
-            ->add('phone')
             ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
                 'timezone' => 'Europe/Madrid',
             ])
