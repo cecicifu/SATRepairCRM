@@ -189,10 +189,10 @@ final class RepairAdmin extends AbstractAdmin
             ->add('code')
             ->add('customer', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
             ->add('category', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
-            ->add('status', FieldDescriptionInterface::TYPE_MANY_TO_ONE)
-            ->add('products', FieldDescriptionInterface::TYPE_ONE_TO_MANY, [
+            ->add('status', FieldDescriptionInterface::TYPE_MANY_TO_ONE, [
                 'template' => 'fieldtype/show_status.html.twig',
             ])
+            ->add('products', FieldDescriptionInterface::TYPE_ONE_TO_MANY)
             ->add('imei')
             ->add('pattern')
             ->add('fault')
