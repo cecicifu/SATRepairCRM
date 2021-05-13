@@ -13,7 +13,8 @@ document.getElementById('tracker__btn').addEventListener('click', (event) => {
 
     const button = event.target;
     const code = document.getElementById('tracker_code');
-    if(code.value) {
+
+    if(code.value && (/^SR-[0-9]{10}$/.test(code.value))) {
         button.disabled = true;
         button.classList.add('disabled');
         code.disabled = true;
