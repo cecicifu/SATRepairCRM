@@ -14,6 +14,7 @@ sonata_admin:
         blocks:
             - { type: sonata.admin.block.admin_list, position: left }
         groups:
+            dashboard: ~
             repairs:
                 on_top: true
                 label: 'Repairs'
@@ -56,6 +57,7 @@ sonata_admin:
                 icon: '<i class="fas fa-user"></i>'
                 items:
                     - admin.user
+            logout: ~
 
 sonata_block:
     blocks:
