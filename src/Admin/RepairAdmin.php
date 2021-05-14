@@ -100,6 +100,13 @@ final class RepairAdmin extends AbstractAdmin
                 'template' => 'fieldtype/list_status.html.twig',
             ])
             ->add('created')
+            ->add('Documents', 'actions', [
+                'actions' => [
+                    'report' => [
+                        'template' => 'actions/report_list_action.html.twig',
+                    ],
+                ]
+            ])
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
                     'show' => [],
