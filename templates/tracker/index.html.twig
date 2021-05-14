@@ -1,8 +1,15 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SATRepairCRM Tracker</title>
+    <link rel="shortcut icon" href="{{ asset('build/images/favicon.ico') }}" type="image/x-icon">
 
-{% block title %}Repair Tracker{% endblock %}
-
-{% block body %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('tracker') }}
+    {% endblock %}
+</head>
+<body>
     <div class="tracker__block">
         <img src="{{ asset('build/images/logo.png') }}" alt="SATRepairCRM Logo">
 
@@ -10,4 +17,9 @@
 
         <div id="content__block"></div>
     </div>
-{% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('tracker') }}
+    {% endblock %}
+</body>
+</html>

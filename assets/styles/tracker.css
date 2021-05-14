@@ -1,0 +1,82 @@
+body {
+    height: 95vh;
+}
+.tracker__block {
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.tracker__block img {
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+.tracker__block .tracker__form {
+    display: flex;
+    justify-content: center;
+}
+.tracker__block .tracker__form input {
+    margin: 1em 0;
+    padding: .5em;
+    text-align: center;
+    border: 2px solid #969696;
+    font-size: 1em;
+}
+.tracker__block .tracker__form input:focus {
+    outline: none;
+    border: 2px solid #3c8dbc;
+    transition: border .1s ease;
+}
+.tracker__block .tracker__form input:focus-visible {
+    outline: none;
+}
+.tracker__block .tracker__form .btn {
+    font-size: 1em;
+    border: 1px solid #367fa9;
+    padding: .5em 1em;
+    background-color: #3c8dbc;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+.tracker__block .tracker__form .btn:hover,
+.tracker__block .tracker__form .btn:active {
+    background-color: #367fa9;
+}
+.tracker__block .tracker__form .btn.disabled {
+    background-color: #adadad;
+    border: 1px solid #a1a1a1;
+    cursor: wait;
+}
+.tracker__block #content__block {
+    margin-top: 1em;
+    display: none;
+    background-color: whitesmoke;
+    padding: 1.5em;
+    border: 1px solid black;
+}
+.tracker__block #content__block div#msg {
+    color: crimson;
+}
+.tracker__block #content__block div {
+    padding: .2em 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+.tracker__block #content__block div span {
+    font-weight: normal;
+}
+.tracker__block #content__block div span#status {
+    padding: .2em .4em;
+    color: white;
+}
+.tracker__block #content__block div span#colour {
+    margin-left: .5em;
+    border-radius: 50% 50%;
+}
+.tracker__block #content__block div span#colour:after {
+    content: "";
+    padding: .7em;
+}
