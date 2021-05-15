@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SATRepairCRM</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+
+    {% block stylesheets %}
+        {% for stylesheet in sonata_config.getOption('stylesheets', []) %}
+            <link rel="stylesheet" href="{{ absolute_url(asset(stylesheet)) }}">
+        {% endfor %}
+    {% endblock %}
+</head>
+<body>
+<main>
+    <div class="row">
+        <div class="col-md-12">
+            <img src="{{ absolute_url(asset('build/images/logo.png')) }}" alt="SATRepairCRM Logo" style="margin-left: 100px">
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col-xs-4">
+                <b>Code:</b>
+                <span>{{ repair.code }}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <b>Date:</b>
+                <span>{{ repair.created|date("m/d/Y") }}</span>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 10px;">
+        <div class="row">
+            <div class="col-xs-7">
+                <b>Customer:</b>
+                <span>{{ repair.customer }}</span>
+            </div>
+        </div>
+    </div>
+    <div style="padding-bottom: 50px;">
+        <div class="row">
+            <div class="col-xs-12">
+                <b>Fault:</b>
+                <span>{{ repair.fault }}</span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <table class="table table-condensed">
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            {% for hasProduct in repair.products %}
+                <tr>
+                    <td>{{ hasProduct.product.name }}</td>
+                    <td>{{ hasProduct.quantity }}</td>
+                    <td>{{ hasProduct.product.price ?? 0.00}} €</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div>
+        <table style="width: 30%;float: right;">
+            <tr>
+                <td>Subtotal</td>
+                <td>{{ subtotal }} €</td>
+            </tr>
+            <tr>
+                <td>Labour Price</td>
+                <td>{{ repair.labourPrice ?? 0.00 }} €</td>
+            </tr>
+            <tr>
+                <td>Tax</td>
+                <td>{{ tax }} %</td>
+            </tr>
+            <tr>
+                <td><b>TOTAL</b></td>
+                <td>{{ total }} €</td>
+            </tr>
+        </table>
+    </div>
+</main>
+</body>
+</html>
