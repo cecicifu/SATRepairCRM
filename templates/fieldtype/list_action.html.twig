@@ -1,0 +1,32 @@
+<div class="btn-group">
+    {% if admin.hasAccess('show', object) and admin.hasRoute('show') %}
+        <a
+                href="{{ admin.generateObjectUrl('show', object, actions.link_parameters|default([])) }}"
+                class="btn btn-sm btn-success view_link"
+                title="{{ 'action_show'|trans({}, 'SonataAdminBundle') }}"
+        >
+            <i class="fas fa-eye" aria-hidden="true"></i>
+            {{ 'action_show'|trans({}, 'SonataAdminBundle') }}
+        </a>
+    {% endif %}
+    {% if admin.hasAccess('edit', object) and admin.hasRoute('edit') %}
+        <a
+                href="{{ admin.generateObjectUrl('edit', object, actions.link_parameters|default([])) }}"
+                class="btn btn-sm btn-info edit_link"
+                title="{{ 'action_edit'|trans({}, 'SonataAdminBundle') }}"
+        >
+            <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+            {{ 'action_edit'|trans({}, 'SonataAdminBundle') }}
+        </a>
+    {% endif %}
+    {% if admin.hasAccess('delete', object) and admin.hasRoute('delete') %}
+        <a
+                href="{{ admin.generateObjectUrl('delete', object, actions.link_parameters|default([])) }}"
+                class="btn btn-sm btn-danger delete_link"
+                title="{{ 'action_delete'|trans({}, 'SonataAdminBundle') }}"
+        >
+            <i class="fas fa-times" aria-hidden="true"></i>
+            {{ 'action_delete'|trans({}, 'SonataAdminBundle') }}
+        </a>
+    {% endif %}
+</div>

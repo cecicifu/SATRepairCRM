@@ -89,9 +89,9 @@ final class UserAdmin extends AbstractAdmin
             ])
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
-                    'show' => [],
-                    'edit' => [],
-                    'delete' => [],
+                    'buttons' => [
+                        'template' => 'fieldtype/list_action.html.twig',
+                    ],
                 ],
             ])
         ;

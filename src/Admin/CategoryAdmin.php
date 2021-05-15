@@ -56,9 +56,9 @@ final class CategoryAdmin extends AbstractAdmin
             ->add('description', FieldDescriptionInterface::TYPE_TEXTAREA)
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
-                    'show' => [],
-                    'edit' => [],
-                    'delete' => [],
+                    'buttons' => [
+                        'template' => 'fieldtype/list_action.html.twig',
+                    ],
                 ],
             ])
         ;
