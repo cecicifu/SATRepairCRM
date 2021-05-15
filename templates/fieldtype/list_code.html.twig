@@ -1,7 +1,7 @@
 {% extends '@SonataAdmin/CRUD/base_list_field.html.twig' %}
 
 {% block field %}
-    <div>{{ object.code }}<a href="#" style="margin-left: .2em;" onclick="clipboard(this)" title="Copy to clipboard"><i class="fas fa-clipboard"></i></a></div>
+    <div>{{ object.code }}<a href="#" style="margin-left: .2em;" onclick="clipboard(this)" title="{{ 'Copy to clipboard'|trans }}"><i class="fas fa-clipboard"></i></a></div>
     <script>
         clipboard = (event) => {
             const code = event.parentNode.textContent;

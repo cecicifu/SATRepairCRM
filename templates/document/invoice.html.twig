@@ -21,13 +21,13 @@
     <div>
         <div class="row">
             <div class="col-xs-4">
-                <b>Code:</b>
+                <b>{{ 'Code'|trans }}:</b>
                 <span>{{ repair.code }}</span>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-4">
-                <b>Date:</b>
+                <b>{{ 'Date'|trans }}:</b>
                 <span>{{ repair.created|date("m/d/Y") }}</span>
             </div>
         </div>
@@ -35,7 +35,7 @@
     <div style="margin-top: 10px;">
         <div class="row">
             <div class="col-xs-7">
-                <b>Customer:</b>
+                <b>{{ 'Customer'|trans }}:</b>
                 <span>{{ repair.customer }}</span>
             </div>
         </div>
@@ -43,7 +43,7 @@
     <div style="padding-bottom: 50px;">
         <div class="row">
             <div class="col-xs-12">
-                <b>Fault:</b>
+                <b>{{ 'Fault'|trans }}:</b>
                 <span>{{ repair.fault }}</span>
             </div>
         </div>
@@ -51,9 +51,9 @@
     <div>
         <table class="table table-condensed">
             <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Price</th>
+                <th>{{ 'Product'|trans }}</th>
+                <th>{{ 'Quantity'|trans }}</th>
+                <th>{{ 'Price'|trans }}</th>
             </tr>
             {% for hasProduct in repair.products %}
                 <tr>
@@ -67,19 +67,19 @@
     <div>
         <table style="width: 30%;float: right;">
             <tr>
-                <td>Subtotal</td>
+                <td>{{ 'Subtotal'|trans }}</td>
                 <td>{{ subtotal }} €</td>
             </tr>
             <tr>
-                <td>Labour Price</td>
+                <td>{{ 'Labour Price'|trans }}</td>
                 <td>{{ repair.labourPrice ?? 0.00 }} €</td>
             </tr>
             <tr>
-                <td>Tax</td>
+                <td>{{ 'Tax'|trans }}</td>
                 <td>{{ tax }} %</td>
             </tr>
             <tr>
-                <td><b>TOTAL</b></td>
+                <td><b>{{ 'TOTAL'|trans }}</b></td>
                 <td>{{ total }} €</td>
             </tr>
         </table>

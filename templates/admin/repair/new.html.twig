@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Repair{% endblock %}
+{% block title %}{{ 'New repair'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>Create new Repair</h1>
+    <h1>{{ 'New repair'|trans }}</h1>
 
     {{ include('admin/repair/_form.html.twig') }}
 
-    <a href="{{ path('repair_index') }}">back to list</a>
+    <a href="{{ path('repair_index') }}">{{ 'Back to list'|trans }}</a>
 {% endblock %}

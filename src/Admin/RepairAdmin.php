@@ -100,7 +100,7 @@ final class RepairAdmin extends AbstractAdmin
                 'template' => 'fieldtype/list_status.html.twig',
             ])
             ->add('created')
-            ->add('Documents', 'actions', [
+            ->add('documents', 'actions', [
                 'actions' => [
                     'document' => [
                         'template' => 'document/list_action.html.twig',
@@ -120,8 +120,8 @@ final class RepairAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form): void
     {
         $form
-            ->tab('Repair')
-                ->with('Metadata', ['class' => 'col-md-3'])
+            ->tab('repair')
+                ->with('metadata', ['class' => 'col-md-3'])
                     ->add('id', null, [
                         'disabled' => true,
                     ])
@@ -150,7 +150,7 @@ final class RepairAdmin extends AbstractAdmin
                         'required' => false,
                     ])
                 ->end()
-                ->with('Info', ['class' => 'col-md-9'])
+                ->with('info', ['class' => 'col-md-9'])
                     ->add('fault', TextareaType::class)
                     ->add('imei', IntegerType::class, [
                         'required' => false,
@@ -169,7 +169,7 @@ final class RepairAdmin extends AbstractAdmin
                     ])
                 ->end()
             ->end()
-            ->tab('Extra')
+            ->tab('extra')
                 ->with('', ['class' => 'col-md-12'])
                     ->add('labourPrice', MoneyType::class, [
                         'required' => false,

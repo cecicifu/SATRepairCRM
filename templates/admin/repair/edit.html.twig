@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Repair{% endblock %}
+{% block title %}{{ 'Edit repair'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>Edit Repair</h1>
+    <h1>{{ 'Edit repair'|trans }}</h1>
 
-    {{ include('admin/repair/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin/repair/_form.html.twig', {'button_label': {{ 'Update'|trans }}}) }}
 
-    <a href="{{ path('repair_index') }}">back to list</a>
+    <a href="{{ path('repair_index') }}">{{ 'Back to list'|trans }}</a>
 
     {{ include('admin/repair/_delete_form.html.twig') }}
 {% endblock %}

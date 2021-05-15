@@ -1,26 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Repair{% endblock %}
+{% block title %}{{ 'Repair'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>Repair</h1>
+    <h1>{{ 'Repair'|trans }}</h1>
 
     <table class="table">
         <tbody>
         <tr>
-            <th>Id</th>
+            <th>{{ 'Id'|trans }}</th>
             <td>{{ repair.id }}</td>
         </tr>
         <tr>
-            <th>Fault</th>
+            <th>{{ 'Fault'|trans }}</th>
             <td>{{ repair.fault }}</td>
         </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('repair_index') }}">back to list</a>
+    <a href="{{ path('repair_index') }}">{{ 'Back to list'|trans }}</a>
 
-    <a href="{{ path('repair_edit', {'id': repair.id}) }}">edit</a>
+    <a href="{{ path('repair_edit', {'id': repair.id}) }}">{{ 'Edit'|trans }}</a>
 
     {{ include('admin/repair/_delete_form.html.twig') }}
 {% endblock %}

@@ -1,46 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}{{ 'User'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
+    <h1>{{ 'User'|trans }}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{{ 'Id'|trans }}</th>
                 <td>{{ user.id }}</td>
             </tr>
             <tr>
-                <th>Username</th>
+                <th>{{ 'Username'|trans }}</th>
                 <td>{{ user.username }}</td>
             </tr>
             <tr>
-                <th>Email</th>
+                <th>{{ 'Email'|trans }}</th>
                 <td>{{ user.email }}</td>
             </tr>
             <tr>
-                <th>Password</th>
+                <th>{{ 'Password'|trans }}</th>
                 <td>{{ user.password }}</td>
             </tr>
             <tr>
-                <th>LastSession</th>
+                <th>{{ 'LastSession'|trans }}</th>
                 <td>{{ user.lastSession ? user.lastSession|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Modified</th>
+                <th>{{ 'Modified'|trans }}</th>
                 <td>{{ user.modified ? user.modified|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Created</th>
+                <th>{{ 'Created'|trans }}</th>
                 <td>{{ user.created ? user.created|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('user_index') }}">back to list</a>
+    <a href="{{ path('user_index') }}">{{ 'Back to list'|trans }}</a>
 
-    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+    <a href="{{ path('user_edit', {'id': user.id}) }}">{{ 'Edit'|trans }}</a>
 
     {{ include('admin/user/_delete_form.html.twig') }}
 {% endblock %}

@@ -21,13 +21,13 @@
         <div>
             <div class="row">
                 <div class="col-xs-4">
-                    <b>Code:</b>
+                    <b>{{ 'Code'|trans }}:</b>
                     <span>{{ repair.code }}</span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-4">
-                    <b>Date:</b>
+                    <b>{{ 'Date'|trans }}:</b>
                     <span>{{ repair.created|date("m/d/Y") }}</span>
                 </div>
             </div>
@@ -35,27 +35,27 @@
         <div style="margin-top: 10px;">
             <div class="row">
                 <div class="col-xs-7">
-                    <b>Customer:</b>
+                    <b>{{ 'Customer'|trans }}:</b>
                     <span>{{ repair.customer }}</span>
                 </div>
                 <div class="col-xs-5">
-                    <b>Phone:</b>
+                    <b>{{ 'Phone'|trans }}:</b>
                     <span>{{ repair.customer.phone }}</span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <b>Category:</b>
+                    <b>{{ 'Category'|trans }}:</b>
                     <span>{{ repair.category }}</span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-7">
-                    <b>Colour:</b>
+                    <b>{{ 'Colour'|trans }}:</b>
                     <span>{{ repair.colour }}</span>
                 </div>
                 <div class="col-xs-5">
-                    <b>IMEI:</b>
+                    <b>{{ 'IMEI'|trans }}:</b>
                     <span>{{ repair.imei }}</span>
                 </div>
             </div>
@@ -63,13 +63,13 @@
         <div style="margin-top: 10px;padding-bottom: 100px;border-bottom: 1px solid #AAAAAA;">
             <div class="row">
                 <div class="col-xs-12">
-                    <b>Fault:</b>
+                    <b>{{ 'Fault'|trans }}:</b>
                     <span>{{ repair.fault }}</span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <b>Pattern:</b>
+                    <b>{{ 'Pattern'|trans }}:</b>
                     <span>{{ repair.pattern }}</span>
                 </div>
             </div>
@@ -78,23 +78,23 @@
             <div class="row">
                 <div class="col-xs-12">
                     <small>
-                        Attended by:
+                        {{ 'Attended by'|trans }}:
                     </small>
                 </div>
             </div>
             <div class="row" style="padding-top: 80px;margin-bottom: 10px;">
                 <div class="col-xs-12 text-right">
-                    Customer sign:_______________
+                    {{ 'Customer sign'|trans }}:_______________
                 </div>
             </div>
         </div>
         <div>
             <div class="row">
                 <div class="col-xs-12">
-                    <small><p>The warranty period for repairs will be <b>6 months</b>.</p></small>
+                    <small><p>{{ 'The warranty period for repairs will be'|trans }} <b>{{ '6 months'|trans }}</b>.</p></small>
                 </div>
                 <div class="col-xs-12" style="margin-top: 20px;">
-                    <small><p>Failures caused by malware, viruses or other malicious software are exempt from warranty.</p></small>
+                    <small><p>{{ 'Failures caused by malware, viruses or other malicious software are exempt from warranty'|trans }}.</p></small>
                 </div>
             </div>
         </div>
