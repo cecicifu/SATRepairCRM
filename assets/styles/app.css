@@ -8,6 +8,18 @@ header.main-header > a.logo > img {
 .input-group .input-group-addon {
     width: 1%;
 }
+.table-bordered,
+.table-bordered>tbody>tr>td,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>td,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th,
+td.sonata-ba-list-field.sonata-ba-list-field-currency,
+td.sonata-ba-list-field.sonata-ba-list-field-integer,
+td.sonata-ba-list-field.sonata-ba-list-field-percent {
+    text-align: center;
+}
 /* PDF */
 img.logo {
     filter: brightness(1.1);
