@@ -6,6 +6,14 @@
   "build/runtime.js": "/build/runtime.js",
   "build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_objec-cc1af2.js": "/build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_objec-cc1af2.js",
   "build/images/favicon.ico": "/build/images/favicon.ico",
-  "build/images/favicon.png": "/build/images/favicon.png",
-  "build/images/logo.png": "/build/images/logo.png"
+  "build/images/favicon-inv.ico": "/build/images/favicon-inv.ico",
+  "build/images/logo-slogan.png": "/build/images/logo-slogan.png",
+  "build/images/logo-text.png": "/build/images/logo-text.png",
+  "build/images/logo-front.png": "/build/images/logo-front.png",
+  "build/images/logo-front-slogan.png": "/build/images/logo-front-slogan.png",
+  "build/images/logo.png": "/build/images/logo.png",
+  "build/images/icon-inv.png": "/build/images/icon-inv.png",
+  "build/images/icon.png": "/build/images/icon.png",
+  "build/images/logo-front-slogan-rec.png": "/build/images/logo-front-slogan-rec.png",
+  "build/images/logo-rec.png": "/build/images/logo-rec.png"
 }

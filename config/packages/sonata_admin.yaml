@@ -1,6 +1,6 @@
 sonata_admin:
     title: false
-    title_logo: build/images/logo.png
+    title_logo: build/images/logo-rec.png
     show_mosaic_button: false
     assets:
         extra_stylesheets:
