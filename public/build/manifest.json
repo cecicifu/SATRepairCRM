@@ -1,0 +1,11 @@
+{
+  "build/app.css": "/build/app.css",
+  "build/app.js": "/build/app.js",
+  "build/tracker.css": "/build/tracker.css",
+  "build/tracker.js": "/build/tracker.js",
+  "build/runtime.js": "/build/runtime.js",
+  "build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_objec-cc1af2.js": "/build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_objec-cc1af2.js",
+  "build/images/favicon.ico": "/build/images/favicon.ico",
+  "build/images/favicon.png": "/build/images/favicon.png",
+  "build/images/logo.png": "/build/images/logo.png"
+}
