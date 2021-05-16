@@ -1,6 +1,15 @@
+/* LOGIN LOGO */
+div.login-box > div.login-logo > img {
+    width: 100%;
+}
 /* ADMIN LOGO */
 header.main-header > a.logo > img {
     max-width: 100%;
+}
+/* DOCUMENT LOGO */
+div.document-logo > img {
+    margin-bottom: 50px;
+    width:100%;
 }
 /* FIX WIDTH INPUTS */
 .input-group .input-group-addon {
@@ -17,9 +26,4 @@ td.sonata-ba-list-field.sonata-ba-list-field-currency,
 td.sonata-ba-list-field.sonata-ba-list-field-integer,
 td.sonata-ba-list-field.sonata-ba-list-field-percent {
     text-align: center;
-}
-/* PDF */
-img.logo {
-    filter: brightness(1.1);
-    mix-blend-mode: multiply;
 }

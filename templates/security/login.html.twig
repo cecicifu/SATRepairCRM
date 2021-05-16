@@ -1,4 +1,4 @@
-{% extends '@SonataAdmin/standard_layout.html.twig' %}
+{% extends 'standard_layout.html.twig' %}
 
 {% block sonata_nav %}
 {% endblock sonata_nav %}
@@ -14,9 +14,7 @@
 {% block sonata_wrapper %}
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ path('sonata_admin_dashboard') }}">
-                <span>{{ 'Login'|trans }}</span>
-            </a>
+            <img src="{{ asset('build/images/logo-rec.png') }}" alt="SATRepairCRM Logo">
         </div>
         <div class="login-box-body">
             {% block sonata_user_login_form %}
