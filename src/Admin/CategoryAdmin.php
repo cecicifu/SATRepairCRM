@@ -43,7 +43,9 @@ final class CategoryAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $filter): void
     {
         $filter
-            ->add('name')
+            ->add('name', null, [
+                'global_search' => true,
+            ])
             ->add('description')
             ->add('created')
         ;

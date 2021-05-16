@@ -72,8 +72,12 @@ final class UserAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $filter): void
     {
         $filter
-            ->add('username')
-            ->add('email')
+            ->add('username', null, [
+                'global_search' => true,
+            ])
+            ->add('email', null, [
+                'global_search' => true,
+            ])
             ->add('lastSession')
             ->add('created')
         ;

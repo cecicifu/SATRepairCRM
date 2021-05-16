@@ -75,14 +75,24 @@ final class RepairAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $filter): void
     {
         $filter
-            ->add('code')
+            ->add('code', null, [
+                'global_search' => true,
+            ])
             ->add('customer')
             ->add('category')
             ->add('status')
-            ->add('imei')
-            ->add('pattern')
-            ->add('fault')
-            ->add('colour')
+            ->add('imei', null, [
+                'global_search' => true,
+            ])
+            ->add('pattern', null, [
+                'global_search' => true,
+            ])
+            ->add('fault', null, [
+                'global_search' => true,
+            ])
+            ->add('colour', null, [
+                'global_search' => true,
+            ])
             ->add('created')
         ;
     }

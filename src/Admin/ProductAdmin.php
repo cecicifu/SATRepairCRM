@@ -44,7 +44,9 @@ final class ProductAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $filter): void
     {
         $filter
-            ->add('name')
+            ->add('name', null, [
+                'global_search' => true,
+            ])
             ->add('amount')
             ->add('price')
             ->add('created')

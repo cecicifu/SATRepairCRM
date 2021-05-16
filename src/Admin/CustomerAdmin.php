@@ -44,12 +44,24 @@ final class CustomerAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $filter): void
     {
         $filter
-            ->add('fullname')
-            ->add('address')
-            ->add('city')
-            ->add('email')
-            ->add('zipCode')
-            ->add('phone')
+            ->add('fullname', null, [
+                'global_search' => true,
+            ])
+            ->add('address', null, [
+                'global_search' => true,
+            ])
+            ->add('city', null, [
+                'global_search' => true,
+            ])
+            ->add('email', null, [
+                'global_search' => true,
+            ])
+            ->add('zipCode', null, [
+                'global_search' => true,
+            ])
+            ->add('phone', null, [
+                'global_search' => true,
+            ])
             ->add('created')
         ;
     }
