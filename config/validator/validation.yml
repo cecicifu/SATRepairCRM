@@ -30,6 +30,9 @@ App\Entity\Repair:
       - Length:
           min: 17
           max: 17
+    pattern:
+      - Length:
+          max: 30
     fault:
       - NotBlank: ~
       - NotNull: ~
@@ -49,16 +52,26 @@ App\Entity\Category:
     name:
       - NotBlank: ~
       - NotNull: ~
+      - Length:
+          max: 30
 
 App\Entity\Customer:
   properties:
     fullname:
       - NotBlank: ~
       - NotNull: ~
+      - Length:
+          max: 50
+    address:
+      - Length:
+          max: 100
+    city:
+      - Length:
+          max: 30
     email:
       - Email: ~
       - Length:
-          max: 70
+          max: 50
     zipCode:
       - Type: integer
       - Length:
@@ -77,6 +90,8 @@ App\Entity\Product:
     name:
       - NotBlank: ~
       - NotNull: ~
+      - Length:
+          max: 30
     amount:
       - Type: integer
     price:
@@ -94,6 +109,8 @@ App\Entity\Status:
     name:
       - NotBlank: ~
       - NotNull: ~
+      - Length:
+          max: 30
     colour:
       - Length:
           min: 7
@@ -106,8 +123,12 @@ App\Entity\User:
     username:
       - NotBlank: ~
       - NotNull: ~
+      - Length:
+          max: 30
     email:
       - Email: ~
+      - Length:
+          max: 50
     password:
       - NotBlank: ~
       - NotNull: ~
