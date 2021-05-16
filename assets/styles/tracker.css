@@ -40,6 +40,7 @@ body {
     background-color: #3c8dbc;
     cursor: pointer;
     color: #FFFFFF;
+    border-radius: 3px;
 }
 .tracker__block .tracker__form .btn:hover,
 .tracker__block .tracker__form .btn:active {
