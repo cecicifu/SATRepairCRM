@@ -4,7 +4,7 @@
     <id name="id" type="uuid" column="id"/>
     <field name="code" column="code" length="13" unique="true"/>
     <field name="imei" type="integer" column="imei" length="17" nullable="true"/>
-    <field name="pattern" type="text" column="pattern" nullable="true"/>
+    <field name="pattern" length="30" column="pattern" nullable="true"/>
     <field name="fault" type="text" column="fault"/>
     <field name="colour" column="colour" length="7" nullable="true"/>
     <field name="privateComment" type="text" column="private_comment" nullable="true"/>

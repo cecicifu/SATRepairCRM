@@ -2,10 +2,10 @@
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
   <entity repository-class="App\Repository\CustomerRepository" name="App\Entity\Customer" table="customer">
     <id name="id" type="uuid" column="id"/>
-    <field name="fullname" type="text" column="fullname"/>
-    <field name="address" type="text" column="address" nullable="true"/>
-    <field name="city" type="text" column="city" nullable="true"/>
-    <field name="email" type="text" column="email" nullable="true"/>
+    <field name="fullname" length="50" column="fullname"/>
+    <field name="address" length="100" column="address" nullable="true"/>
+    <field name="city" length="30" column="city" nullable="true"/>
+    <field name="email" length="50" column="email" nullable="true"/>
     <field name="zipCode" type="integer" column="zip_code" length="5" nullable="true"/>
     <field name="phone" type="integer" column="phone" length="9"/>
     <field name="modified" type="datetime" column="modified" nullable="true"/>
