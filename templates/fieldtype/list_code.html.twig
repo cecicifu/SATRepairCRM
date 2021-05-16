@@ -20,7 +20,7 @@
         }
         clipboard = (event) => {
             const code = event.parentNode.textContent;
-            if (navigator.clipboard) {
+            if (!navigator.clipboard) {
                 fallbackClipboard(code);
                 return;
             }
