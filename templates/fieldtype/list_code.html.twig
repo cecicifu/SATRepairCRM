@@ -3,10 +3,25 @@
 {% block field %}
     <div>{{ object.code }}<a href="#" style="margin-left: .2em;" onclick="clipboard(this)" title="{{ 'Copy to clipboard'|trans }}"><i class="fas fa-clipboard"></i></a></div>
     <script>
+        fallbackClipboard = (code) => {
+            const textArea = document.createElement("textarea");
+            textArea.value = code;
+
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+        }
         clipboard = (event) => {
             const code = event.parentNode.textContent;
-            if (!navigator.clipboard) {
-                console.log("Not supported!");
+            if (navigator.clipboard) {
+                fallbackClipboard(code);
                 return;
             }
             navigator.clipboard.writeText(code);
