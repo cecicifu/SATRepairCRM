@@ -53,13 +53,15 @@
             <tr>
                 <th>{{ 'Product'|trans }}</th>
                 <th>{{ 'Quantity'|trans }}</th>
-                <th>{{ 'Price'|trans }}</th>
+                <th>{{ 'Price (unit)'|trans }}</th>
+                <th>{{ 'Total'|trans }}</th>
             </tr>
             {% for hasProduct in repair.products %}
                 <tr>
                     <td>{{ hasProduct.product.name }}</td>
                     <td>{{ hasProduct.quantity }}</td>
-                    <td>{{ hasProduct.product.price ?? 0.00}} €</td>
+                    <td>{{ (hasProduct.product.price ?? 0.00)|number_format(2) }} €</td>
+                    <td>{{ ((hasProduct.product.price ?? 0.00) * hasProduct.quantity)|number_format(2) }} €</td>
                 </tr>
             {% endfor %}
         </table>
@@ -68,11 +70,11 @@
         <table style="width: 30%;float: right;">
             <tr>
                 <td>{{ 'Subtotal'|trans }}</td>
-                <td>{{ subtotal }} €</td>
+                <td>{{ subtotal|number_format(2) }} €</td>
             </tr>
             <tr>
                 <td>{{ 'Labour Price'|trans }}</td>
-                <td>{{ repair.labourPrice ?? 0.00 }} €</td>
+                <td>{{ (repair.labourPrice ?? 0.00)|number_format(2) }} €</td>
             </tr>
             <tr>
                 <td>{{ 'Tax'|trans }}</td>
@@ -80,7 +82,7 @@
             </tr>
             <tr>
                 <td><b>{{ 'TOTAL'|trans }}</b></td>
-                <td>{{ total }} €</td>
+                <td>{{ total|number_format(2) }} €</td>
             </tr>
         </table>
     </div>
