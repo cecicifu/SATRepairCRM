@@ -11,7 +11,7 @@ body {
     justify-content: center;
 }
 .tracker__block img {
-    width: 100%;
+    width: 50%;
 }
 .tracker__block .tracker__form {
     display: flex;
