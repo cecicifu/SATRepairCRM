@@ -27,3 +27,10 @@ td.sonata-ba-list-field.sonata-ba-list-field-integer,
 td.sonata-ba-list-field.sonata-ba-list-field-percent {
     text-align: center;
 }
+table.table-products {
+    width: 20%;
+    min-width: 250px;
+}
+table.table-products i {
+    margin-right: .4em;
+}

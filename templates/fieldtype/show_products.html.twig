@@ -1,0 +1,16 @@
+{% extends '@SonataAdmin/CRUD/base_show_field.html.twig' %}
+
+{% block field %}
+    <table class="table table-products">
+        <thead>
+            <th><i class="fas fa-box"></i>{{ 'Product'|trans }}</th>
+            <th><i class="fas fa-boxes"></i>{{ 'Quantity'|trans }}</th>
+        </thead>
+        {% for hasProduct in object.products %}
+            <tr>
+                <td>{{ hasProduct.product.name }}</td>
+                <td>{{ hasProduct.quantity }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

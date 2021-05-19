@@ -227,7 +227,9 @@ final class RepairAdmin extends AbstractAdmin
                 'currency' => '€',
             ])
             ->add('tax', FieldDescriptionInterface::TYPE_PERCENT)
-            ->add('products', FieldDescriptionInterface::TYPE_ONE_TO_MANY)
+            ->add('products', FieldDescriptionInterface::TYPE_ONE_TO_MANY, [
+                'template' => 'fieldtype/show_products.html.twig',
+            ])
             ->add('modified', FieldDescriptionInterface::TYPE_DATETIME, [
                 'timezone' => 'Europe/Madrid',
             ])
