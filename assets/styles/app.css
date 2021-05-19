@@ -34,3 +34,15 @@ table.table-products {
 table.table-products i {
     margin-right: .4em;
 }
+/* LOGO */
+@media (max-width: 767px) {
+    .skin-black .main-header .logo {
+        background-color: #ffffff;
+    }
+    .skin-black .main-header .logo:hover {
+        background-color: #fcfcfc;
+    }
+}
+.logo img+span {
+    display: none;
+}
