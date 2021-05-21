@@ -12,8 +12,8 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 class BatchRepairHideCommand extends Command
 {
-    protected static string $defaultName = 'batch:repair:hide';
-    protected static string $defaultDescription = 'Add a short description for your command';
+    protected static $defaultName = 'batch:repair:hide';
+    protected static $defaultDescription = 'Add a short description for your command';
 
     private RepairService $repairService;
     private EntityManagerInterface $entityManager;
