@@ -2,6 +2,7 @@
 
 namespace App\Validator\Quantity;
 
+use App\Entity\RepairHasProducts;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
@@ -15,10 +16,11 @@ class QuantityLessThanAmountValidator extends ConstraintValidator
             return;
         }
 
-        foreach ($value as $product) {
-            if($product->getQuantity() > $product->getProduct()->getAmount()) {
+		/* @var RepairHasProducts $hasProduct */
+        foreach ($value as $hasProduct) {
+            if($hasProduct->getQuantity() > $hasProduct->getProduct()->getAmount()) {
                 $this->context->buildViolation($constraint->message)
-                    ->setParameter('{{ value }}', $product->getProduct()->getName())
+                    ->setParameter('{{ value }}', $hasProduct->getProduct()->getName())
                     ->addViolation();
             }
         }

@@ -2,6 +2,7 @@
 
 namespace App\Validator\Quantity;
 
+use App\Entity\RepairHasProducts;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
@@ -15,10 +16,11 @@ class QuantityPositiveValidator extends ConstraintValidator
             return;
         }
 
-        foreach ($value as $product) {
-            if($product->getQuantity() < 0) {
+		/* @var RepairHasProducts $hasProduct */
+        foreach ($value as $hasProduct) {
+            if($hasProduct->getQuantity() < 0) {
                 $this->context->buildViolation($constraint->message)
-                    ->setParameter('{{ value }}', $product->getProduct()->getName())
+                    ->setParameter('{{ value }}', $hasProduct->getProduct()->getName())
                     ->addViolation();
             }
         }

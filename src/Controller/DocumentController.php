@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Repair;
+use App\Entity\RepairHasProducts;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -49,6 +50,8 @@ class DocumentController extends AbstractController
     {
         $subtotal = 0;
         if(!$repair->getProducts()->isEmpty()) {
+
+			/* @var RepairHasProducts $product */
             foreach ($repair->getProducts() as $product) {
                 $subtotal += $product->getProduct()->getPrice() * $product->getQuantity();
             }

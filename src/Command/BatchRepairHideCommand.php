@@ -2,6 +2,7 @@
 
 namespace App\Command;
 
+use App\Entity\Repair;
 use App\Service\RepairService;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
@@ -36,7 +37,9 @@ class BatchRepairHideCommand extends Command
 
         $repairs = $this->repairService->findAll();
         $totalRepairs = 0;
-        foreach ($repairs as $repair) {
+
+		/* @var Repair $repair */
+		foreach ($repairs as $repair) {
             $interval = $repair->getCreated()->diff(new DateTime('now'));
             $days = (int) $interval->format("%a");
 
