@@ -13,7 +13,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 class BatchRepairHideCommand extends Command
 {
     protected static $defaultName = 'batch:repair:hide';
-    protected static $defaultDescription = 'Add a short description for your command';
+    protected static $defaultDescription = 'Hide repairs where the created date is greater than 90 days';
 
     private RepairService $repairService;
     private EntityManagerInterface $entityManager;
