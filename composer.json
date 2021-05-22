@@ -52,13 +52,13 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
-        "fzaninotto/faker": "^1.9",
-        "roave/security-advisories": "dev-latest",
         "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "fakerphp/faker": "^1.14",
         "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^0.12.85",
         "phpstan/phpstan-doctrine": "^0.12.33",
         "phpstan/phpstan-symfony": "^0.12.28",
-        "phpstan/phpstan": "^0.12.85",
+        "roave/security-advisories": "dev-latest",
         "symfony/browser-kit": "^5.2",
         "symfony/css-selector": "^5.2",
         "symfony/debug-bundle": "^5.2",
