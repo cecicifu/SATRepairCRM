@@ -12,9 +12,9 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-class BatchRepairHideCommand extends Command
+class BatchRepairsExpireCommand extends Command
 {
-    protected static $defaultName = 'batch:repair:hide';
+    protected static $defaultName = 'batch:repairs:expire';
     protected static $defaultDescription = 'Hide repairs where the created date is greater than specified days';
 
     private RepairService $repairService;
