@@ -2,7 +2,6 @@
 
 namespace App\Service;
 
-use App\Entity\RepairHasProducts;
 use App\Repository\RepairRepository;
 use App\Entity\Repair;
 use Doctrine\Common\Collections\Collection;
@@ -40,7 +39,6 @@ class RepairService
 
     public function updateRepairProductAmount(Repair $repair): void
     {
-		/* @var RepairHasProducts $productToAdd */
         foreach ($repair->getProducts() as $productToAdd) {
             $product = $productToAdd->getProduct();
 

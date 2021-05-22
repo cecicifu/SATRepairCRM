@@ -77,6 +77,7 @@ class Repair
         return $this;
     }
 
+	/** @return Collection|RepairHasProducts[] */
     public function getProducts(): Collection
     {
         return $this->products;

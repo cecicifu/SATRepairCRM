@@ -102,7 +102,7 @@
             "@auto-scripts"
         ],
         "stan": [
-            "vendor/bin/phpstan analyse --ansi --no-interaction"
+            "vendor/bin/phpstan analyse --ansi --no-interaction -l 5"
         ]
     },
     "conflict": {

@@ -5,12 +5,15 @@ namespace App\Validator\Quantity;
 use App\Entity\RepairHasProducts;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
+use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 class QuantityNonZeroValidator extends ConstraintValidator
 {
     public function validate($value, Constraint $constraint): void
     {
-        /* @var $constraint QuantityNonZero */
+		if (!$constraint instanceof QuantityNonZero) {
+			throw new UnexpectedTypeException($constraint, QuantityNonZero::class);
+		}
 
         if (null === $value || '' === $value) {
             return;
