@@ -2,6 +2,9 @@
 div.login-box > div.login-logo > img {
     width: 100%;
 }
+.row.remember_me {
+    margin-top: 15px;
+}
 /* ADMIN LOGO */
 header.main-header > a.logo > img {
     max-width: 100%;
