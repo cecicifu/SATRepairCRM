@@ -31,6 +31,7 @@ class AppFixtures extends Fixture
         $user = new User(Uuid::uuid4());
         $user->setUsername('admin');
         $user->setEmail('admin@admin.com');
+        $user->setRoles(['ROLE_SUPER_ADMIN']);
         $user->setPassword(
             $this->passwordEncoder->encodePassword(
                 $user,
