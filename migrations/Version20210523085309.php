@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210516124701 extends AbstractMigration
+final class Version20210523085309 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -26,7 +26,7 @@ final class Version20210516124701 extends AbstractMigration
         $this->addSql('CREATE TABLE repair (id CHAR(36) NOT NULL COMMENT \'(DC2Type:uuid)\', customer_id CHAR(36) DEFAULT NULL COMMENT \'(DC2Type:uuid)\', category_id CHAR(36) DEFAULT NULL COMMENT \'(DC2Type:uuid)\', status_id CHAR(36) DEFAULT NULL COMMENT \'(DC2Type:uuid)\', code VARCHAR(13) NOT NULL, imei INT DEFAULT NULL, pattern VARCHAR(30) DEFAULT NULL, fault LONGTEXT NOT NULL, colour VARCHAR(7) DEFAULT NULL, private_comment LONGTEXT DEFAULT NULL, public_comment LONGTEXT DEFAULT NULL, labour_price DOUBLE PRECISION DEFAULT NULL, tax DOUBLE PRECISION DEFAULT NULL, visible TINYINT(1) NOT NULL, modified DATETIME DEFAULT NULL, created DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', UNIQUE INDEX UNIQ_8EE4342177153098 (code), INDEX IDX_8EE434219395C3F3 (customer_id), INDEX IDX_8EE4342112469DE2 (category_id), INDEX IDX_8EE434216BF700BD (status_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE repair_products (id CHAR(36) NOT NULL COMMENT \'(DC2Type:uuid)\', repair CHAR(36) NOT NULL COMMENT \'(DC2Type:uuid)\', product CHAR(36) NOT NULL COMMENT \'(DC2Type:uuid)\', quantity INT NOT NULL, created DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', INDEX IDX_DA2223F18EE43421 (repair), INDEX IDX_DA2223F1D34A04AD (product), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE status (id CHAR(36) NOT NULL COMMENT \'(DC2Type:uuid)\', name VARCHAR(30) NOT NULL, colour VARCHAR(7) DEFAULT NULL, modified DATETIME DEFAULT NULL, created DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', UNIQUE INDEX UNIQ_7B00651C5E237E06 (name), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE user (id CHAR(36) NOT NULL COMMENT \'(DC2Type:uuid)\', username VARCHAR(30) NOT NULL, email VARCHAR(50) DEFAULT NULL, password LONGTEXT NOT NULL, last_session DATETIME DEFAULT NULL, modified DATETIME DEFAULT NULL, created DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', UNIQUE INDEX UNIQ_8D93D649F85E0677 (username), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE user (id CHAR(36) NOT NULL COMMENT \'(DC2Type:uuid)\', username VARCHAR(30) NOT NULL, email VARCHAR(50) DEFAULT NULL, password LONGTEXT NOT NULL, roles JSON NOT NULL, last_session DATETIME DEFAULT NULL, modified DATETIME DEFAULT NULL, created DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', UNIQUE INDEX UNIQ_8D93D649F85E0677 (username), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE repair ADD CONSTRAINT FK_8EE434219395C3F3 FOREIGN KEY (customer_id) REFERENCES customer (id)');
         $this->addSql('ALTER TABLE repair ADD CONSTRAINT FK_8EE4342112469DE2 FOREIGN KEY (category_id) REFERENCES category (id)');
         $this->addSql('ALTER TABLE repair ADD CONSTRAINT FK_8EE434216BF700BD FOREIGN KEY (status_id) REFERENCES status (id)');

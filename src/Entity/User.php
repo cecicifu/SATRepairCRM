@@ -13,6 +13,7 @@ class User implements UserInterface
     private string $username;
     private ?string $email;
     private string $password;
+    private array $roles;
     private ?DateTimeInterface $lastSession;
     private ?DateTimeInterface $modified;
     private DateTimeImmutable $created;
@@ -20,6 +21,7 @@ class User implements UserInterface
     public function __construct(UuidInterface $uuid)
     {
         $this->id = $uuid;
+		$this->roles[] = 'ROLE_ADMIN';
     }
 
     public function getId(): UuidInterface
@@ -63,6 +65,18 @@ class User implements UserInterface
         return $this;
     }
 
+	public function getRoles(): array
+	{
+		return array_unique($this->roles);
+	}
+
+	public function setRoles(array $roles): self
+	{
+		$this->roles = $roles;
+
+		return $this;
+	}
+
     public function getLastSession(): ?DateTimeInterface
     {
         return $this->lastSession;
@@ -102,11 +116,6 @@ class User implements UserInterface
     public function __toString()
     {
         return $this->username;
-    }
-
-    public function getRoles(): array
-    {
-        return ['ROLE_ADMIN'];
     }
 
     public function getSalt(): ?string

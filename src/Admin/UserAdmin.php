@@ -88,6 +88,9 @@ final class UserAdmin extends AbstractAdmin
         $list
             ->add('username')
             ->add('email', FieldDescriptionInterface::TYPE_EMAIL)
+			->add('roles', FieldDescriptionInterface::TYPE_ARRAY, [
+				'display' => 'values',
+			])
             ->add('lastSession', FieldDescriptionInterface::TYPE_DATETIME, [
                 'timezone' => 'Europe/Madrid',
             ])
@@ -128,6 +131,9 @@ final class UserAdmin extends AbstractAdmin
             ->add('id')
             ->add('username')
             ->add('email', FieldDescriptionInterface::TYPE_EMAIL)
+			->add('roles', FieldDescriptionInterface::TYPE_ARRAY, [
+				'display' => 'values',
+			])
             ->add('lastSession', FieldDescriptionInterface::TYPE_DATETIME, [
                 'timezone' => 'Europe/Madrid',
             ])
