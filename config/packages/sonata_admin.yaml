@@ -59,6 +59,7 @@ sonata_admin:
                 icon: '<i class="fas fa-user"></i>'
                 items:
                     - admin.user
+                roles: [ROLE_SUPER_ADMIN]
             logout: ~
 
 sonata_block:

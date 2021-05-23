@@ -44,14 +44,34 @@ class UsersCreateCommand extends Command
 				);
 			}
 
+			if (!$username) {
+				throw new RuntimeException(
+					'Username cant be null.'
+				);
+			}
+
 			return $username;
 		});
 
-		$password = $io->askHidden("Password");
+		$email = $io->ask("Email");
+
+		$roles[] = $io->choice('Role', ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN'], 'ROLE_ADMIN');
+
+		$password = $io->askHidden("Password", function ($password) {
+			if (!$password) {
+				throw new RuntimeException(
+					'Password cant be null.'
+				);
+			}
+
+			return $password;
+		});
 
 		$user = new User(Uuid::uuid4());
 		$user->setCreated(new DateTimeImmutable('now'));
 		$user->setUsername($username);
+		$user->setEmail($email);
+		$user->setRoles($roles);
 		$user->setPassword(
 			$this->passwordEncoder->encodePassword(
 				$user,
