@@ -14,8 +14,8 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 class BatchRepairsExpireCommand extends Command
 {
-    protected static $defaultName = 'batch:repairs:expire';
-    protected static $defaultDescription = 'Hide repairs expired where the created date is greater than specified days';
+	private string $name = 'batch:repairs:expire';
+	private string $description = 'Hide repairs expired where the created date is greater than specified days';
 
     private RepairService $repairService;
     private EntityManagerInterface $entityManager;
@@ -30,7 +30,8 @@ class BatchRepairsExpireCommand extends Command
     protected function configure(): void
     {
         $this
-			->setDescription(self::$defaultDescription)
+			->setName($this->name)
+			->setDescription($this->description)
 			->addOption('days', null, InputOption::VALUE_REQUIRED, 'Number of days')
 		;
     }

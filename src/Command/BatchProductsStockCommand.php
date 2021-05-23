@@ -11,8 +11,8 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 class BatchProductsStockCommand extends Command
 {
-    protected static $defaultName = 'batch:products:stock';
-    protected static $defaultDescription = 'Check product stock';
+    private string $name = 'batch:products:stock';
+    private string $description = 'Check product stock';
 
 	private EntityManagerInterface $entityManager;
 
@@ -24,7 +24,10 @@ class BatchProductsStockCommand extends Command
 
 	protected function configure(): void
     {
-        $this->setDescription(self::$defaultDescription);
+        $this
+			->setName($this->name)
+			->setDescription($this->description)
+		;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
