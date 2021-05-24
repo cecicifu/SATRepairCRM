@@ -103,7 +103,7 @@
             "@auto-scripts"
         ],
         "stan": [
-            "vendor/bin/phpstan analyse --ansi --no-interaction"
+            "vendor/bin/phpstan analyse --ansi --no-interaction --level 6 src"
         ],
         "csfixer": [
             "vendor/bin/php-cs-fixer fix src"
