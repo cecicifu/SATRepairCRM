@@ -54,6 +54,7 @@
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.4",
         "fakerphp/faker": "^1.14",
+        "friendsofphp/php-cs-fixer": "^3.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^0.12.85",
         "phpstan/phpstan-doctrine": "^0.12.33",
@@ -102,7 +103,10 @@
             "@auto-scripts"
         ],
         "stan": [
-            "vendor/bin/phpstan analyse --ansi --no-interaction -l 5"
+            "vendor/bin/phpstan analyse --ansi --no-interaction"
+        ],
+        "csfixer": [
+            "vendor/bin/php-cs-fixer fix src"
         ]
     },
     "conflict": {
