@@ -40,6 +40,7 @@ final class UserAdmin extends AbstractAdmin
      */
     protected function prePersist(object $object): void
     {
+		$object->setModified(new DateTime('now'));
         $object->setCreated(new DateTimeImmutable('now'));
         $object->setPassword(
             $this->passwordEncoder->encodePassword(

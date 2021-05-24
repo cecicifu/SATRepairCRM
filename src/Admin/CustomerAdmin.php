@@ -27,6 +27,7 @@ final class CustomerAdmin extends AbstractAdmin
 
     protected function prePersist(object $object): void
     {
+		$object->setModified(new DateTime('now'));
         $object->setCreated(new DateTimeImmutable('now'));
     }
 

@@ -49,7 +49,8 @@ final class RepairAdmin extends AbstractAdmin
      */
     protected function prePersist(object $object): void
     {
-        $object->setCreated(new DateTimeImmutable('now'));
+		$object->setModified(new DateTime('now'));
+		$object->setCreated(new DateTimeImmutable('now'));
         if (!$object->getProducts()->isEmpty())  {
             $this->repairService->updateRepairProductAmount($object);
         }

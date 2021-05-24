@@ -15,7 +15,7 @@ class User implements UserInterface
     private string $password;
     private array $roles;
     private ?DateTimeInterface $lastSession;
-    private ?DateTimeInterface $modified;
+    private DateTimeInterface $modified;
     private DateTimeImmutable $created;
 
     public function __construct(UuidInterface $uuid)
@@ -89,12 +89,12 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getModified(): ?DateTimeInterface
+    public function getModified(): DateTimeInterface
     {
         return $this->modified;
     }
 
-    public function setModified(?DateTimeInterface $modified): self
+    public function setModified(DateTimeInterface $modified): self
     {
         $this->modified = $modified;
 

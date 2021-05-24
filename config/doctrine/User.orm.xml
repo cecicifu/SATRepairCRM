@@ -7,7 +7,7 @@
     <field name="password" type="text" column="password"/>
     <field name="roles" type="json" column="roles"/>
     <field name="lastSession" type="datetime" column="last_session" nullable="true"/>
-    <field name="modified" type="datetime" column="modified" nullable="true"/>
+    <field name="modified" type="datetime" column="modified"/>
     <field name="created" type="datetime_immutable" column="created"/>
   </entity>
 </doctrine-mapping>

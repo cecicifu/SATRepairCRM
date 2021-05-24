@@ -11,7 +11,7 @@ class Status
     private UuidInterface $id;
     private string $name;
     private ?string $colour;
-    private ?DateTimeInterface $modified;
+    private DateTimeInterface $modified;
     private DateTimeImmutable $created;
 
     public function __construct(UuidInterface $uuid)
@@ -48,12 +48,12 @@ class Status
         return $this;
     }
 
-    public function getModified(): ?DateTimeInterface
+    public function getModified(): DateTimeInterface
     {
         return $this->modified;
     }
 
-    public function setModified(?DateTimeInterface $modified): self
+    public function setModified(DateTimeInterface $modified): self
     {
         $this->modified = $modified;
 

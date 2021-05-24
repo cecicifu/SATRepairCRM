@@ -12,7 +12,7 @@
     <field name="labourPrice" type="float" column="labour_price" nullable="true"/>
     <field name="tax" type="float" column="tax" nullable="true"/>
     <field name="visible" type="boolean" column="visible"/>
-    <field name="modified" type="datetime" column="modified" nullable="true"/>
+    <field name="modified" type="datetime" column="modified"/>
     <field name="created" type="datetime_immutable" column="created"/>
     <one-to-many field="products" target-entity="App\Entity\RepairHasProducts" mapped-by="repair" orphan-removal="true" fetch="EAGER">
       <cascade>
