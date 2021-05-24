@@ -2,8 +2,8 @@
 
 namespace App\Service;
 
-use App\Repository\RepairRepository;
 use App\Entity\Repair;
+use App\Repository\RepairRepository;
 use Doctrine\Common\Collections\Collection;
 
 class RepairService
@@ -28,12 +28,14 @@ class RepairService
     public function findRepairProducts(Repair $repair): ?Collection
     {
         $repair = $this->repairRepository->find($repair);
+
         return $repair->getProducts();
     }
 
     public function countRepairProducts(Repair $repair): ?int
     {
         $repair = $this->repairRepository->find($repair);
+
         return $repair->getProducts()->count();
     }
 

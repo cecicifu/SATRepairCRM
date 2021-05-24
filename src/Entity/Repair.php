@@ -4,9 +4,9 @@ namespace App\Entity;
 
 use DateTimeImmutable;
 use DateTimeInterface;
-use Ramsey\Uuid\UuidInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Ramsey\Uuid\UuidInterface;
 
 class Repair
 {
@@ -77,7 +77,7 @@ class Repair
         return $this;
     }
 
-	/** @return Collection|RepairHasProducts[] */
+    /** @return Collection|RepairHasProducts[] */
     public function getProducts(): Collection
     {
         return $this->products;
@@ -85,15 +85,13 @@ class Repair
 
     public function addProduct(RepairHasProducts $product): self
     {
-        if (!$this->products->contains($product))
-        {
-            foreach ($this->getProducts() as $existingProduct)
-            {
-                if ($existingProduct->equals($product))
-                {
+        if (!$this->products->contains($product)) {
+            foreach ($this->getProducts() as $existingProduct) {
+                if ($existingProduct->equals($product)) {
                     $existingProduct->setQuantity(
                         $existingProduct->getQuantity() + $product->getQuantity()
                     );
+
                     return $this;
                 }
             }
@@ -105,8 +103,7 @@ class Repair
 
     public function removeProduct(RepairHasProducts $product): self
     {
-        if ($this->products->contains($product))
-        {
+        if ($this->products->contains($product)) {
             $this->products->removeElement($product);
         }
 

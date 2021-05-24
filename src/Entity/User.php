@@ -21,7 +21,7 @@ class User implements UserInterface
     public function __construct(UuidInterface $uuid)
     {
         $this->id = $uuid;
-		$this->roles[] = 'ROLE_ADMIN';
+        $this->roles[] = 'ROLE_ADMIN';
     }
 
     public function getId(): UuidInterface
@@ -65,17 +65,17 @@ class User implements UserInterface
         return $this;
     }
 
-	public function getRoles(): array
-	{
-		return array_unique($this->roles);
-	}
+    public function getRoles(): array
+    {
+        return array_unique($this->roles);
+    }
 
-	public function setRoles(array $roles): self
-	{
-		$this->roles = $roles;
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
 
-		return $this;
-	}
+        return $this;
+    }
 
     public function getLastSession(): ?DateTimeInterface
     {

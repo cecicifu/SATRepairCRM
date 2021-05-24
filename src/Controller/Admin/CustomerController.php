@@ -20,8 +20,6 @@ class CustomerController extends abstractController
 {
     /**
      * @Route("/", name="customer_index", methods={"GET"})
-     * @param CustomerRepository $customerRepository
-     * @return Response
      */
     public function index(CustomerRepository $customerRepository): Response
     {
@@ -32,8 +30,6 @@ class CustomerController extends abstractController
 
     /**
      * @Route("/new", name="customer_new", methods={"GET","POST"})
-     * @param Request $request
-     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -59,8 +55,6 @@ class CustomerController extends abstractController
 
     /**
      * @Route("/{id}", name="customer_show", methods={"GET"})
-     * @param Customer $customer
-     * @return Response
      */
     public function show(Customer $customer): Response
     {
@@ -71,9 +65,6 @@ class CustomerController extends abstractController
 
     /**
      * @Route("/{id}/edit", name="customer_edit", methods={"GET","POST"})
-     * @param Request $request
-     * @param Customer $customer
-     * @return Response
      */
     public function edit(Request $request, Customer $customer): Response
     {
@@ -95,9 +86,6 @@ class CustomerController extends abstractController
 
     /**
      * @Route("/{id}", name="customer_delete", methods={"POST"})
-     * @param Request $request
-     * @param Customer $customer
-     * @return Response
      */
     public function delete(Request $request, Customer $customer): Response
     {

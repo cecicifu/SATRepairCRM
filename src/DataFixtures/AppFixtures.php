@@ -38,12 +38,12 @@ class AppFixtures extends Fixture
                 'asdf,123'
             )
         );
-        $user->setCreated(new DateTimeImmutable("now"));
-        $user->setModified(new DateTime("now"));
+        $user->setCreated(new DateTimeImmutable('now'));
+        $user->setModified(new DateTime('now'));
 
         $manager->persist($user);
 
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $status = new Status(Uuid::uuid4());
             $status->setName($faker->unique()->word);
             $status->setColour($faker->hexColor);
@@ -53,7 +53,7 @@ class AppFixtures extends Fixture
             $manager->persist($status);
         }
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; ++$i) {
             $product = new Product(Uuid::uuid4());
             $product->setName($faker->word);
             $product->setPrice($faker->randomFloat(2, 0, 100));
@@ -64,7 +64,7 @@ class AppFixtures extends Fixture
             $manager->persist($product);
         }
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; ++$i) {
             $customer = new Customer(Uuid::uuid4());
             $customer->setFullname($faker->name);
             $customer->setPhone($faker->randomNumber(9, true));
@@ -78,7 +78,7 @@ class AppFixtures extends Fixture
             $manager->persist($customer);
         }
 
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $category = new Category(Uuid::uuid4());
             $category->setName($faker->word);
             $category->setDescription($faker->text);

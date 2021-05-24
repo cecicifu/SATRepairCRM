@@ -21,10 +21,10 @@ class DocumentController extends AbstractController
         $dompdf->setPaper('A4');
         $dompdf->render();
 
-        $filename = sprintf("%s - %s", $repair->getCode(), $type);
+        $filename = sprintf('%s - %s', $repair->getCode(), $type);
 
         $dompdf->stream($filename, [
-            "Attachment" => true
+            'Attachment' => true,
         ]);
 
         return new Response(null, 200);
@@ -36,7 +36,7 @@ class DocumentController extends AbstractController
     public function report(Repair $repair): Response
     {
         $html = $this->renderView('document/report.html.twig', [
-            'repair' => $repair
+            'repair' => $repair,
         ]);
 
         return $this->generate($repair, $html, 'report');
@@ -48,7 +48,7 @@ class DocumentController extends AbstractController
     public function invoice(Repair $repair): Response
     {
         $subtotal = 0;
-        if(!$repair->getProducts()->isEmpty()) {
+        if (!$repair->getProducts()->isEmpty()) {
             foreach ($repair->getProducts() as $product) {
                 $subtotal += $product->getProduct()->getPrice() * $product->getQuantity();
             }
@@ -62,7 +62,7 @@ class DocumentController extends AbstractController
             'repair' => $repair,
             'subtotal' => $subtotal,
             'tax' => $repair->getTax() * 100,
-            'total' => $total
+            'total' => $total,
         ]);
 
         return $this->generate($repair, $html, 'invoice');

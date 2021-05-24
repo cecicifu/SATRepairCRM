@@ -17,7 +17,7 @@ class RepairHasProductsType extends AbstractType
         $builder
             ->add('product', EntityType::class, [
                 'class' => Product::class,
-                'choice_label' => function($product) {
+                'choice_label' => function ($product) {
                     return sprintf('%s (%d)', $product->getName(), $product->getAmount());
                 },
                 'label' => 'Product',

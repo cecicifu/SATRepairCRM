@@ -18,7 +18,7 @@ class TrackerType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Type your code',
                     'autofocus' => true,
-                ]
+                ],
             ])
         ;
     }

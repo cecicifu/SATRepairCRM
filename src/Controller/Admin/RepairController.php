@@ -20,8 +20,6 @@ class RepairController extends AbstractController
 {
     /**
      * @Route("/", name="repair_index", methods={"GET"})
-     * @param RepairService $repairService
-     * @return Response
      */
     public function index(RepairService $repairService): Response
     {
@@ -32,13 +30,10 @@ class RepairController extends AbstractController
 
     /**
      * @Route("/new", name="repair_new", methods={"GET","POST"})
-     * @param Request $request
-     * @param RepairService $repairService
-     * @return Response
      */
     public function new(Request $request, RepairService $repairService): Response
     {
-        $repair = new Repair(Uuid::uuid4(), "SR-".time(), true);
+        $repair = new Repair(Uuid::uuid4(), 'SR-'.time(), true);
         $form = $this->createForm(RepairType::class, $repair);
         $form->handleRequest($request);
 
@@ -48,7 +43,7 @@ class RepairController extends AbstractController
             $repair->setModified(new DateTime('now'));
             $repair->setCreated(new DateTimeImmutable('now'));
 
-            if (!$form->get('products')->getData()->isEmpty())  {
+            if (!$form->get('products')->getData()->isEmpty()) {
                 $repairService->updateRepairProductAmount($form->getData());
             }
 
@@ -66,8 +61,6 @@ class RepairController extends AbstractController
 
     /**
      * @Route("/{id}", name="repair_show", methods={"GET"})
-     * @param Repair $repair
-     * @return Response
      */
     public function show(Repair $repair): Response
     {
@@ -78,10 +71,6 @@ class RepairController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="repair_edit", methods={"GET","POST"})
-     * @param Request $request
-     * @param Repair $repair
-     * @param RepairService $repairService
-     * @return Response
      */
     public function edit(Request $request, Repair $repair, RepairService $repairService): Response
     {
@@ -91,7 +80,7 @@ class RepairController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $repair->setModified(new DateTime('now'));
 
-            if(!$repair->getProducts()->isEmpty()) {
+            if (!$repair->getProducts()->isEmpty()) {
                 $repairService->updateRepairProductAmount($repair);
             }
 
@@ -108,9 +97,6 @@ class RepairController extends AbstractController
 
     /**
      * @Route("/{id}", name="repair_delete", methods={"POST"})
-     * @param Request $request
-     * @param Repair $repair
-     * @return Response
      */
     public function delete(Request $request, Repair $repair): Response
     {

@@ -33,7 +33,7 @@ class TrackerController extends AbstractController
         if ($request->isXmlHttpRequest()) {
             $repair = $repairService->findByCode($request->getContent());
 
-            if($repair && $repair->isVisible()) {
+            if ($repair && $repair->isVisible()) {
                 return new JsonResponse([
                     'category' => $repair->getCategory()->getName(),
                     'status' => $repair->getStatus()->getName(),
@@ -42,11 +42,13 @@ class TrackerController extends AbstractController
                     'fault' => $repair->getFault(),
                     'colour' => $repair->getColour(),
                     'publicComment' => $repair->getPublicComment(),
-                    'created' => $repair->getCreated()->format('Y-m-d')
+                    'created' => $repair->getCreated()->format('Y-m-d'),
                 ], 200);
             }
+
             return new JsonResponse(null, 404);
         }
+
         return new JsonResponse(null, 400);
     }
 }

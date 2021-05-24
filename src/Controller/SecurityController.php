@@ -13,20 +13,18 @@ class SecurityController extends AbstractController
 {
     /**
      * @Route("/login", name="app_login")
-     * @param AuthenticationUtils $authenticationUtils
-     * @return Response
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-         if ($this->getUser()) {
-             return $this->redirectToRoute('sonata_admin_dashboard');
-         }
+        if ($this->getUser()) {
+            return $this->redirectToRoute('sonata_admin_dashboard');
+        }
 
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
         $form = $this->createForm(LoginType::class, [
-            'username' => $lastUsername
+            'username' => $lastUsername,
         ]);
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'form' => $form->createView(), 'error' => $error]);

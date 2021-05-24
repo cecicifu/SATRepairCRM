@@ -21,8 +21,6 @@ class UserController extends AbstractController
 {
     /**
      * @Route("/", name="user_index", methods={"GET"})
-     * @param UserRepository $userRepository
-     * @return Response
      */
     public function index(UserRepository $userRepository): Response
     {
@@ -33,9 +31,6 @@ class UserController extends AbstractController
 
     /**
      * @Route("/new", name="user_new", methods={"GET","POST"})
-     * @param Request $request
-     * @param UserPasswordEncoderInterface $passwordEncoder
-     * @return Response
      */
     public function new(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
@@ -67,8 +62,6 @@ class UserController extends AbstractController
 
     /**
      * @Route("/{id}", name="user_show", methods={"GET"})
-     * @param User $user
-     * @return Response
      */
     public function show(User $user): Response
     {
@@ -79,10 +72,6 @@ class UserController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
-     * @param Request $request
-     * @param User $user
-     * @param UserPasswordEncoderInterface $passwordEncoder
-     * @return Response
      */
     public function edit(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder): Response
     {
@@ -90,7 +79,7 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if(empty($form->get('plainPassword')->getData())){
+            if (empty($form->get('plainPassword')->getData())) {
                 $user->setPassword($user->getPassword());
             } else {
                 $user->setPassword(
@@ -115,9 +104,6 @@ class UserController extends AbstractController
 
     /**
      * @Route("/{id}", name="user_delete", methods={"POST"})
-     * @param Request $request
-     * @param User $user
-     * @return Response
      */
     public function delete(Request $request, User $user): Response
     {

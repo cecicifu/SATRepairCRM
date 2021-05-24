@@ -41,28 +41,28 @@ final class RepairAdmin extends AbstractAdmin
 
     protected function createNewInstance(): object
     {
-        return new Repair(Uuid::uuid4(), "SR-".time(), true);
+        return new Repair(Uuid::uuid4(), 'SR-'.time(), true);
     }
 
     /**
-     * @var Repair|object|null $object
+     * @var Repair|object|null
      */
     protected function prePersist(object $object): void
     {
-		$object->setModified(new DateTime('now'));
-		$object->setCreated(new DateTimeImmutable('now'));
-        if (!$object->getProducts()->isEmpty())  {
+        $object->setModified(new DateTime('now'));
+        $object->setCreated(new DateTimeImmutable('now'));
+        if (!$object->getProducts()->isEmpty()) {
             $this->repairService->updateRepairProductAmount($object);
         }
     }
 
     /**
-     * @var Repair|object|null $object
+     * @var Repair|object|null
      */
     protected function preUpdate(object $object): void
     {
         $object->setModified(new DateTime('now'));
-        if(!$object->getProducts()->isEmpty()) {
+        if (!$object->getProducts()->isEmpty()) {
             $this->repairService->updateRepairProductAmount($object);
         }
     }
@@ -193,7 +193,7 @@ final class RepairAdmin extends AbstractAdmin
                         'entry_options' => [
                             'label' => false,
                         ],
-                        'label' => "Products",
+                        'label' => 'Products',
                         'mapped' => true,
                         'by_reference' => false,
                         'required' => true,

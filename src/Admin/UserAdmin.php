@@ -36,11 +36,11 @@ final class UserAdmin extends AbstractAdmin
     }
 
     /**
-     * @var User|object|null $object
+     * @var User|object|null
      */
     protected function prePersist(object $object): void
     {
-		$object->setModified(new DateTime('now'));
+        $object->setModified(new DateTime('now'));
         $object->setCreated(new DateTimeImmutable('now'));
         $object->setPassword(
             $this->passwordEncoder->encodePassword(
@@ -51,7 +51,7 @@ final class UserAdmin extends AbstractAdmin
     }
 
     /**
-     * @var User|object|null $object
+     * @var User|object|null
      */
     protected function preUpdate(object $object): void
     {
@@ -89,9 +89,9 @@ final class UserAdmin extends AbstractAdmin
         $list
             ->add('username')
             ->add('email', FieldDescriptionInterface::TYPE_EMAIL)
-			->add('roles', FieldDescriptionInterface::TYPE_ARRAY, [
-				'display' => 'values',
-			])
+            ->add('roles', FieldDescriptionInterface::TYPE_ARRAY, [
+                'display' => 'values',
+            ])
             ->add('lastSession', FieldDescriptionInterface::TYPE_DATETIME, [
                 'timezone' => 'Europe/Madrid',
             ])
@@ -116,11 +116,11 @@ final class UserAdmin extends AbstractAdmin
                 'required' => false,
             ])
             ->add('password', RepeatedType::class, [
-                'type'              => PasswordType::class,
-                'required'          => true,
-                'mapped'            => true,
-                'first_options'     => ['label' => 'New password'],
-                'second_options'    => ['label' => 'Confirm new password'],
+                'type' => PasswordType::class,
+                'required' => true,
+                'mapped' => true,
+                'first_options' => ['label' => 'New password'],
+                'second_options' => ['label' => 'Confirm new password'],
                 'invalid_message' => 'The password fields must match.',
             ])
         ;
@@ -132,9 +132,9 @@ final class UserAdmin extends AbstractAdmin
             ->add('id')
             ->add('username')
             ->add('email', FieldDescriptionInterface::TYPE_EMAIL)
-			->add('roles', FieldDescriptionInterface::TYPE_ARRAY, [
-				'display' => 'values',
-			])
+            ->add('roles', FieldDescriptionInterface::TYPE_ARRAY, [
+                'display' => 'values',
+            ])
             ->add('lastSession', FieldDescriptionInterface::TYPE_DATETIME, [
                 'timezone' => 'Europe/Madrid',
             ])

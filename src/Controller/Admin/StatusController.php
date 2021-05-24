@@ -20,8 +20,6 @@ class StatusController extends abstractController
 {
     /**
      * @Route("/", name="status_index", methods={"GET"})
-     * @param StatusRepository $statusRepository
-     * @return Response
      */
     public function index(StatusRepository $statusRepository): Response
     {
@@ -32,8 +30,6 @@ class StatusController extends abstractController
 
     /**
      * @Route("/new", name="status_new", methods={"GET","POST"})
-     * @param Request $request
-     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -59,8 +55,6 @@ class StatusController extends abstractController
 
     /**
      * @Route("/{id}", name="status_show", methods={"GET"})
-     * @param Status $status
-     * @return Response
      */
     public function show(Status $status): Response
     {
@@ -71,9 +65,6 @@ class StatusController extends abstractController
 
     /**
      * @Route("/{id}/edit", name="status_edit", methods={"GET","POST"})
-     * @param Request $request
-     * @param Status $status
-     * @return Response
      */
     public function edit(Request $request, Status $status): Response
     {
@@ -95,9 +86,6 @@ class StatusController extends abstractController
 
     /**
      * @Route("/{id}", name="status_delete", methods={"POST"})
-     * @param Request $request
-     * @param Status $status
-     * @return Response
      */
     public function delete(Request $request, Status $status): Response
     {

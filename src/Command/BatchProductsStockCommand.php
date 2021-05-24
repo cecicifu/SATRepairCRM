@@ -14,36 +14,36 @@ class BatchProductsStockCommand extends Command
     private string $name = 'batch:products:stock';
     private string $description = 'Check product stock';
 
-	private EntityManagerInterface $entityManager;
+    private EntityManagerInterface $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager)
-	{
-		parent::__construct();
-		$this->entityManager = $entityManager;
-	}
+    {
+        parent::__construct();
+        $this->entityManager = $entityManager;
+    }
 
-	protected function configure(): void
+    protected function configure(): void
     {
         $this
-			->setName($this->name)
-			->setDescription($this->description)
-		;
+            ->setName($this->name)
+            ->setDescription($this->description)
+        ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
 
-		$productRepository = $this->entityManager->getRepository(Product::class);
+        $productRepository = $this->entityManager->getRepository(Product::class);
 
-		$io->info("Products out of stock:");
+        $io->info('Products out of stock:');
 
-		/* @var Product $product */
-		foreach ($productRepository->findAll() as $product) {
-			if($product->getAmount() === 0) {
-				$io->note($product->getName());
-			}
-		}
+        /* @var Product $product */
+        foreach ($productRepository->findAll() as $product) {
+            if (0 === $product->getAmount()) {
+                $io->note($product->getName());
+            }
+        }
 
         return Command::SUCCESS;
     }

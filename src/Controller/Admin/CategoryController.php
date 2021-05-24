@@ -20,8 +20,6 @@ class CategoryController extends abstractController
 {
     /**
      * @Route("/", name="category_index", methods={"GET"})
-     * @param CategoryRepository $categoryRepository
-     * @return Response
      */
     public function index(CategoryRepository $categoryRepository): Response
     {
@@ -32,8 +30,6 @@ class CategoryController extends abstractController
 
     /**
      * @Route("/new", name="category_new", methods={"GET","POST"})
-     * @param Request $request
-     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -59,8 +55,6 @@ class CategoryController extends abstractController
 
     /**
      * @Route("/{id}", name="category_show", methods={"GET"})
-     * @param Category $category
-     * @return Response
      */
     public function show(Category $category): Response
     {
@@ -71,9 +65,6 @@ class CategoryController extends abstractController
 
     /**
      * @Route("/{id}/edit", name="category_edit", methods={"GET","POST"})
-     * @param Request $request
-     * @param Category $category
-     * @return Response
      */
     public function edit(Request $request, Category $category): Response
     {
@@ -95,9 +86,6 @@ class CategoryController extends abstractController
 
     /**
      * @Route("/{id}", name="category_delete", methods={"POST"})
-     * @param Request $request
-     * @param Category $category
-     * @return Response
      */
     public function delete(Request $request, Category $category): Response
     {

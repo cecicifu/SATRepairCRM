@@ -6,5 +6,4 @@ use Symfony\Component\Form\AbstractType;
 
 class CustomerType extends AbstractType
 {
-
 }
