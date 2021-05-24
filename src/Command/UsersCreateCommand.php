@@ -3,6 +3,7 @@
 namespace App\Command;
 
 use App\Entity\User;
+use DateTime;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Ramsey\Uuid\Uuid;
@@ -71,6 +72,7 @@ class UsersCreateCommand extends Command
 		});
 
 		$user = new User(Uuid::uuid4());
+		$user->setModified(new DateTime('now'));
 		$user->setCreated(new DateTimeImmutable('now'));
 		$user->setUsername($username);
 		$user->setEmail($email);
