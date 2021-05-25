@@ -5,7 +5,7 @@
 {% block body %}
     <h1>{{ 'Edit repair'|trans }}</h1>
 
-    {{ include('admin/repair/_form.html.twig', {'button_label': {{ 'Update'|trans }}}) }}
+    {{ include('admin/repair/_form.html.twig', {'button_label':'Update'|trans}) }}
 
     <a href="{{ path('repair_index') }}">{{ 'Back to list'|trans }}</a>
 

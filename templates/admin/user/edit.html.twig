@@ -5,7 +5,7 @@
 {% block body %}
     <h1>{{ 'Edit user'|trans }}</h1>
 
-    {{ include('admin/user/_form.html.twig', {'button_label': {{ 'Update'|trans }}}) }}
+    {{ include('admin/user/_form.html.twig', {'button_label':'Update'|trans}) }}
 
     <a href="{{ path('user_index') }}">{{ 'Back to list'|trans }}</a>
 
