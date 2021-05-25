@@ -18,8 +18,8 @@ class RepairRepository extends ServiceEntityRepository
         parent::__construct($registry, Repair::class);
     }
 
-	public function findAll(): array
-	{
-		return $this->findBy([], ['created' => 'DESC']);
-	}
+    public function findAll(): array
+    {
+        return $this->findBy([], ['created' => 'DESC']);
+    }
 }

@@ -19,7 +19,7 @@ class CategoryRepository extends ServiceEntityRepository
     }
 
     public function findAll(): array
-	{
-		return $this->findBy([], ['created' => 'DESC']);
-	}
+    {
+        return $this->findBy([], ['created' => 'DESC']);
+    }
 }

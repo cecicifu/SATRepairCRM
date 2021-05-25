@@ -18,8 +18,8 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
-	public function findAll(): array
-	{
-		return $this->findBy([], ['created' => 'DESC']);
-	}
+    public function findAll(): array
+    {
+        return $this->findBy([], ['created' => 'DESC']);
+    }
 }

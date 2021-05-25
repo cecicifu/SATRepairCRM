@@ -18,8 +18,8 @@ class StatusRepository extends ServiceEntityRepository
         parent::__construct($registry, Status::class);
     }
 
-	public function findAll(): array
-	{
-		return $this->findBy([], ['created' => 'DESC']);
-	}
+    public function findAll(): array
+    {
+        return $this->findBy([], ['created' => 'DESC']);
+    }
 }
