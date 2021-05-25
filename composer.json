@@ -8,8 +8,8 @@
     "require": {
         "php": ">=7.4",
         "ext-ctype": "*",
-        "ext-iconv": "*",
         "ext-gd": "*",
+        "ext-iconv": "*",
         "composer/package-versions-deprecated": "1.11.99.1",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.3",
@@ -31,6 +31,7 @@
         "symfony/http-client": "5.2.*",
         "symfony/intl": "5.2.*",
         "symfony/mailer": "5.2.*",
+        "symfony/messenger": "5.2.*",
         "symfony/mime": "5.2.*",
         "symfony/monolog-bundle": "^3.1",
         "symfony/notifier": "5.2.*",

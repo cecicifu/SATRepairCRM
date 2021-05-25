@@ -9,6 +9,7 @@ use App\Entity\Customer;
 use App\Entity\Repair;
 use App\Entity\Status;
 use App\Form\RepairHasProductsType;
+use App\Message\StatusHasChanged;
 use App\Service\RepairService;
 use DateTime;
 use DateTimeImmutable;
@@ -28,15 +29,23 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\PercentType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Messenger\MessageBusInterface;
 
 final class RepairAdmin extends AbstractAdmin
 {
     private RepairService $repairService;
+    private MessageBusInterface $messageBus;
 
-    public function __construct(string $code, string $class, string $baseControllerName, RepairService $repairService)
-    {
+    public function __construct(
+        string $code,
+        string $class,
+        string $baseControllerName,
+        RepairService $repairService,
+        MessageBusInterface $messageBus
+    ) {
         parent::__construct($code, $class, $baseControllerName);
         $this->repairService = $repairService;
+        $this->messageBus = $messageBus;
     }
 
     protected function createNewInstance(): object
@@ -64,6 +73,13 @@ final class RepairAdmin extends AbstractAdmin
         $object->setModified(new DateTime('now'));
         if (!$object->getProducts()->isEmpty()) {
             $this->repairService->updateRepairProductAmount($object);
+        }
+    }
+
+    protected function postUpdate(object $object): void
+    {
+        if ($object->getCustomer()->getEmail()) {
+            $this->messageBus->dispatch(new StatusHasChanged($object->getCustomer()->getEmail(), $object->getCode(), $object->getStatus()->getName()));
         }
     }
 
