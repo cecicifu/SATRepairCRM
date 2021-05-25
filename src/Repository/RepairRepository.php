@@ -9,7 +9,6 @@ use Doctrine\Persistence\ManagerRegistry;
 /**
  * @method Repair|null find($id, $lockMode = null, $lockVersion = null)
  * @method Repair|null findOneBy(array $criteria, array $orderBy = null)
- * @method Repair[]    findAll()
  * @method Repair[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class RepairRepository extends ServiceEntityRepository
@@ -18,4 +17,9 @@ class RepairRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Repair::class);
     }
+
+	public function findAll(): array
+	{
+		return $this->findBy([], ['created' => 'DESC']);
+	}
 }
