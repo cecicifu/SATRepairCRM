@@ -13,7 +13,6 @@ use App\Message\StatusHasChanged;
 use App\Service\RepairService;
 use DateTime;
 use DateTimeImmutable;
-use DeepCopy\DeepCopy;
 use Ramsey\Uuid\Uuid;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridInterface;
@@ -37,7 +36,7 @@ final class RepairAdmin extends AbstractAdmin
     private RepairService $repairService;
     private MessageBusInterface $messageBus;
 
-    private Repair $oldObject;
+    private object $oldObject;
 
     protected $supportsPreviewMode = true;
 
@@ -60,8 +59,7 @@ final class RepairAdmin extends AbstractAdmin
 
 	protected function alterObject(object $object): void
 	{
-		$copier = new DeepCopy(true);
-		$this->oldObject = $copier->copy($object);
+		$this->oldObject = clone $object;
 	}
 
     protected function prePersist(object $object): void
