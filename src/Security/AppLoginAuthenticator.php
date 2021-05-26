@@ -45,6 +45,7 @@ class AppLoginAuthenticator extends AbstractFormLoginAuthenticator
             && $request->isMethod('POST');
     }
 
+    /** @return array[] */
     public function getCredentials(Request $request): array
     {
         $credentials = [

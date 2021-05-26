@@ -17,6 +17,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
+/** @extends AbstractAdmin<object> */
 final class CategoryAdmin extends AbstractAdmin
 {
     protected function createNewInstance(): object

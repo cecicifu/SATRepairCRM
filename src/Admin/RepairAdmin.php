@@ -31,6 +31,7 @@ use Symfony\Component\Form\Extension\Core\Type\PercentType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Messenger\MessageBusInterface;
 
+/** @extends AbstractAdmin<object> */
 final class RepairAdmin extends AbstractAdmin
 {
     private RepairService $repairService;
@@ -57,10 +58,10 @@ final class RepairAdmin extends AbstractAdmin
         return new Repair(Uuid::uuid4(), 'SR-'.time(), true);
     }
 
-	protected function alterObject(object $object): void
-	{
-		$this->oldObject = clone $object;
-	}
+    protected function alterObject(object $object): void
+    {
+        $this->oldObject = clone $object;
+    }
 
     protected function prePersist(object $object): void
     {
@@ -85,7 +86,7 @@ final class RepairAdmin extends AbstractAdmin
 
     protected function postUpdate(object $object): void
     {
-        if ($object->getCustomer()->getEmail() && ($this->oldObject->getStatus()->getId() !== $object->getStatus()->getId())) {
+        if ($object->getCustomer()->getEmail() && ($this->oldObject->getStatus() !== $object->getStatus())) {
             $this->messageBus->dispatch(new StatusHasChanged($object->getCustomer()->getEmail(), $object->getCode(), $object->getStatus()->getName()));
         }
     }

@@ -18,6 +18,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 
+/** @extends AbstractAdmin<object> */
 final class ProductAdmin extends AbstractAdmin
 {
     protected function createNewInstance(): object

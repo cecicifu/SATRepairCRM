@@ -21,7 +21,7 @@ final class StatusHasChangedHandler implements MessageHandlerInterface
     /**
      * @throws TransportExceptionInterface
      */
-    public function __invoke(StatusHasChanged $message)
+    public function __invoke(StatusHasChanged $message): void
     {
         $email = (new Email())
             ->from(Address::create('SATRepairCRM <status@satrepaircrm.me>'))
@@ -29,7 +29,7 @@ final class StatusHasChangedHandler implements MessageHandlerInterface
             ->priority(Email::PRIORITY_NORMAL)
             ->subject("Repair Status Update {$message->getCode()}")
             ->html("
-				Your repair status ({$message->getCode()}) has been updated to <b>{$message->getStatus()}</b>
+				Your repair status ({$message->getCode()}) has been updated to <b>{$message->getStatus()}.</b>
 				<i>This e-mail is an automatic confirmation. Please do not reply to it.</i>
 			")
         ;

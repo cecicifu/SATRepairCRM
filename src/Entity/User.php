@@ -13,6 +13,7 @@ class User implements UserInterface
     private string $username;
     private ?string $email;
     private string $password;
+    /** @var array<String> */
     private array $roles;
     private ?DateTimeInterface $lastSession;
     private DateTimeInterface $modified;
@@ -70,6 +71,7 @@ class User implements UserInterface
         return array_unique($this->roles);
     }
 
+    /** @param array<String> $roles */
     public function setRoles(array $roles): self
     {
         $this->roles = $roles;

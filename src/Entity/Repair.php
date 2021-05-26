@@ -14,6 +14,7 @@ class Repair
     private Customer $customer;
     private Category $category;
     private Status $status;
+    /** @var ArrayCollection<int, RepairHasProducts> */
     private Collection $products;
     private string $code;
     private ?int $imei;
@@ -77,7 +78,7 @@ class Repair
         return $this;
     }
 
-    /** @return Collection|RepairHasProducts[] */
+    /** @return ArrayCollection<int, RepairHasProducts> */
     public function getProducts(): Collection
     {
         return $this->products;

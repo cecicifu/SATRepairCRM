@@ -20,6 +20,7 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+/** @extends AbstractAdmin<object> */
 final class UserAdmin extends AbstractAdmin
 {
     private UserPasswordEncoderInterface $passwordEncoder;

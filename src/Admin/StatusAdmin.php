@@ -17,6 +17,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\ColorType;
 
+/** @extends AbstractAdmin<object> */
 final class StatusAdmin extends AbstractAdmin
 {
     protected function createNewInstance(): object

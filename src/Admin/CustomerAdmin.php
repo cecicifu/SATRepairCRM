@@ -18,6 +18,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
+/** @extends AbstractAdmin<object> */
 final class CustomerAdmin extends AbstractAdmin
 {
     protected function createNewInstance(): object
