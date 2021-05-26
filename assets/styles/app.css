@@ -37,9 +37,6 @@ table.table-products {
 table.table-products i {
     margin-right: .4em;
 }
-.sonata-ba-view-title {
-    display: none;
-}
 /* LOGO */
 @media (max-width: 767px) {
     .skin-black .main-header .logo {

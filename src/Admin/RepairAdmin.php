@@ -40,8 +40,6 @@ final class RepairAdmin extends AbstractAdmin
 
     private object $oldObject;
 
-    protected $supportsPreviewMode = true;
-
     public function __construct(
         string $code,
         string $class,
