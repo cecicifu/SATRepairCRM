@@ -16,6 +16,7 @@ use Sonata\AdminBundle\FieldDescription\FieldDescriptionInterface;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 /** @extends AbstractAdmin<object> */
 final class CategoryAdmin extends AbstractAdmin
@@ -71,10 +72,10 @@ final class CategoryAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form): void
     {
         $form
-            ->add('id', null, [
+            ->add('id', TextType::class, [
                 'disabled' => true,
             ])
-            ->add('name')
+            ->add('name', TextType::class)
             ->add('description', TextareaType::class, [
                 'required' => false,
             ])

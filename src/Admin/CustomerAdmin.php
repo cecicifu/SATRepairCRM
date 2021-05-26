@@ -17,6 +17,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 /** @extends AbstractAdmin<object> */
 final class CustomerAdmin extends AbstractAdmin
@@ -89,18 +90,18 @@ final class CustomerAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form): void
     {
         $form
-            ->add('id', null, [
+            ->add('id', TextType::class, [
                 'disabled' => true,
             ])
-            ->add('fullname')
+            ->add('fullname', TextType::class)
             ->add('phone', IntegerType::class)
             ->add('email', EmailType::class, [
                 'required' => false,
             ])
-            ->add('address', null, [
+            ->add('address', TextType::class, [
                 'required' => false,
             ])
-            ->add('city', null, [
+            ->add('city', TextType::class, [
                 'required' => false,
             ])
             ->add('zipCode', IntegerType::class, [

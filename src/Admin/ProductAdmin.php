@@ -17,6 +17,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 /** @extends AbstractAdmin<object> */
 final class ProductAdmin extends AbstractAdmin
@@ -76,7 +77,7 @@ final class ProductAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form): void
     {
         $form
-            ->add('id', null, [
+            ->add('id', TextType::class, [
                 'disabled' => true,
             ])
             ->add('name')

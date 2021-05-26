@@ -18,6 +18,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /** @extends AbstractAdmin<object> */
@@ -107,10 +108,10 @@ final class UserAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form): void
     {
         $form
-            ->add('id', null, [
+            ->add('id', TextType::class, [
                 'disabled' => true,
             ])
-            ->add('username')
+            ->add('username', TextType::class)
             ->add('email', EmailType::class, [
                 'required' => false,
             ])

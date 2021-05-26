@@ -29,6 +29,7 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\PercentType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Messenger\MessageBusInterface;
 
 /** @extends AbstractAdmin<object> */
@@ -157,10 +158,10 @@ final class RepairAdmin extends AbstractAdmin
         $form
             ->tab('repair')
                 ->with('metadata', ['class' => 'col-md-3'])
-                    ->add('id', null, [
+                    ->add('id', TextType::class, [
                         'disabled' => true,
                     ])
-                    ->add('code', null, [
+                    ->add('code', TextType::class, [
                         'disabled' => true,
                     ])
                     ->add('customer', ModelAutocompleteType::class, [
@@ -190,7 +191,7 @@ final class RepairAdmin extends AbstractAdmin
                     ->add('imei', IntegerType::class, [
                         'required' => false,
                     ])
-                    ->add('pattern', null, [
+                    ->add('pattern', TextType::class, [
                         'required' => false,
                     ])
                     ->add('colour', ColorType::class, [
