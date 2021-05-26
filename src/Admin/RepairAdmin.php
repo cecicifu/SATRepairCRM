@@ -36,6 +36,8 @@ final class RepairAdmin extends AbstractAdmin
     private RepairService $repairService;
     private MessageBusInterface $messageBus;
 
+    protected $supportsPreviewMode = true;
+
     public function __construct(
         string $code,
         string $class,
