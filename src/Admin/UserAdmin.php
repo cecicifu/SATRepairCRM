@@ -35,13 +35,12 @@ final class UserAdmin extends AbstractAdmin
         return new User(Uuid::uuid4());
     }
 
-    /**
-     * @var User|object|null
-     */
     protected function prePersist(object $object): void
     {
         $object->setModified(new DateTime('now'));
         $object->setCreated(new DateTimeImmutable('now'));
+
+        /* @var User $object */
         $object->setPassword(
             $this->passwordEncoder->encodePassword(
                 $object,
@@ -50,12 +49,11 @@ final class UserAdmin extends AbstractAdmin
         );
     }
 
-    /**
-     * @var User|object|null
-     */
     protected function preUpdate(object $object): void
     {
         $object->setModified(new DateTime('now'));
+
+        /* @var User $object */
         $object->setPassword(
             $this->passwordEncoder->encodePassword(
                 $object,

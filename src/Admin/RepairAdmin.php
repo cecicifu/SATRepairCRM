@@ -13,6 +13,7 @@ use App\Message\StatusHasChanged;
 use App\Service\RepairService;
 use DateTime;
 use DateTimeImmutable;
+use DeepCopy\DeepCopy;
 use Ramsey\Uuid\Uuid;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridInterface;
@@ -36,6 +37,8 @@ final class RepairAdmin extends AbstractAdmin
     private RepairService $repairService;
     private MessageBusInterface $messageBus;
 
+    private Repair $oldObject;
+
     protected $supportsPreviewMode = true;
 
     public function __construct(
@@ -55,24 +58,28 @@ final class RepairAdmin extends AbstractAdmin
         return new Repair(Uuid::uuid4(), 'SR-'.time(), true);
     }
 
-    /**
-     * @var Repair|object|null
-     */
+	protected function alterObject(object $object): void
+	{
+		$copier = new DeepCopy(true);
+		$this->oldObject = $copier->copy($object);
+	}
+
     protected function prePersist(object $object): void
     {
         $object->setModified(new DateTime('now'));
         $object->setCreated(new DateTimeImmutable('now'));
+
+        /* @var Repair $object */
         if (!$object->getProducts()->isEmpty()) {
             $this->repairService->updateRepairProductAmount($object);
         }
     }
 
-    /**
-     * @var Repair|object|null
-     */
     protected function preUpdate(object $object): void
     {
         $object->setModified(new DateTime('now'));
+
+        /* @var Repair $object */
         if (!$object->getProducts()->isEmpty()) {
             $this->repairService->updateRepairProductAmount($object);
         }
@@ -80,7 +87,7 @@ final class RepairAdmin extends AbstractAdmin
 
     protected function postUpdate(object $object): void
     {
-        if ($object->getCustomer()->getEmail()) {
+        if ($object->getCustomer()->getEmail() && ($this->oldObject->getStatus()->getId() !== $object->getStatus()->getId())) {
             $this->messageBus->dispatch(new StatusHasChanged($object->getCustomer()->getEmail(), $object->getCode(), $object->getStatus()->getName()));
         }
     }
