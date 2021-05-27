@@ -3,10 +3,7 @@
 namespace App\Service;
 
 use App\Entity\Repair;
-use App\Entity\RepairHasProducts;
 use App\Repository\RepairRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 
 class RepairService
 {
@@ -26,21 +23,6 @@ class RepairService
     public function findByCode(string $code): ?Repair
     {
         return $this->repairRepository->findOneBy(['code' => $code]);
-    }
-
-    /** @return ArrayCollection<int, RepairHasProducts> */
-    public function findRepairProducts(Repair $repair): ?Collection
-    {
-        $repair = $this->repairRepository->find($repair);
-
-        return $repair->getProducts();
-    }
-
-    public function countRepairProducts(Repair $repair): ?int
-    {
-        $repair = $this->repairRepository->find($repair);
-
-        return $repair->getProducts()->count();
     }
 
     public function updateRepairProductAmount(Repair $repair): void
