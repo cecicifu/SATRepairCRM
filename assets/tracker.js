@@ -32,7 +32,7 @@ document.getElementById('tracker__btn').addEventListener('click', (event) => {
             button.disabled = false;
             button.classList.remove('disabled');
             code.disabled = false;
-            showResults(error);
+            showResults(null);
         });
     }
 });
@@ -41,8 +41,8 @@ function showResults(data) {
     const content = document.getElementById('content__block');
     content.style.display = 'initial';
 
-    if(!data.hasOwnProperty('code')) {
-        content.innerHTML = `<div id="msg">${data}</div>`;
+    if(!data) {
+        content.innerHTML = `<div id="msg">Not Found</div>`;
         return null;
     }
 
