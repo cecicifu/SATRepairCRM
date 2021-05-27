@@ -9,6 +9,7 @@ use App\Entity\Customer;
 use App\Entity\Repair;
 use App\Entity\Status;
 use App\Form\RepairHasProductsType;
+use App\Message\NewRepairCreated;
 use App\Message\StatusHasChanged;
 use App\Service\RepairService;
 use DateTime;
@@ -70,6 +71,13 @@ final class RepairAdmin extends AbstractAdmin
         /* @var Repair $object */
         if (!$object->getProducts()->isEmpty()) {
             $this->repairService->updateRepairProductAmount($object);
+        }
+    }
+
+    protected function postPersist(object $object): void
+    {
+        if ($object->getCustomer()->getEmail()) {
+            $this->messageBus->dispatch(new NewRepairCreated($object->getCustomer()->getEmail(), $object->getCode()));
         }
     }
 
