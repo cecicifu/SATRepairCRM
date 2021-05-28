@@ -51,4 +51,20 @@ class TrackerController extends AbstractController
 
         return new JsonResponse(null, 400);
     }
+
+    /**
+     * @Route("/privacy", name="privacy")
+     */
+    public function privacy(): Response
+    {
+        return $this->render('legal/privacy_policy.html.twig');
+    }
+
+    /**
+     * @Route("/terms", name="terms")
+     */
+    public function terms(): Response
+    {
+        return $this->render('legal/terms_and_conditions.html.twig');
+    }
 }

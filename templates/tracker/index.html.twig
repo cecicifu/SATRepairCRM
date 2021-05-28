@@ -10,13 +10,17 @@
     {% endblock %}
 </head>
 <body>
-    <div class="tracker__block">
+    <main class="tracker__block">
         <img src="{{ asset('build/images/logo-front-slogan-rec.png') }}" alt="SATRepairCRM Logo">
 
         {{ include('tracker/_form.html.twig') }}
 
         <div id="content__block"></div>
-    </div>
+    </main>
+    <footer class="footer__block">
+        <a href="{{ path('privacy') }}" target="_blank">Privacy Policy</a> |
+        <a href="{{ path('terms') }}" target="_blank">Terms & Conditions</a>
+    </footer>
 
     {% block javascripts %}
         {{ encore_entry_script_tags('tracker') }}

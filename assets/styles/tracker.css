@@ -1,8 +1,8 @@
 body {
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     height: 95vh;
 }
 .tracker__block {
-    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     height: 90%;
     text-align: center;
     display: flex;
@@ -79,4 +79,24 @@ body {
 .tracker__block #content__block div span#colour:after {
     content: "";
     padding: .7em;
+}
+.footer__block {
+    text-align: center;
+}
+.footer__block a {
+    text-decoration: none;
+    color: #0a0a0a;
+}
+.footer__block a:hover {
+    text-decoration: revert;
+}
+.footer__block a:hover,
+.footer__block a:focus,
+.footer__block a:active {
+    color: #0a0a0a;
+}
+.legal {
+    margin: 1em;
+    padding-bottom: 1em;
+    text-align: justify;
 }

@@ -91,10 +91,27 @@
         <div>
             <div class="row">
                 <div class="col-xs-12">
-                    <small><p>{{ 'The warranty period for repairs will be'|trans }} <b>{{ '6 months'|trans }}</b>.</p></small>
+                    <p>{{ 'Track your repair'|trans }} <b>{{ url('tracker_index') }}</b></p>
+                </div>
+            </div>
+        </div>
+        <div style="font-size: 12px;">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>{{ 'The warranty period for repairs will be 6 months'|trans }}.</p>
                 </div>
                 <div class="col-xs-12" style="margin-top: 20px;">
-                    <small><p>{{ 'Failures caused by malware, viruses or other malicious software are exempt from warranty'|trans }}.</p></small>
+                    <p>{{ 'Failures caused by malware, viruses or other malicious software are exempt from warranty'|trans }}.</p>
+                </div>
+            </div>
+        </div>
+        <div style="font-size: 12px;">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>{{ 'Check our privacy policy'|trans }} {{ url('privacy') }}</p>
+                </div>
+                <div class="col-xs-12" style="margin-top: 20px;">
+                    <p>{{ 'Check our terms and conditions'|trans }} {{ url('terms') }}</p>
                 </div>
             </div>
         </div>
