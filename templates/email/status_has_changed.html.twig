@@ -3,10 +3,10 @@
 </p>
 
 <div>
-    <p>Repair status ({{ message.code }}) has been updated to <u><b>{{ message.status }}</b></u></p>
-    <a href="{{ url('tracker_index') }}">Check your repair here</a>
+    <p>{{ 'Repair status'|trans }} ({{ message.code }}) {{ 'has been updated to'|trans }} <u><b>{{ message.status }}</b></u></p>
+    <a href="{{ url('tracker_index') }}">{{ 'Check your repair here'|trans }}</a>
 </div>
 
 <p>
-    <i>This e-mail is automatic. Please do not reply to it.</i>
+    <i>{{ 'This e-mail is automatic. Please do not reply to it'|trans }}.</i>
 </p>
