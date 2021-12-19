@@ -60,6 +60,7 @@
         "phpstan/phpstan": "^0.12.85",
         "phpstan/phpstan-doctrine": "^0.12.33",
         "phpstan/phpstan-symfony": "^0.12.28",
+        "phpunit/phpunit": "^9.5",
         "roave/security-advisories": "dev-latest",
         "symfony/browser-kit": "^5.2",
         "symfony/css-selector": "^5.2",
@@ -67,6 +68,7 @@
         "symfony/maker-bundle": "^1.30",
         "symfony/phpunit-bridge": "^5.2",
         "symfony/stopwatch": "^5.2",
+        "symfony/test-pack": "^1.0",
         "symfony/var-dumper": "^5.2",
         "symfony/web-profiler-bundle": "^5.2"
     },
