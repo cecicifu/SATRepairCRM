@@ -39,6 +39,8 @@ final class RepairAdmin extends AbstractAdmin
     private RepairService $repairService;
     private MessageBusInterface $messageBus;
 
+    private const EMAIL_DISPATCHER = false;
+
     private object $oldObject;
 
     public function __construct(
@@ -76,7 +78,7 @@ final class RepairAdmin extends AbstractAdmin
 
     protected function postPersist(object $object): void
     {
-        if ($object->getCustomer()->getEmail()) {
+        if ($object->getCustomer()->getEmail() && self::EMAIL_DISPATCHER) {
             $this->messageBus->dispatch(new NewRepairCreated($object->getCustomer()->getEmail(), $object->getCode()));
         }
     }
@@ -93,7 +95,7 @@ final class RepairAdmin extends AbstractAdmin
 
     protected function postUpdate(object $object): void
     {
-        if ($object->getCustomer()->getEmail() && ($this->oldObject->getStatus() !== $object->getStatus())) {
+        if ($object->getCustomer()->getEmail() && ($this->oldObject->getStatus() !== $object->getStatus()) && self::EMAIL_DISPATCHER) {
             $this->messageBus->dispatch(new StatusHasChanged($object->getCustomer()->getEmail(), $object->getCode(), $object->getStatus()->getName()));
         }
     }
