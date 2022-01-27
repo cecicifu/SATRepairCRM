@@ -11,7 +11,6 @@ sonata_admin:
         layout: 'standard_layout.html.twig'
     global_search:
         empty_boxes: fade
-        case_sensitive: false
     dashboard:
         blocks:
             - { type: sonata.admin.block.admin_list, position: center }
