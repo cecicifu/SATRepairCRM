@@ -53,6 +53,7 @@
         "twig/twig": "2.12|^3.0"
     },
     "require-dev": {
+        "roave/security-advisories": "dev-latest",
         "doctrine/doctrine-fixtures-bundle": "^3.4",
         "fakerphp/faker": "^1.14",
         "friendsofphp/php-cs-fixer": "^3.0",
