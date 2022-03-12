@@ -26,7 +26,7 @@
 7. Run NPM in dev environment
 >``npm run dev``
 8. Run your server or run ``symfony serve`` if you have [Symfony](https://symfony.com/doc/current/setup/symfony_server.html#installation) installed
-9. Open your browser and enter **localhost:8000** or **localhost:8000/login** (or custom port)
+9. Open your browser and enter **localhost:8000** or **localhost:8000/login** (could be other port, you should check it out)
 
 If you have loaded the demo data from step 6, you can access using the username "**admin**" and password "**asdf,1234**"
 
