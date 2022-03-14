@@ -6,29 +6,33 @@
 ## Usage
 ### Requirements & tested versions:
 - PHP 7.4.5
-- Symfony 5.3
-- Composer 2.2.5
 - Node 16.14.0
 - NPM 8.3.1
 
-### Follow the next steps:
-1. Install composer 
+### Installation:
+1. Install Composer packages
 >``composer install``
-2. Install NPM 
+2. Install NPM packages
 >``npm install``
 3. Configure the database connection in the file ***.env*** or ***.env.local***
 4. Create the database
 >``php bin/console doctrine:database:create``
-5. Run migrations
+5. Run database migrations
 >``php bin/console doctrine:migrations:migrate``
-6. [**OPTIONAL**] Load the demo data
->``php bin/console doctrine:fixtures:load``
-7. Run NPM in dev environment
+6. Run build for dev environment
 >``npm run dev``
-8. Run your server or run ``symfony serve`` if you have [Symfony](https://symfony.com/doc/current/setup/symfony_server.html#installation) installed
-9. Open your browser and enter **localhost:8000** or **localhost:8000/login** (could be other port, you should check it out)
+7. Run your server or run ``symfony serve`` if you have [Symfony CLI](https://symfony.com/doc/current/setup/symfony_server.html#installation) installed
+8. Open your browser and enter **localhost:8000** or **localhost:8000/login** (could be other port, you should check it out)
 
-If you have loaded the demo data from step 6, you can access using the username "**admin**" and password "**asdf,1234**"
+### Load demo data
+Run the next command:
+>``php bin/console doctrine:fixtures:load``
+
+With the demo data loaded you can access using:
+- Username: **admin**
+- Password: **asdf,1234**
+
+If not, you will have to create the user manually in the database.
 
 
 
