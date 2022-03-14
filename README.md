@@ -23,6 +23,7 @@
 >``npm run dev``
 7. Run your server or run ``symfony serve`` if you have [Symfony CLI](https://symfony.com/doc/current/setup/symfony_server.html#installation) installed
 8. Open your browser and enter **localhost:8000** or **localhost:8000/login** (could be other port, you should check it out)
+9. Enjoy it! 😊
 
 ### Load demo data
 Run the next command:
