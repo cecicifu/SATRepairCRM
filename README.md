@@ -18,7 +18,7 @@ composer install
 ```sh
 npm install
 ```
-3. Configure the database connection in the file ***.env*** or ***.env.local***
+3. Configure the database connection in the file **.env** or **.env.local**
 4. Create the database
 ```sh
 php bin/console doctrine:database:create
