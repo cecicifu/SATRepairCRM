@@ -11,23 +11,38 @@
 
 ### Installation:
 1. Install Composer packages
->``composer install``
+```sh
+composer install
+```
 2. Install NPM packages
->``npm install``
+```sh
+npm install
+```
 3. Configure the database connection in the file ***.env*** or ***.env.local***
 4. Create the database
->``php bin/console doctrine:database:create``
+```sh
+php bin/console doctrine:database:create
+```
 5. Run database migrations
->``php bin/console doctrine:migrations:migrate``
+```sh
+php bin/console doctrine:migrations:migrate
+```
 6. Run build for dev environment
->``npm run dev``
-7. Run your server or run ``symfony serve`` if you have [Symfony CLI](https://symfony.com/doc/current/setup/symfony_server.html#installation) installed
+```sh
+npm run dev
+```
+7. Run your own server or if you have [Symfony CLI](https://symfony.com/doc/current/setup/symfony_server.html#installation) installed, just run:
+```sh
+symfony serve
+```
 8. Open your browser and enter **localhost:8000** or **localhost:8000/login** (could be other port, you should check it out)
 9. Enjoy it! 😊
 
 ### Load demo data
 Run the next command:
->``php bin/console doctrine:fixtures:load``
+```sh
+php bin/console doctrine:fixtures:load
+```
 
 With the demo data loaded you can access using:
 - Username: **admin**
