@@ -10,11 +10,13 @@ use Ramsey\Uuid\UuidInterface;
 
 class Repair
 {
+    private UuidInterface $id;
     private Customer $customer;
     private Category $category;
     private Status $status;
     /** @var ArrayCollection<int, RepairHasProducts> */
     private Collection $products;
+    private string $code;
     private ?int $imei;
     private ?string $pattern;
     private string $fault;
@@ -23,11 +25,15 @@ class Repair
     private ?string $publicComment;
     private ?float $labourPrice;
     private ?float $tax;
+    private bool $visible;
     private DateTimeInterface $modified;
     private DateTimeImmutable $created;
 
-    public function __construct(private readonly UuidInterface $id, private string $code, private bool $visible)
+    public function __construct(UuidInterface $uuid, string $code, bool $visible)
     {
+        $this->id = $uuid;
+        $this->code = $code;
+        $this->visible = $visible;
         $this->products = new ArrayCollection();
     }
 

@@ -8,13 +8,15 @@ use Ramsey\Uuid\UuidInterface;
 
 class Status
 {
+    private UuidInterface $id;
     private string $name;
     private ?string $colour;
     private DateTimeInterface $modified;
     private DateTimeImmutable $created;
 
-    public function __construct(private readonly UuidInterface $id)
+    public function __construct(UuidInterface $uuid)
     {
+        $this->id = $uuid;
     }
 
     public function getId(): UuidInterface

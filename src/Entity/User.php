@@ -9,17 +9,19 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 class User implements UserInterface
 {
+    private UuidInterface $id;
     private string $username;
     private ?string $email;
     private string $password;
-    /** @var array<string> */
+    /** @var array<String> */
     private array $roles;
     private ?DateTimeInterface $lastSession;
     private DateTimeInterface $modified;
     private DateTimeImmutable $created;
 
-    public function __construct(private readonly UuidInterface $id)
+    public function __construct(UuidInterface $uuid)
     {
+        $this->id = $uuid;
         $this->roles[] = 'ROLE_ADMIN';
     }
 
@@ -69,7 +71,7 @@ class User implements UserInterface
         return array_unique($this->roles);
     }
 
-    /** @param array<string> $roles */
+    /** @param array<String> $roles */
     public function setRoles(array $roles): self
     {
         $this->roles = $roles;

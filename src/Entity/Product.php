@@ -8,14 +8,16 @@ use Ramsey\Uuid\UuidInterface;
 
 class Product
 {
+    private UuidInterface $id;
     private string $name;
     private int $amount;
     private ?float $price;
     private DateTimeInterface $modified;
     private DateTimeImmutable $created;
 
-    public function __construct(private readonly UuidInterface $id)
+    public function __construct(UuidInterface $uuid)
     {
+        $this->id = $uuid;
     }
 
     public function getId(): UuidInterface
