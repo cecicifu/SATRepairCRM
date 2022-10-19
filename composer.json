@@ -98,6 +98,12 @@
         "symfony/polyfill-php72": "*"
     },
     "scripts": {
+        "db": [
+            "php bin/console doctrine:database:drop --force",
+            "php bin/console doctrine:database:create",
+            "php bin/console make:migration",
+            "php bin/console doctrine:schema:update --force --complete --dump-sql"
+        ],
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
