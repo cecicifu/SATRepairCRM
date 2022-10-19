@@ -19,24 +19,21 @@ composer install
 npm install
 ```
 3. Configure the database connection in the file **.env** or **.env.local**
-4. Create the database
+4. Create the database and run the migrations
 ```sh
-php bin/console doctrine:database:create
+composer db
 ```
-5. Run database migrations
-```sh
-php bin/console doctrine:migrations:migrate
-```
-6. Run build for dev environment
+5. Run build for dev environment
 ```sh
 npm run dev
 ```
-7. Run your own server or if you have [Symfony CLI](https://symfony.com/doc/current/setup/symfony_server.html#installation) installed, just run:
+6. Run your own server or if you have [Symfony CLI](https://symfony.com/doc/current/setup/symfony_server.html#installation) installed, just run:
 ```sh
 symfony serve
 ```
-8. Open your browser and enter **localhost:8000** or **localhost:8000/login** (could be other port, you should check it out)
-9. Enjoy it! 😊
+7. Open your browser and enter **localhost:8000** or **localhost:8000/login** (could be other port, you should check it out)
+
+Enjoy it! 😊
 
 ### Load demo data
 Run the next command:
