@@ -1,4 +1,6 @@
 /.idea/
+/.vscode/
+
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -7,6 +9,7 @@
 /public/bundles/
 /var/
 /vendor/
+/migrations/*
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
@@ -26,8 +29,3 @@ yarn-error.log
 /.php-cs-fixer
 /.php-cs-fixer.cache
 ###< friendsofphp/php-cs-fixer ###
-
-###> phpunit/phpunit ###
-/phpunit.xml
-.phpunit.result.cache
-###< phpunit/phpunit ###
