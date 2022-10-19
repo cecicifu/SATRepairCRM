@@ -8,7 +8,6 @@ use Ramsey\Uuid\UuidInterface;
 
 class Customer
 {
-    private UuidInterface $id;
     private string $fullname;
     private ?string $address;
     private ?string $city;
@@ -18,9 +17,8 @@ class Customer
     private DateTimeInterface $modified;
     private DateTimeImmutable $created;
 
-    public function __construct(UuidInterface $uuid)
+    public function __construct(private readonly UuidInterface $id)
     {
-        $this->id = $uuid;
     }
 
     public function getId(): UuidInterface

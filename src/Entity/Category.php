@@ -8,15 +8,13 @@ use Ramsey\Uuid\UuidInterface;
 
 class Category
 {
-    private UuidInterface $id;
     private string $name;
     private ?string $description;
     private DateTimeInterface $modified;
     private DateTimeImmutable $created;
 
-    public function __construct(UuidInterface $uuid)
+    public function __construct(private readonly UuidInterface $id)
     {
-        $this->id = $uuid;
     }
 
     public function getId(): UuidInterface
