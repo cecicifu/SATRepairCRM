@@ -38,7 +38,7 @@ Enjoy it! 😊
 ### Demo data
 Run the next command:
 ```sh
-php bin/console doctrine:fixtures:load
+composer demo
 ```
 
 With the demo data loaded you can access using:
