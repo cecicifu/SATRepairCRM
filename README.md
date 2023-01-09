@@ -35,7 +35,7 @@ symfony serve
 
 Enjoy it! 😊
 
-### Load demo data
+### Demo data
 Run the next command:
 ```sh
 php bin/console doctrine:fixtures:load
