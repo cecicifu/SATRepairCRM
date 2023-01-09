@@ -104,6 +104,9 @@
             "php bin/console make:migration",
             "php bin/console doctrine:schema:update --force --complete --dump-sql"
         ],
+        "demo": [
+            "php bin/console doctrine:fixtures:load"
+        ],
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
