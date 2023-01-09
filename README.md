@@ -5,9 +5,9 @@
 
 ## Usage
 ### Requirements & tested versions:
-- PHP 7.4.5 (8.1 tested)
-- Node 16.14.0
-- NPM 8.3.1 (8.19.* tested)
+- PHP >= 7.4 (8 compatible)
+- Node >= 16.14
+- NPM >= 8.3
 
 ### Installation:
 1. Install Composer packages
